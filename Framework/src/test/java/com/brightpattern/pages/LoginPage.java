@@ -9,6 +9,8 @@ public class LoginPage {
 	
 	WebDriver driver;
 	
+	// this is agent initialization
+	
 	public LoginPage(WebDriver ldriver) {
 		
 		this.driver = ldriver;
