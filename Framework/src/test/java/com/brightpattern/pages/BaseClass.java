@@ -23,8 +23,16 @@ import com.brightpattern.utility.ConfigDataProvider;
 import com.brightpattern.utility.ExcelDataProvider;
 import com.brightpattern.utility.Helper;
 
+
 public class BaseClass {
 	
+//================ 3 agents implementations ================ 
+	
+	protected 	WebDriver driver_aj;
+	protected 	WebDriver driver_tb;
+	protected 	WebDriver driver_cc;
+	
+//================ 3 agents implementations ================ 
 	protected WebDriver driver;
 	protected ExcelDataProvider excel;
 	protected ConfigDataProvider config;
@@ -52,9 +60,22 @@ public class BaseClass {
 		Reporter.log("Trying to start Browser and Getting application ready", true);
 //		driver = BrowserFactory.startApplication(driver, config.getBrowser(), config.getStagingURL());
 		
-		driver = BrowserFactory.startApplication(driver, browser, url);
-	
+		
+		driver = BrowserFactory.startApplication(driver, browser, url);	
 		Reporter.log("Browser and application is up and running", true);
+		
+		//================ 3 agents implementations ================ 
+		
+		driver_aj = BrowserFactory.startApplication(driver_aj, browser, url);	
+		Reporter.log("Browser and application is up and running for driver_aj", true);
+		
+		driver_tb = BrowserFactory.startApplication(driver_tb, browser, url);	
+		Reporter.log("Browser and application is up and running for driver_tb", true);
+		
+//		driver_cc = BrowserFactory.startApplication(driver_cc, browser, url);	
+//		Reporter.log("Browser and application is up and running for driver_cc", true);
+		
+		//================ 3 agents implementations ================ 
 		
 	}
 
@@ -62,6 +83,14 @@ public class BaseClass {
 	public void tearDown() {
 		
 		BrowserFactory.quitBrowser(driver);
+		
+		//================ 3 agents implementations ================ 
+		
+		BrowserFactory.quitBrowser(driver_aj);
+		BrowserFactory.quitBrowser(driver_tb);
+//		BrowserFactory.quitBrowser(driver_cc);
+	
+		//================ 3 agents implementations ================ 
 		
 	}
 	
