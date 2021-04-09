@@ -25,7 +25,7 @@ public class LoginTestAD {
 
 		String agentName = "admin";
 		String agentPassword = "password";
-		System.setProperty("webdriver.chrome.driver", "C:\\tools\\chrome\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		WebDriver driver;
 
