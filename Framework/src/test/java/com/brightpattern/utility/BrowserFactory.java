@@ -17,7 +17,7 @@ public class BrowserFactory {
 			  System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 			  ChromeOptions options = new ChromeOptions();
 			  
-//			  options.addArguments("headless");
+			  options.addArguments("headless");
 
 //			  options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 			  options.addExtensions(new File("./Drivers/Agent Desktop Chrome Extension 1.16.0.0.crx"));
