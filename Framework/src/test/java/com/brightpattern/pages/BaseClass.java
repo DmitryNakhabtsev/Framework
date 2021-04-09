@@ -105,7 +105,7 @@ public class BaseClass {
 		}
 		else if(result.getStatus()==ITestResult.SUCCESS) {
 			logger.pass("Test Passed", MediaEntityBuilder.createScreenCaptureFromPath(Helper.captureScreenshot(driver)).build());
-			// LoginTestAD>BaseClass.tearDownMethod:70 » IllegalArgument ScreenCapture path m...
+			// LoginTestAD>BaseClass.tearDownMethod:70  IllegalArgument ScreenCapture path m...
 			
 		}
 		
