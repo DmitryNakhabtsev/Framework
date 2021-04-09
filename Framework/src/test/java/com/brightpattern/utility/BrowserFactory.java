@@ -19,7 +19,8 @@ public class BrowserFactory {
 			  
 //			  options.addArguments("headless");
 
-			  options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+//			  options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+			  options.addExtensions(new File("/Framework/src/test/java/com/brightpattern/utility/Agent Desktop Chrome Extension 1.16.0.0.crx"));
 			  options.addArguments("--disable-notifications");
 			  options.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 			  driver = new ChromeDriver(options);
