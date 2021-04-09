@@ -27,7 +27,7 @@ public class LoginTestAD {
 		String agentPassword = "password";
 		System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		WebDriver driver;
+//		WebDriver driver;
 
 		options.addArguments("headless");
 
@@ -35,7 +35,7 @@ public class LoginTestAD {
 		  options.addArguments("--disable-notifications");
 		  options.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 		  
-		driver = new ChromeDriver(options);
+		  WebDriver driver = new ChromeDriver(options);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 
