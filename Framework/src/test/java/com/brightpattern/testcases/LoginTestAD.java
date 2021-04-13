@@ -31,11 +31,11 @@ public class LoginTestAD {
 
 		options.addArguments("headless");
 
-//		  options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
-		  options.addArguments("--disable-notifications");
-		  options.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
+//		options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+		options.addArguments("--disable-notifications");
+		options.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 		  
-		  WebDriver driver = new ChromeDriver(options);
+		WebDriver driver = new ChromeDriver(options);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 
