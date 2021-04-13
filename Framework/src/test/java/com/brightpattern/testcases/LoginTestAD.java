@@ -43,7 +43,7 @@ public class LoginTestAD {
 
 		driver.get("https://dima1.ssf.bugfocus.com/agentdesktop/");
 		System.out.println("Browser started");
-		driver.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
+//		driver.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
 		driver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 		driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 		driver.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
