@@ -70,9 +70,9 @@ public class API {
 			  System.setProperty("webdriver.chrome.driver", "C:\\tools\\chrome\\chromedriver.exe");
 			  ChromeOptions options_aj = new ChromeOptions();
 			  
-			  options_aj.addArguments("headless");
+//			  options_aj.addArguments("headless");
 
-//			  options_aj.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+			  options_aj.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 			  options_aj.addArguments("--disable-notifications");
 			  options_aj.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 			  driver_aj = new ChromeDriver(options_aj);
@@ -106,9 +106,9 @@ public class API {
 			  System.setProperty("webdriver.chrome.driver", "C:\\tools\\chrome\\chromedriver.exe");
 			  ChromeOptions options_tb = new ChromeOptions();
 			  
-			  options_tb.addArguments("headless");
+//			  options_tb.addArguments("headless");
 
-//			  options_tb.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+			  options_tb.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 			  options_tb.addArguments("--disable-notifications");
 			  options_tb.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 			  driver_tb = new ChromeDriver(options_tb);
@@ -142,9 +142,9 @@ public class API {
 			  System.setProperty("webdriver.chrome.driver", "C:\\tools\\chrome\\chromedriver.exe");
 			  ChromeOptions options_cc = new ChromeOptions();
 			  
-			  options_cc.addArguments("headless");
+//			  options_cc.addArguments("headless");
 
-//			  options_cc.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+			  options_cc.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 			  options_cc.addArguments("--disable-notifications");
 			  options_cc.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 			  driver_cc = new ChromeDriver(options_cc);
@@ -179,9 +179,9 @@ public class API {
 			  System.setProperty("webdriver.chrome.driver", "C:\\tools\\chrome\\chromedriver.exe");
 			  ChromeOptions options = new ChromeOptions();
 			  
-			  options.addArguments("headless");
+//			  options.addArguments("headless");
 
-//			  options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+			  options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 			  options.addArguments("--disable-notifications");
 			  options.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 			  driver = new ChromeDriver(options);
