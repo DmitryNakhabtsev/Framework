@@ -26,7 +26,7 @@ public class LoginTestAD {
 		String agentName = "admin";
 		String agentPassword = "password";
 		System.setProperty("webdriver.chrome.driver", "Drivers/Linux/chromedriver");
-		System.setProperty("webdriver.chrome.whitelistedIps", "");
+		System.setProperty("webdriver.chrome.whitelistedIps", ""); // Cannot assign requested address (99)” while starting chromedriver
 		
 		ChromeOptions options = new ChromeOptions();
 //		WebDriver driver;
@@ -43,7 +43,8 @@ public class LoginTestAD {
 
 //		driver.get("https://dima1.ssf.bugfocus.com/agentdesktop/"); //aha
 		driver.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
-		System.out.println("Browser started on autotests.ssf.bugfocus.com/agentdesktop");
+		System.out.println("Browser started on "+ driver. getCurrentUrl());
+		
 		driver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 		driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 		driver.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
