@@ -26,6 +26,7 @@ public class LoginTestAD {
 		String agentName = "admin";
 		String agentPassword = "password";
 		System.setProperty("webdriver.chrome.driver", "Drivers/Linux/chromedriver");
+		System.setProperty("webdriver.chrome.whitelistedIps", "");
 		
 		ChromeOptions options = new ChromeOptions();
 //		WebDriver driver;
