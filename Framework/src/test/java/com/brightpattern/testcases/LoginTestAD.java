@@ -42,15 +42,17 @@ public class LoginTestAD {
 
 //		driver.get("https://dima1.ssf.bugfocus.com/agentdesktop/"); //aha
 		driver.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
-		System.out.println("Browser started");
+		System.out.println("Browser started on autotests.ssf.bugfocus.com/agentdesktop");
 		driver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 		driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 		driver.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		
+//		try {
+//			Thread.sleep(5000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
+		
 		driver.quit();
 		System.out.println("Browser closed");
 	
