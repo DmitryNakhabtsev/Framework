@@ -70,9 +70,9 @@ public class API {
 			  System.setProperty("webdriver.chrome.driver", "C:\\tools\\chrome\\chromedriver.exe");
 			  ChromeOptions options_aj = new ChromeOptions();
 			  
-//			  options_aj.addArguments("headless");
+			  options_aj.addArguments("headless");
 
-			  options_aj.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+//			  options_aj.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 			  options_aj.addArguments("--disable-notifications");
 			  options_aj.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 			  driver_aj = new ChromeDriver(options_aj);
@@ -80,6 +80,7 @@ public class API {
 			  driver_aj.manage().window().setPosition(new Point(1920,0));
 			  
 			  driver_aj.get("https://dima1.ssf.bugfocus.com/agentdesktop/");
+//			  driver_aj.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
 			  driver_aj.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver_aj.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 			  driver_aj.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
@@ -105,9 +106,9 @@ public class API {
 			  System.setProperty("webdriver.chrome.driver", "C:\\tools\\chrome\\chromedriver.exe");
 			  ChromeOptions options_tb = new ChromeOptions();
 			  
-//			  options_tb.addArguments("headless");
+			  options_tb.addArguments("headless");
 
-			  options_tb.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+//			  options_tb.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 			  options_tb.addArguments("--disable-notifications");
 			  options_tb.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 			  driver_tb = new ChromeDriver(options_tb);
@@ -115,6 +116,7 @@ public class API {
 			  driver_tb.manage().window().setPosition(new Point(2880,0));
 			  
 			  driver_tb.get("https://dima1.ssf.bugfocus.com/agentdesktop/");
+//			  driver_tb.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
 			  driver_tb.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver_tb.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 			  driver_tb.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
@@ -140,9 +142,9 @@ public class API {
 			  System.setProperty("webdriver.chrome.driver", "C:\\tools\\chrome\\chromedriver.exe");
 			  ChromeOptions options_cc = new ChromeOptions();
 			  
-//			  options_cc.addArguments("headless");
+			  options_cc.addArguments("headless");
 
-			  options_cc.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+//			  options_cc.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 			  options_cc.addArguments("--disable-notifications");
 			  options_cc.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 			  driver_cc = new ChromeDriver(options_cc);
@@ -150,6 +152,7 @@ public class API {
 			  driver_cc.manage().window().setPosition(new Point(2400,0));
 			  
 			  driver_cc.get("https://dima1.ssf.bugfocus.com/agentdesktop/");
+//			  driver_cc.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
 			  driver_cc.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver_cc.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 			  driver_cc.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
@@ -176,9 +179,9 @@ public class API {
 			  System.setProperty("webdriver.chrome.driver", "C:\\tools\\chrome\\chromedriver.exe");
 			  ChromeOptions options = new ChromeOptions();
 			  
-//			  options.addArguments("headless");
+			  options.addArguments("headless");
 
-			  options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+//			  options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 			  options.addArguments("--disable-notifications");
 			  options.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 			  driver = new ChromeDriver(options);
@@ -186,6 +189,7 @@ public class API {
 			  driver.manage().window().maximize();
 			  
 			  driver.get("https://dima1.ssf.bugfocus.com/agentdesktop/"); 
+//			  driver.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
 			  driver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 			  driver.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
@@ -270,6 +274,8 @@ public class API {
 
 		switch (agentName) {
 		case "alan.jenks":
+			//*[@id="cpEndCall"]/div
+			//*[@id="cpEndCall"]/div
 			driver_aj.findElement(By.xpath("//*[@id=\"cpTransfer\"]/div")).click(); // "Complete Transfer" button
 			break;
 		case "tony.cobb":
@@ -368,6 +374,40 @@ public class API {
 		System.out.println("agent " + agentName + " was LOGOUT successfully");
 
 	}// end of agentLogOut
+	
+	  /**
+	   * Get Services Metrics for 3 services: Customer Service Chat, Service A, ServiceZen 
+	   * from the "admin" Supervision board.
+	   * 
+	   * @param agentName not implemented feature
+	   * @param numberOfAgents enter number of agents that metrics we want to get
+	   * @return String[][] two-dimensional array of all agents (Customer Alan Jenks, Tony Cobb, User Super ) metrics
+	   */
+	protected static String[][] getServicesMetrics(String serviceName, int numberOfServices) {
+		int size = 89;
+		String[][] metrics = new String[4][size+1]; // create a metrics array
+		
+		for (int i = 1; i <= size; i++) {// get name fields
+			String xpath_names = "//*[@id=\"monServiceTable\"]/div[1]/div[3]/table/thead/tr/th[" + i + "]/div/span";
+
+			try	{metrics[0][i] = driver.findElement(By.xpath(xpath_names)).getText();
+			} catch (StaleElementReferenceException e) {System.out.println(e.toString());}
+
+		}
+
+		for (int j = 1; j < 4; j++) {// get value fields for 3 services: Customer Service Chat, Service A, ServiceZen		
+			for (int i = 1; i <= size; i++) {
+				String xpath_values = "//*[@id=\"monServiceTable\"]/div[3]/div/div[1]/div/div/table/tbody/tr[" + j + "]/td[" + i + "]/div/div";
+				  try {metrics[j][i] = driver.findElement(By.xpath(xpath_values)).getText();
+				  } catch (StaleElementReferenceException e) {System.out.println(e.toString());}
+			}
+
+			System.out.println("************************ 89 services metrics gathering ******************************");
+
+		}
+		
+		return metrics;
+	} // servicesMetrics89 ========================================================================================================================================
 	
 	  /**
 	   * Get Agents Metrics for all configured agents (Alan Jenks, Tony Cobb, User Super ) from the "admin" Supervision board.
@@ -584,6 +624,9 @@ public class API {
 	protected static void setReadyToAgent(String agentName) {
 		// locator for select status 
 		//*[@id="gwt-debug-acStateMenuContainer"]/div[1]/img
+		
+		//*[@id="gwt-debug-acStateMenuContainer"]/div[1]/img     <-   xpathSelectStatus
+		
 //		String xpathSelectStatus ="/html/body/div[5]/div/div[2]/div/div/div[1]/div[1]/div/div[1]/img";
 		// locator for select READY status 	from drop down menu
 		//*[@title='Ready']
@@ -593,7 +636,7 @@ public class API {
 //		String xpathSelectReadyStatus = "/html/body/div[5]/div/div[2]/div/div/div[1]/div[1]/div"; // locator for READY status in agent desktop
 		
 		
-		String xpathSelectStatus ="//*[@id=\"gwt-debug-acStateMenuContainer\"]/div[1]/img";
+		String xpathSelectStatus ="//*[@id=\"gwt-debug-acStateMenuContainer\"]/div[1]"; // <-   xpathSelectStatus /img
 		String xpathReady = "//*[@title='Ready']";
 		String xpathSelectReadyStatus = "//*[@id=\"header-panel\"]/div"; // locator for READY status in agent desktop
 		String service_names;
@@ -1203,9 +1246,11 @@ public class API {
 
 //			driver_aj.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); //blind transfer button 
 			
-			//                                /html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/div/button/div
-			driver_aj.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/div/button")).click(); //initiate call button
-			System.out.println("initiate call button was clicked!!!!!!!!!!!!");
+			//                              /html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/div/button
+											//*[@id="gwt-uid-936"]/div[1]/div/div/div[1]/div[2]/div/div/button[@title="Initiate call"]
+											//*/div[1]/div/div/div[1]/div[2]/div/div/button/div[@class='b-svg']
+			driver_aj.findElement(By.xpath("//*/div[1]/div/div/div[1]/div[2]/div/div/button/div[@class='b-svg']")).click(); //initiate call button
+			System.out.println("initiate call button was clicked!");
 			
 			break;
 		case "tony.cobb":
@@ -1298,7 +1343,7 @@ public class API {
 	   * 
 	   * @param t ms waiting time
 	   */
-	protected void wait(int t) {
+	protected static void wait(int t) {
 		try {Thread.sleep(t);} catch (InterruptedException e) {e.printStackTrace();} // t ms waiting time
 	}
 	
