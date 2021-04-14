@@ -29,10 +29,8 @@ public class LoginTestAD {
 		System.setProperty("webdriver.chrome.whitelistedIps", ""); // Cannot assign requested address (99) while starting chromedriver
 	
 		ChromeOptions options = new ChromeOptions();
-//		WebDriver driver;
 
 		options.addArguments("headless");
-
 //		options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 		options.addArguments("--disable-notifications");
 		options.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
@@ -49,15 +47,46 @@ public class LoginTestAD {
 		driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 		driver.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
 		
-//		try {
-//			Thread.sleep(5000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
+/****************************************************************************************************************************/
+		agentName = "alan.jenks";
+		agentPassword = "password";
+		
+		WebDriver driver_aj = new ChromeDriver(options);
+		driver_aj.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver_aj.manage().window().maximize();
+
+//		driver.get("https://dima1.ssf.bugfocus.com/agentdesktop/"); //aha
+		driver_aj.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
+		System.out.println("Browser started on " + driver_aj.getCurrentUrl());
+		
+		driver_aj.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
+		driver_aj.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
+		driver_aj.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
+		
+		/****************************************************************************************************************************/
+		agentName = "tony.cobb";
+		agentPassword = "password";
+		
+		WebDriver driver_tb = new ChromeDriver(options);
+		driver_tb.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver_tb.manage().window().maximize();
+
+//		driver.get("https://dima1.ssf.bugfocus.com/agentdesktop/"); //aha
+		driver_tb.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
+		System.out.println("Browser started on " + driver_tb.getCurrentUrl());
+		
+		driver_tb.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
+		driver_tb.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
+		driver_tb.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();		
 		
 		driver.quit();
-		System.out.println("Browser closed");
+		System.out.println("Browser admin closed");
 	
+		driver_aj.quit();
+		System.out.println("Browser alan.jenks closed");
+		
+		driver_tb.quit();
+		System.out.println("Browser tony.cobb closed");
 	}
 	
 
