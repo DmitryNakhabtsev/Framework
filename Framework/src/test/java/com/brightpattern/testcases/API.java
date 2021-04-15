@@ -102,7 +102,7 @@ public class API {
 	protected static void agentInit(String agentName, String agentPassword) {
 
 		System.setProperty("webdriver.chrome.driver", "Drivers/Linux/chromedriver");
-		System.setProperty("webdriver.chrome.whitelistedIps", ""); // Cannot assign requested address (99) while starting chromedriver
+//		System.setProperty("webdriver.chrome.whitelistedIps", ""); // Cannot assign requested address (99) while starting chromedriver
 		
 		ChromeOptions options = new ChromeOptions();
 		
@@ -110,6 +110,8 @@ public class API {
 //		options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 		options.addArguments("--disable-notifications");
 		options.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
+	    options.addArguments("--verbose");
+	    options.addArguments("--whitelisted-ips=''");
 
 		
 		switch(agentName) {
