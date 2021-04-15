@@ -118,8 +118,8 @@ public class API {
 			  driver_aj.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			  driver_aj.manage().window().setPosition(new Point(1920,0));
 			  
-			  driver_aj.get("https://dima1.ssf.bugfocus.com/agentdesktop/");
-//			  driver_aj.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
+//			  driver_aj.get("https://dima1.ssf.bugfocus.com/agentdesktop/");
+			  driver_aj.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
 			  driver_aj.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver_aj.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 			  driver_aj.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
@@ -142,8 +142,8 @@ public class API {
 			  driver_tb.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			  driver_tb.manage().window().setPosition(new Point(2880,0));
 			  
-			  driver_tb.get("https://dima1.ssf.bugfocus.com/agentdesktop/");
-//			  driver_tb.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
+//			  driver_tb.get("https://dima1.ssf.bugfocus.com/agentdesktop/");
+			  driver_tb.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
 			  driver_tb.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver_tb.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 			  driver_tb.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
@@ -168,8 +168,8 @@ public class API {
 			  driver_cc.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			  driver_cc.manage().window().setPosition(new Point(2400,0));
 			  
-			  driver_cc.get("https://dima1.ssf.bugfocus.com/agentdesktop/");
-//			  driver_cc.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
+//			  driver_cc.get("https://dima1.ssf.bugfocus.com/agentdesktop/");
+			  driver_cc.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
 			  driver_cc.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver_cc.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 			  driver_cc.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
@@ -193,8 +193,8 @@ public class API {
 			  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			  driver.manage().window().maximize();
 			  
-			  driver.get("https://dima1.ssf.bugfocus.com/agentdesktop/"); 
-//			  driver.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
+//			  driver.get("https://dima1.ssf.bugfocus.com/agentdesktop/"); 
+			  driver.get("https://autotests.ssf.bugfocus.com/agentdesktop/");
 			  driver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 			  driver.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
