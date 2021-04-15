@@ -25,7 +25,7 @@ public class DimaAfter extends API{
 
 /************************ scenario body ******************************/
 		
-		agentCallTo(admin, "8003");             //Customer calls to Scenario (ServiceA)
+		agentCallTo(admin, "2022");             //Customer calls to Scenario (ServiceA)
 		wait(action); 							// 10sec Customer listens to IVR prompt 
 		wait(action); 							// 10sec Customer waits in Q for 10 seconds  		
 		setReadyToAgent(agent1);                // Agent1 set himself as Ready
