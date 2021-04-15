@@ -32,7 +32,7 @@ public class DimaAfter extends API{
 		wait(action); 							// Call is routed to Agent and call is in Ringing state for 10 seconds 
 		
 		String str = driver_aj.getPageSource();
-		System.out.println(str);	
+//		System.out.println(str);	
 		System.out.println("Page Source Length is: " + str.length());
 
 		if (str.contains("Bright Pattern")) {
