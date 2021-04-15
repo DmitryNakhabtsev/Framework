@@ -300,18 +300,56 @@ public class API {
 	   */
 	protected static void agentCallAnswer(String agentName) {
 
+//		String AcceptCallButton = "/html/body/div[8]/div/table/tbody/tr[2]/td[2]/div/div/div[3]/button[1]";		
+		String AcceptCallButton = "/html/body/div[8]//button[contains(text(),'Accept')]";
+		                         
 		switch (agentName) {
 		case "alan.jenks":
-			driver_aj.findElement(By.xpath("/html/body/div[8]/div/table/tbody/tr[2]/td[2]/div/div/div[3]/button[1]")).click(); // ACCEPT CALL
+		
+			try {
+				// try to check setting of "Service A"
+				driver_aj.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
+				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
+
+			} catch (NoSuchElementException e) {
+				// Code for Handling exception
+				System.out.println(e.toString() + "ACCEPT CALL for " + agentName + " was not set");
+			}
+					
 			break;
-		case "tony.cobb":
-			driver_tb.findElement(By.xpath("/html/body/div[8]/div/table/tbody/tr[2]/td[2]/div/div/div[3]/button[1]")).click(); // ACCEPT CALL
+		case "tony.cobb":		
+			try {
+				// try to check setting of "Service A"
+				driver_tb.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
+				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
+
+			} catch (NoSuchElementException e) {
+				// Code for Handling exception
+				System.out.println(e.toString() + "ACCEPT CALL for " + agentName + " was not set");
+			}
+			
 			break;
 		case "carlos.clapper":
-			driver_cc.findElement(By.xpath("/html/body/div[8]/div/table/tbody/tr[2]/td[2]/div/div/div[3]/button[1]")).click(); // ACCEPT CALL
+			try {
+				// try to check setting of "Service A"
+				driver_cc.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
+				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
+
+			} catch (NoSuchElementException e) {
+				// Code for Handling exception
+				System.out.println(e.toString() + "ACCEPT CALL for " + agentName + " was not set");
+			}
 			break;
 		default:			
-			driver.findElement(By.xpath("/html/body/div[8]/div/table/tbody/tr[2]/td[2]/div/div/div[3]/button[1]")).click(); // ACCEPT CALL
+			try {
+				// try to check setting of "Service A"
+				driver.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
+				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
+
+			} catch (NoSuchElementException e) {
+				// Code for Handling exception
+				System.out.println(e.toString() + "ACCEPT CALL for " + agentName + " was not set");
+			}
 		}
 	}// end of agentAnswerCall
 	
