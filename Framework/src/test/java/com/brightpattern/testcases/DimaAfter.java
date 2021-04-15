@@ -29,6 +29,16 @@ public class DimaAfter extends API{
 		wait(action); 							// 10sec Customer waits in Q for 10 seconds  		
 		setReadyToAgent(agent1);                // Agent1 set himself as Ready
 		wait(action); 							// Call is routed to Agent and call is in Ringing state for 10 seconds 
+		
+		String str = driver_aj.getPageSource();
+		System.out.println(str);	
+		System.out.println("Page Source Length is: " + str.length());
+
+		if (str.contains("Bright Pattern")) {
+			System.out.println("Pass");
+		} else {
+			System.out.println("Fail");
+		}
 	
 		agentCallAnswer(agent1);                // Agent1 accepts the call 
 		wait(callDuration+callDuration);  		// Agent1 talks to Customer for 2*callDuration seconds
