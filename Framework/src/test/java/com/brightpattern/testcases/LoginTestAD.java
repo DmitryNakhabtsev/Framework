@@ -15,12 +15,12 @@ public class LoginTestAD extends API {
 	public void ArrayBefore() {
 
 		agentInit("admin","password");
-		agentInit("alan.jenks","password");
+//		agentInit("alan.jenks","password");
 //		agentCallTo("admin", "2022");
-		wait(5000);
+//		wait(5000);
 //		agentCallAnswer("alan.jenks");
 		wait(5000);
-		agentLogOut("alan.jenks");
+//		agentLogOut("alan.jenks");
 		agentLogOut("admin");		
 		
 	
