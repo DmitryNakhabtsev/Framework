@@ -16,9 +16,9 @@ public class LoginTestAD extends API {
 
 		agentInit("admin","password");
 		agentInit("alan.jenks","password");
-		agentCallTo("admin", "2022");
+//		agentCallTo("admin", "2022");
 		wait(5000);
-		agentCallAnswer("alan.jenks");
+//		agentCallAnswer("alan.jenks");
 		wait(5000);
 		agentLogOut("alan.jenks");
 		agentLogOut("admin");		
