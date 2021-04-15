@@ -17,10 +17,11 @@ public class DimaAfter extends API{
 		int action = 1000; 
 		
 		agentInit(agent1, pwd);
-		setServiceToAgent(agent1);
+//		setServiceToAgent(agent1);
 		
+		System.out.println("Started initalization for tony.cobb");
 		agentInit(agent2, pwd);
-		setServiceToAgent(agent2);
+//		setServiceToAgent(agent2);
 
 /************************ scenario body ******************************/
 		
