@@ -242,8 +242,30 @@ public class API {
 			break;
 		default:
 			// input field for enter number, call tocalleeNumber
-			driver.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);
+
 			driver.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button
+			
+			
+			  try
+			  {
+				  driver.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);	
+				  System.out.println("AGENT "+ agentName +" ENTER NUMBER of " + calleeNumber);
+				  
+			  } catch (NoSuchElementException e) {
+				  // Code for Handling exception
+				  System.out.println(e.toString() + "AGENT "+ agentName +" ENTER NUMBER of " + calleeNumber + "FAILED!!! !!! !!!");
+			  }
+			  
+			  try
+			  {
+				  driver.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button	
+				  System.out.println("AGENT "+ agentName +" CLICK call button FOR " + calleeNumber);
+				  
+			  } catch (NoSuchElementException e) {
+				  // Code for Handling exception
+				  System.out.println(e.toString() + "AGENT "+ agentName +" CLICK call button FOR " + calleeNumber + "FAILED!!! !!! !!!");
+			  }
+			
 		}
 	}// end of agentCallTo
 	
