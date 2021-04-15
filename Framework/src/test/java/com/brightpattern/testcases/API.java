@@ -102,7 +102,7 @@ public class API {
 	protected static void agentInit(String agentName, String agentPassword) {
 
 		System.setProperty("webdriver.chrome.driver", "Drivers/Linux/chromedriver");
-//		System.setProperty("webdriver.chrome.whitelistedIps", ""); // Cannot assign requested address (99) while starting chromedriver
+		System.setProperty("webdriver.chrome.whitelistedIps", ""); // Cannot assign requested address (99) while starting chromedriver
 		
 		ChromeOptions options = new ChromeOptions();
 		

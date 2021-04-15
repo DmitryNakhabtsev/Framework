@@ -19,7 +19,18 @@ public class LoginTestAD extends API {
 		
 		agentCallTo("admin", "2022");
 		wait(5000);
-		agentCallAnswer("alan.jenks");
+		
+		String str = driver_aj.getPageSource();
+		System.out.println(str);	
+		System.out.println("Page Source Length is: " + str.length());
+
+		if (str.contains("Bright Pattern")) {
+			System.out.println("Pass");
+		} else {
+			System.out.println("Fail");
+		}
+		
+//		agentCallAnswer("alan.jenks");
 		wait(5000);	
 		
 		agentLogOut("admin");				
