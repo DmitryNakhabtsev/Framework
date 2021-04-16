@@ -19,7 +19,7 @@ public class LoginTestAD extends API {
 		
 		agentCallTo("admin", "2022");
 		wait(2000);
-		System.out.println(Helper.captureScreenshot(driver_aj));
+		System.out.println(Helper.captureScreenshot(driver));
 		
 		String str = driver_aj.getPageSource();
 //		System.out.println(str);	
