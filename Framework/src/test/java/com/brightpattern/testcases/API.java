@@ -111,7 +111,7 @@ public class API {
 		options.addArguments("--disable-notifications");
 //		options.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 		
-		options.addArguments("--use-fake-device-for-media-stream");
+		options.addArguments("--use-fake-device-for-media-stream"); //Bypass the media stream infobar by selecting the default device for media streams (e.g. WebRTC)
 		
 	    options.addArguments("--verbose");
 	    options.addArguments("--whitelisted-ips=''");
@@ -129,11 +129,11 @@ public class API {
 
 			  driver_aj.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver_aj.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
-			  driver_aj.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
+
 		  
 				try {
-					// try to find agent avatar
-					driver_aj.findElement(By.xpath("//*[@id=\"top-toolbar-photo\"]"));
+					// try to submit
+					  driver_aj.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
 					System.out.println("AGENT " + agentName + " WAS LOGIN successfully");
 
 				} catch (NoSuchElementException e) {
@@ -153,12 +153,12 @@ public class API {
 
 			  driver_tb.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver_tb.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
-			  driver_tb.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
+			  
 
 			  
 				try {
-					// try to find agent avatar
-					driver_tb.findElement(By.xpath("//*[@id=\"top-toolbar-photo\"]"));
+					// try to submit
+					driver_tb.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
 					System.out.println("AGENT " + agentName + " WAS LOGIN successfully");
 
 				} catch (NoSuchElementException e) {
@@ -182,8 +182,8 @@ public class API {
 		  
 			  try
 			  {
-				  // try to find agent avatar
-				  driver_cc.findElement(By.xpath("//*[@id=\"top-toolbar-photo\"]"));	
+				  // try to login
+				  driver_cc.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();	
 				  System.out.println("AGENT "+agentName+" WAS LOGIN successfully");
 				  
 			  } catch (NoSuchElementException e) {
@@ -203,12 +203,12 @@ public class API {
 
 			  driver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
-			  driver.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
+			  
 			  
 			  
 				try {
-					// try to find the login agent web element
-					driver.findElement(By.xpath("//*[@id=\"top-toolbar-photo\"]"));
+					// try to login
+					driver.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
 					System.out.println("AGENT " + agentName + " WAS LOGIN successfully");
 
 				} catch (NoSuchElementException e) {
@@ -216,8 +216,8 @@ public class API {
 					System.out.println(e.toString());
 				}
 			  
-			  driver.findElement(By.xpath("//*[@id=\"b-navigation-item-supervisor\"]/div[1]")).click(); //supervision panel activation
-			  driver.findElement(By.xpath("//*[@id=\"b-navigation-item-acl1\"]/div[1]")).click(); //activation dial pad
+			  driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']")).click(); //supervision panel activation
+			  driver.findElement(By.xpath("//*[@id='b-navigation-item-acl2']")).click(); //activation dial pad
 
 		}
 }// end of agent_init
