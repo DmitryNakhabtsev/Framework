@@ -2,11 +2,11 @@ package com.brightpattern.testcases;
 
 import java.util.Arrays;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
-
+import com.brightpattern.utility.Helper;
 public class LoginTestAD extends API {
 	
 
@@ -30,6 +30,7 @@ public class LoginTestAD extends API {
 			System.out.println("Fail");
 		}
 		
+		System.out.println(Helper.captureScreenshot(driver_aj));
 		agentCallAnswer("alan.jenks");
 		wait(2000);
 		
