@@ -217,7 +217,7 @@ public class API {
 				}
 			  
 			  driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']")).click(); //supervision panel activation
-			  driver.findElement(By.xpath("//*[@id='b-navigation-item-acl2']")).click(); //activation dial pad
+			  driver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); //activation dial pad
 
 		}
 }// end of agent_init
