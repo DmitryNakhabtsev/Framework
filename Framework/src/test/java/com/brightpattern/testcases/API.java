@@ -123,9 +123,9 @@ public class API {
 		  case "alan.jenks":
 			  driver_aj = new ChromeDriver(options);
 			  driver_aj.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driver_aj.manage().window().setPosition(new Point(1920,0));
+			  driver_aj.manage().window().maximize();
 			  
-			  driver_aj.get(hostURL);
+			  driver_aj.get(hostURL); 
 
 			  driver_aj.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
 			  driver_aj.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
@@ -141,13 +141,13 @@ public class API {
 					System.out.println(e.toString());
 				}
 
-			  driver_aj.findElement(By.xpath("//*[@id=\"b-navigation-item-acl1\"]/div[1]")).click(); //activation dial pad
+			  driver_aj.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); //activation dial pad
 		    break;
 		  case "tony.cobb":
 
 			  driver_tb = new ChromeDriver(options);
 			  driver_tb.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driver_tb.manage().window().setPosition(new Point(2880,0));
+			  driver_tb.manage().window().maximize();
 			  
 			  driver_tb.get(hostURL);
 
@@ -172,7 +172,7 @@ public class API {
 			  
 			  driver_cc = new ChromeDriver(options);
 			  driver_cc.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driver_cc.manage().window().setPosition(new Point(2400,0));
+			  driver_cc.manage().window().maximize();
 			  
 			  driver_cc.get(hostURL);
 
