@@ -113,8 +113,8 @@ public class API {
 	    options.addArguments("--verbose");
 	    options.addArguments("--whitelisted-ips=''");
 	    
-	    String hostURL = "https://dima1.ssf.bugfocus.com/agentdesktop/";
-//	    String hostURL = "https://autotests.ssf.bugfocus.com/agentdesktop/";
+//	    String hostURL = "https://dima1.ssf.bugfocus.com/agentdesktop/";
+	    String hostURL = "https://autotests.ssf.bugfocus.com/agentdesktop/";
 		
 		switch(agentName) {
 		  case "alan.jenks":
