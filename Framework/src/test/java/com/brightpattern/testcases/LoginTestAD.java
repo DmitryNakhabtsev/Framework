@@ -19,6 +19,7 @@ public class LoginTestAD extends API {
 		
 		agentCallTo("admin", "2022");
 		wait(2000);
+		System.out.println(Helper.captureScreenshot(driver_aj));
 		
 		String str = driver_aj.getPageSource();
 //		System.out.println(str);	
@@ -29,7 +30,7 @@ public class LoginTestAD extends API {
 		} else {
 			System.out.println("Fail");
 		}
-		
+		wait(1000);		
 		System.out.println(Helper.captureScreenshot(driver_aj));
 		agentCallAnswer("alan.jenks");
 		wait(2000);
