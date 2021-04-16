@@ -18,10 +18,10 @@ public class LoginTestAD extends API {
 		agentInit("alan.jenks","password");
 		
 		agentCallTo("admin", "2022");
-		wait(5000);
+		wait(2000);
 		
 		String str = driver_aj.getPageSource();
-		System.out.println(str);	
+//		System.out.println(str);	
 		System.out.println("Page Source Length is: " + str.length());
 
 		if (str.contains("Bright Pattern")) {
@@ -30,8 +30,11 @@ public class LoginTestAD extends API {
 			System.out.println("Fail");
 		}
 		
-//		agentCallAnswer("alan.jenks");
-		wait(5000);	
+		agentCallAnswer("alan.jenks");
+		wait(2000);
+		
+		agentEndCall("alan.jenks");
+		agentEndCall("admin");		
 		
 		agentLogOut("admin");				
 		agentLogOut("alan.jenks");
