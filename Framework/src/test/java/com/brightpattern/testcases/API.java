@@ -109,9 +109,9 @@ public class API {
 		options.addArguments("--headless");		
 //		options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 		options.addArguments("--disable-notifications");
-		options.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
+//		options.addArguments("use-fake-ui-for-media-stream"); // microphone access in the agent desktop
 		
-//		options.addArguments("--use-fake-device-for-media-stream"); //Bypass the media stream infobar by selecting the default device for media streams (e.g. WebRTC)
+		options.addArguments("--use-fake-device-for-media-stream"); //Bypass the media stream infobar by selecting the default device for media streams (e.g. WebRTC)
 		
 	    options.addArguments("--verbose");
 	    options.addArguments("--whitelisted-ips=''");
