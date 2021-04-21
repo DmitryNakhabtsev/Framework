@@ -112,7 +112,6 @@ public class API {
 //		options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
 		options.addArguments("--disable-notifications");
 		options.addArguments("use-fake-ui-for-media-stream"); // Disable permission dialogs for camera/mic access
-		
 		options.addArguments("--enable-webrtc-stun-origin[13]");	//STUN server used to gather
 		/*
 		 * Session Traversal Utilities for NAT (STUN) is a standardized set of methods,
@@ -120,15 +119,12 @@ public class API {
 		 * (NAT) gateways in applications of real-time voice, video, messaging, and
 		 * other interactive communications
 		 */
-
 		options.addArguments("--no-sandbox");
-		
 		options.addArguments("--disable-gpu");
-		
 		options.addArguments("--use-fake-device-for-media-stream"); //Bypass the media stream infobar by selecting the default device for media streams (e.g. WebRTC)
-		
 	    options.addArguments("--verbose");
 	    options.addArguments("--whitelisted-ips=''");
+	    options.addArguments("--window-size=1920,1200");
 	    
 	    String hostURL = "https://dima1.ssf.bugfocus.com/agentdesktop/";
 //	    String hostURL = "https://autotests.ssf.bugfocus.com/agentdesktop/";
