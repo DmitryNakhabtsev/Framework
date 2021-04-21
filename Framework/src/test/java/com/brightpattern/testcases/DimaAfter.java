@@ -52,11 +52,11 @@ public class DimaAfter extends API{
 		wait(action);  							// Agent1 and Agent2 talks for 10 seconds	
 		
 		agentCompleteTransfer(agent1);          // "Complete Transfer" button
-//		wait(3*callDuration);  					// Agent1 talks to Customer for 3*callDuration seconds
+		wait(3*callDuration);  					// Agent1 talks to Customer for 3*callDuration seconds
 		
-//		checkHoldButton(agent2); 
-//		wait(action);  							// Agent2 puts call on hold for 10 seconds	
-//		checkRetrieveButton(agent2); 			// Agent2 takes call from Hold
+		checkHoldButton(agent2); 
+		wait(action);  							// Agent2 puts call on hold for 10 seconds	
+		checkRetrieveButton(agent2); 			// Agent2 takes call from Hold
 		
 		wait(4*callDuration);  					// Agent1 talks to Customer for 4*callDuration seconds 
 		
