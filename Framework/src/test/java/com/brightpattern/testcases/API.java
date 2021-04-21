@@ -707,9 +707,12 @@ public class API {
 	protected static void setReadyToAgent(String agentName) {
 		
 		
-		String xpathSelectStatus ="//*[@id=\"gwt-debug-acStateMenuContainer\"]/div[1]"; // <-   xpathSelectStatus /img
+//		String xpathSelectStatus ="//*[@id=\"gwt-debug-acStateMenuContainer\"]/div[1]"; // <-   xpathSelectStatus /img
+		String xpathSelectStatus ="//*[@id='header-panel']/div"; //*[@id='header-panel']/div
 		String xpathReady = "//*[@title='Ready']";
-		String xpathSelectReadyStatus = "//*[@id=\"header-panel\"]/div"; // locator for READY status in agent desktop
+		String xpathSelectReadyStatus = "//*[@id=\"header-panel\"]/div"; // locator for READY status in agent desktop 
+
+		
 		String service_names;
 		String status_names;
 
