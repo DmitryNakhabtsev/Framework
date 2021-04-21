@@ -28,7 +28,7 @@ public class DimaAfter extends API{
 		agentCallTo(admin, "2022");             //Customer calls to Scenario (ServiceA)
 		wait(action); 							// 10sec Customer listens to IVR prompt 
 		wait(action); 							// 10sec Customer waits in Q for 10 seconds  		
-		setReadyToAgent(agent1);                // Agent1 set himself as Ready
+//		setReadyToAgent(agent1);                // Agent1 set himself as Ready
 		wait(action); 							// Call is routed to Agent and call is in Ringing state for 10 seconds 
 		
 		String str = driver_aj.getPageSource();
