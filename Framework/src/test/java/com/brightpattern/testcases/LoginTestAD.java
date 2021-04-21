@@ -75,8 +75,8 @@ public class LoginTestAD extends API{
 			serviceMetricsBefore = getServicesMetrics("Service A", 3);	
 			agentMetricsBefore = getAgentsMetrics("admin", 1);	
 			teamMetricsBefore = getTeamsMetrics("TeamDmitry");
-			System.out.println(Helper.captureScreenshot(driver));
-			
+			System.out.println(Helper.captureScreenshot(driver_aj));
+			printOutMetrics(serviceMetricsBefore);
 		
 //			return serviceMetricsBefore;
 
@@ -98,8 +98,8 @@ public class LoginTestAD extends API{
 			agentLogOut("admin");
 			
 			printOutMetrics(serviceMetricsAfter);
-			printOutMetrics(agentMetricsAfter);
-			printOutMetrics(teamMetricsAfter);
+//			printOutMetrics(agentMetricsAfter);
+//			printOutMetrics(teamMetricsAfter);
 			
 //			return serviceMetricsAfter;
 
