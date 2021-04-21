@@ -75,6 +75,7 @@ public class LoginTestAD extends API{
 			serviceMetricsBefore = getServicesMetrics("Service A", 3);	
 			agentMetricsBefore = getAgentsMetrics("admin", 1);	
 			teamMetricsBefore = getTeamsMetrics("TeamDmitry");
+			System.out.println(Helper.captureScreenshot(driver));
 			
 		
 //			return serviceMetricsBefore;
@@ -87,7 +88,7 @@ public class LoginTestAD extends API{
 			scenario.olgaInteraction(); // scenario execution
 			wait(13000); // 13000 ms waiting time for supervision refreshing (refresh logout agents)
 			System.out.println("started gathering after interaction 13 sec >> servicesMetricsAfter");
-			
+			System.out.println(Helper.captureScreenshot(driver));
 //			String[][] servicesMetricsAfter = obj1.servicesMetrics89();	
 			
 			serviceMetricsAfter = getServicesMetrics("Service A", 3);

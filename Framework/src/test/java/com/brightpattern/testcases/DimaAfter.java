@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 
+import com.brightpattern.utility.Helper;
+
 public class DimaAfter extends API{
 
 	public void olgaInteraction() { // olgaInteraction ==================================================================
@@ -17,11 +19,13 @@ public class DimaAfter extends API{
 		int action = 1000; 
 		
 		agentInit(agent1, pwd);
-//		setServiceToAgent(agent1);
+		setServiceToAgent(agent1);
+		System.out.println(Helper.captureScreenshot(driver_aj));
 		
 //		System.out.println("Started initalization for tony.cobb");
 		agentInit(agent2, pwd);
-//		setServiceToAgent(agent2);
+		setServiceToAgent(agent2);
+		System.out.println(Helper.captureScreenshot(driver_tb));
 
 /************************ scenario body ******************************/
 		
