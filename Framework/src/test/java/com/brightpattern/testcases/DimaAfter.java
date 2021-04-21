@@ -43,8 +43,8 @@ public class DimaAfter extends API{
 	
 		agentCallAnswer(agent1);                // Agent1 accepts the call 
 		wait(callDuration+callDuration);  		// Agent1 talks to Customer for 2*callDuration seconds
-//		checkHoldButton(agent1); 
-//		wait(action);  							//Agent1 puts call on Hold for 10 seconds
+		checkHoldButton(agent1); 
+		wait(action);  							//Agent1 puts call on Hold for 10 seconds
 
 		agentConsultCall(agent1, "2023");       // Agent1 takes consult call from Hold 		
 		wait(action);  							// In 10 seconds Agent1 places a consult call to Agent2
