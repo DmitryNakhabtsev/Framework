@@ -39,8 +39,9 @@ public class LoginTestAD extends API {
 		System.out.println(Helper.captureScreenshot(driver_aj));
 		
 		agentEndCall("alan.jenks");
-		agentEndCall("admin");		
-		
+//		agentEndCall("admin");		
+		wait(2000);
+		System.out.println(Helper.captureScreenshot(driver));
 		agentLogOut("admin");				
 		agentLogOut("alan.jenks");
 
