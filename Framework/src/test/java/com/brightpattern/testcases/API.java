@@ -21,6 +21,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverInfo;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import com.brightpattern.utility.Helper;
+
 /**
  * The API implements methods that simply interact with the Agent Desktop
  * application for The Java-Selenium-TestNG Automation Project
@@ -720,7 +722,10 @@ public class API {
 		case "alan.jenks":
 
 			driver_aj.findElement(By.xpath(xpathSelectStatus)).click();
+			System.out.println(Helper.captureScreenshot(driver_aj));
+			wait(1000);
 			driver_aj.findElement(By.xpath(xpathReady)).click();	
+			System.out.println(Helper.captureScreenshot(driver_aj));
 
 			
 			try {
