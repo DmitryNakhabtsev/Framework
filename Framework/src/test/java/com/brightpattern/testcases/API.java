@@ -111,8 +111,13 @@ public class API {
 		options.addArguments("--disable-notifications");
 		options.addArguments("use-fake-ui-for-media-stream"); // Disable permission dialogs for camera/mic access
 		
-		
-		options.addArguments("--enable-webrtc-stun-origin[13]");	//STUN or TURN server used to gather
+		options.addArguments("--enable-webrtc-stun-origin[13]");	//STUN server used to gather
+		/*
+		 * Session Traversal Utilities for NAT (STUN) is a standardized set of methods,
+		 * including a network protocol, for traversal of network address translator
+		 * (NAT) gateways in applications of real-time voice, video, messaging, and
+		 * other interactive communications
+		 */
 
 		options.addArguments("--no-sandbox");
 		
@@ -291,16 +296,53 @@ public class API {
 
 		switch (agentName) {
 		case "alan.jenks":
-			driver_aj.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
+
+			
+			try //TRY to click the "end call" button
+			  {
+				driver_aj.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call	
+				  System.out.println("AGENT "+ agentName +" ended the call");
+				  
+			  } catch (NoSuchElementException e) {
+				  // Code for Handling exception
+				  System.out.println(e.toString() + "AGENT "+ agentName +" click END CALL button FAILED!!! !!! !!!");
+			  }
+			
 			break;
 		case "tony.cobb":
-			driver_tb.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
+			
+			try //TRY to click the "end call" button
+			  {
+				driver_tb.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
+				  System.out.println("AGENT "+ agentName +" ended the call");
+				  
+			  } catch (NoSuchElementException e) {
+				  // Code for Handling exception
+				  System.out.println(e.toString() + "AGENT "+ agentName +" click END CALL button FAILED!!! !!! !!!");
+			  }
 			break;
 		case "carlos.clapper":
-			driver_cc.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
+			
+			try //TRY to click the "end call" button
+			  {
+				driver_cc.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
+				  System.out.println("AGENT "+ agentName +" ended the call");
+				  
+			  } catch (NoSuchElementException e) {
+				  // Code for Handling exception
+				  System.out.println(e.toString() + "AGENT "+ agentName +" click END CALL button FAILED!!! !!! !!!");
+			  }
 			break;
 		default:
-			driver.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
+			try //TRY to click the "end call" button
+			  {
+				driver.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
+				  System.out.println("AGENT "+ agentName +" ended the call");
+				  
+			  } catch (NoSuchElementException e) {
+				  // Code for Handling exception
+				  System.out.println(e.toString() + "AGENT "+ agentName +" click END CALL button FAILED!!! !!! !!!");
+			  }
 		}
 	}// end of agentEndCall
 	
@@ -342,7 +384,7 @@ public class API {
 		case "alan.jenks":
 		
 			try {
-				// try to check setting of "Service A"
+				// try to check ACCEPT CALL
 				driver_aj.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
@@ -354,7 +396,7 @@ public class API {
 			break;
 		case "tony.cobb":		
 			try {
-				// try to check setting of "Service A"
+				// try to check ACCEPT CALL
 				driver_tb.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
@@ -366,7 +408,7 @@ public class API {
 			break;
 		case "carlos.clapper":
 			try {
-				// try to check setting of "Service A"
+				// try to check ACCEPT CALL
 				driver_cc.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
@@ -377,7 +419,7 @@ public class API {
 			break;
 		default:			
 			try {
-				// try to check setting of "Service A"
+				// try to check ACCEPT CALL
 				driver.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
