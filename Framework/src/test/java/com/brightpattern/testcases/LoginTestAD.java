@@ -141,32 +141,48 @@ public class LoginTestAD extends API {
 	@Test
 	public void test_074_ServiceA_BusySvc() {
 		serviceMetricNumber = 74;
-		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+//		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		int delta = 1;
+		
+		String expected = parseStringExpectation(metricValueBefore, delta);
 		Assert.assertEquals(actual, expected);
 	}
 	
 	@Test
 	public void test_076_ServiceA_ACWCount() {
 		serviceMetricNumber = 76;
-		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+//		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		int delta = 1;
+		
+		String expected = parseStringExpectation(metricValueBefore, delta);
 		Assert.assertEquals(actual, expected);
 	}	
 	
 	@Test
 	public void test_081_ServiceA_NotReady() {
 		serviceMetricNumber = 81;
-		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+//		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		int delta = 1;
+		
+		String expected = parseStringExpectation(metricValueBefore, delta);
 		Assert.assertEquals(actual, expected);
 	}	
 	
 	@Test
 	public void test_082_ServiceA_LoggedIn() {
 		serviceMetricNumber = 82;
-		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+//		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		int delta = 2;
+		
+		String expected = parseStringExpectation(metricValueBefore, delta);
 		Assert.assertEquals(actual, expected);
 	}
 	
@@ -200,40 +216,10 @@ public class LoginTestAD extends API {
 //		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		int delta = 2;
+		int delta = 1;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
 		Assert.assertEquals(actual, expected);
 	}
-	// ****************************************************************************************************************************
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
