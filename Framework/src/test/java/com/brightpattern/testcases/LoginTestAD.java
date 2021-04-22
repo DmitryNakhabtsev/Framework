@@ -2,6 +2,7 @@ package com.brightpattern.testcases;
 
 import java.util.Arrays;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -28,6 +29,7 @@ public class LoginTestAD extends API {
 
 		agentInit(admin,pwd);
 		wait(action);
+		System.out.println(">>>>>>>>>>>>>>>>>> print serviceMetricsBefore <<<<<<<<<<<<<<<<<<");
 		serviceMetricsBefore = getServicesMetrics("Service A", 3);	
 //		agentMetricsBefore = getAgentsMetrics("admin", 1);	
 //		teamMetricsBefore = getTeamsMetrics("TeamDmitry");
@@ -52,8 +54,9 @@ public class LoginTestAD extends API {
 		wait(callDuration);
 		System.out.println(Helper.captureScreenshot(driver_aj));
 		
-		agentEndCall(agent1);
-//		agentEndCall("admin");		
+//		agentEndCall(agent1);
+//		driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']")).click(); //supervision panel activation
+		agentEndCall("admin");		
 		wait(12000);
 		System.out.println("Start getServicesMetrics after wait(12000) <<<<<<<<<<<<<<<<<<<");
 		System.out.println(Helper.captureScreenshot(driver));
