@@ -717,6 +717,7 @@ public class API {
 		switch (agentName) {
 		case "alan.jenks":
 
+			System.out.println(agentName + " attempts to set READY");
 			driver_aj.findElement(By.xpath(xpathSelectStatus)).click();
 			System.out.println(Helper.captureScreenshot(driver_aj));
 			wait(1000);
