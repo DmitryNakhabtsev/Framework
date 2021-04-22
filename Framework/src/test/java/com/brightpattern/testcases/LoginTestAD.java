@@ -19,7 +19,7 @@ public class LoginTestAD extends API {
 	String admin = "admin";
 	String pwd = "password";
 
-	int callDuration = 3000; // 10 sec for every conversation
+	int callDuration = 2000; // 10 sec for every conversation
 	int action = 1000; 
 	
 	
@@ -42,11 +42,11 @@ public class LoginTestAD extends API {
 		System.out.println(Helper.captureScreenshot(driver_tb));
 		
 		agentCallTo(admin, "2022");
-		wait(2000);
+		wait(action);
 		System.out.println(Helper.captureScreenshot(driver));	
 		
 		agentCallAnswer(agent1);
-//		wait(2000);
+		wait(callDuration);
 		System.out.println(Helper.captureScreenshot(driver_aj));
 		
 		agentEndCall(agent1);
