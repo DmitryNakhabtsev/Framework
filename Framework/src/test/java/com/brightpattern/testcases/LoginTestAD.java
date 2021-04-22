@@ -70,4 +70,170 @@ public class LoginTestAD extends API {
 
 	}
 	
+	@Test
+	public void test_028_ServiceA_INTotalTalkTime() {
+		serviceMetricNumber = 28;
+//		String parseTimeExpectation(String strTime, int expectedSec)
+		String strTime = serviceMetricsBefore[2][serviceMetricNumber];
+		int expectedSec = 2;
+		String expected = parseTimeExpectation(strTime, expectedSec);
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		Assert.assertEquals(actual, expected);
+	}	
+	
+	@Test
+	public void test_036_ServiceA_INRouted() {
+		serviceMetricNumber = 36;
+// String parseStringExpectation(String metricValueBefore, int delta)
+//		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		int delta = 1;
+		
+		String expected = parseStringExpectation(metricValueBefore, delta);
+		
+		Assert.assertEquals(actual, expected);
+	}	
+
+	@Test
+	public void test_043_ServiceA_INQueuedUnique() {
+		serviceMetricNumber = 43;
+//		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		int delta = 1;
+		
+		String expected = parseStringExpectation(metricValueBefore, delta);
+		Assert.assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void test_055_ServiceA_INinProgress() {
+		serviceMetricNumber = 55;
+		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		int delta = 1;
+		
+		String expected = parseStringExpectation(metricValueBefore, delta);
+		Assert.assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void test_058_ServiceA_INHandledUnique() {
+		serviceMetricNumber = 58;
+//		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		int delta = 1;
+		
+		String expected = parseStringExpectation(metricValueBefore, delta);
+		Assert.assertEquals(actual, expected);
+	}	
+	
+	@Test
+	public void test_070_ServiceA_INAgentDisconnected() {
+		serviceMetricNumber = 71;
+		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		Assert.assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void test_074_ServiceA_BusySvc() {
+		serviceMetricNumber = 74;
+		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		Assert.assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void test_076_ServiceA_ACWCount() {
+		serviceMetricNumber = 76;
+		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		Assert.assertEquals(actual, expected);
+	}	
+	
+	@Test
+	public void test_081_ServiceA_NotReady() {
+		serviceMetricNumber = 81;
+		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		Assert.assertEquals(actual, expected);
+	}	
+	
+	@Test
+	public void test_082_ServiceA_LoggedIn() {
+		serviceMetricNumber = 82;
+		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		Assert.assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void test_087_ServiceA_INReceived() {
+		serviceMetricNumber = 87;
+//		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		int delta = 1;
+		
+		String expected = parseStringExpectation(metricValueBefore, delta);
+		Assert.assertEquals(actual, expected);
+	}
+
+	@Test
+	public void test_088_ServiceA_INQueued() {
+		serviceMetricNumber = 88;
+//		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		int delta = 1;
+		
+		String expected = parseStringExpectation(metricValueBefore, delta);
+		Assert.assertEquals(actual, expected);
+	}
+
+	@Test
+	public void test_089_ServiceA_INHandled() {
+		serviceMetricNumber = 89;
+//		String expected = serviceMetricsBefore[2][serviceMetricNumber];
+		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
+		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		int delta = 2;
+		
+		String expected = parseStringExpectation(metricValueBefore, delta);
+		Assert.assertEquals(actual, expected);
+	}
+	// ****************************************************************************************************************************
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
