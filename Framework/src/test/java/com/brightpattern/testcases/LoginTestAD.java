@@ -54,9 +54,9 @@ public class LoginTestAD extends API {
 		wait(callDuration);
 		System.out.println(Helper.captureScreenshot(driver_aj));
 		
-//		agentEndCall(agent1);
-//		driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']")).click(); //supervision panel activation
-		agentEndCall("admin");		
+		agentEndCall(agent1);
+		driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']")).click(); //supervision panel activation
+//		agentEndCall("admin");		
 		wait(12000);
 		System.out.println("Start getServicesMetrics after wait(12000) <<<<<<<<<<<<<<<<<<<");
 		System.out.println(Helper.captureScreenshot(driver));
