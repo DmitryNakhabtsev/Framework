@@ -54,8 +54,13 @@ public class LoginTestAD extends API {
 		
 		agentEndCall(agent1);
 //		agentEndCall("admin");		
-//		wait(2000);
+		wait(12000);
+		System.out.println("Start getServicesMetrics after wait(12000) <<<<<<<<<<<<<<<<<<<");
 		System.out.println(Helper.captureScreenshot(driver));
+		serviceMetricsAfter = getServicesMetrics("Service A", 3);
+		System.out.println(">>>>>>>>>>>>>>>>>> print serviceMetricsAfter <<<<<<<<<<<<<<<<<<");
+		printOutMetrics(serviceMetricsAfter);
+		
 		agentLogOut(admin);				
 		agentLogOut(agent1);
 		agentLogOut(agent2);
