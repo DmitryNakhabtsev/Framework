@@ -26,11 +26,12 @@ public class LoginTestAD extends API {
 	@Test(priority = -3)
 	public void ArrayBefore() {
 
-		agentInit("admin","password");
+		agentInit(admin,pwd);
+		wait(action);
 		serviceMetricsBefore = getServicesMetrics("Service A", 3);	
 //		agentMetricsBefore = getAgentsMetrics("admin", 1);	
 //		teamMetricsBefore = getTeamsMetrics("TeamDmitry");
-		System.out.println(Helper.captureScreenshot(driver_aj));
+		System.out.println(Helper.captureScreenshot(driver));
 		printOutMetrics(serviceMetricsBefore);
 		
 		agentInit(agent1, pwd);
