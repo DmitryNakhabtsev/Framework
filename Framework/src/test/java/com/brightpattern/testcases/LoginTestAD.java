@@ -41,7 +41,7 @@ public class LoginTestAD extends API {
 		System.out.println(Helper.captureScreenshot(driver_aj));
 		
 		agentInit(agent2, pwd);
-		wait(1000);
+//		wait(1000);
 		setServiceToAgent(agent2);
 		System.out.println(Helper.captureScreenshot(driver_tb));
 		
@@ -76,7 +76,7 @@ public class LoginTestAD extends API {
 		serviceMetricNumber = 28;
 //		String parseTimeExpectation(String strTime, int expectedSec)
 		String strTime = serviceMetricsBefore[2][serviceMetricNumber];
-		int expectedSec = 3;
+		int expectedSec = 2;
 		String expected = parseTimeExpectation(strTime, expectedSec);
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
 		Assert.assertEquals(actual, expected);
