@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.brightpattern.utility.Helper;
-public class LoginTestAD extends API {
+public class BlindCall extends API {
 	
 	//getServicesMetrics
 	protected int serviceMetricNumber; //Service Metric index in array
