@@ -188,7 +188,7 @@ public class BlindCall extends API {
 //		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		int delta = 1;
+		int delta = 2;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
 		if(expected != null && actual != null) {
@@ -205,7 +205,7 @@ public class BlindCall extends API {
 //		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		int delta = 1;
+		int delta = 2;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
 		if(expected != null && actual != null) {
@@ -290,7 +290,7 @@ public class BlindCall extends API {
 //		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		int delta = 1;
+		int delta = 2;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
 		if(expected != null && actual != null) {
@@ -623,7 +623,7 @@ public class BlindCall extends API {
 		}
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void test_025_ServiceA_Occupancy() {
 		serviceMetricNumber = 25;
 //		String expected = serviceMetricsBefore[2][serviceMetricNumber];
@@ -665,7 +665,7 @@ public class BlindCall extends API {
 	}
 
 
-	@Test
+	@Test(enabled = false)
 	public void test_029_ServiceA_INTotalAbandonedPerCent() {
 		serviceMetricNumber = 29;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
@@ -804,7 +804,7 @@ public class BlindCall extends API {
 //		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		int delta = 0;
+		int delta = 1;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
 		
@@ -1326,7 +1326,7 @@ public class BlindCall extends API {
 //		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		int delta = 0;
+		int delta = 1;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
 		
