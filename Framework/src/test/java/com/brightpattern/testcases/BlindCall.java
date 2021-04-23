@@ -61,15 +61,10 @@ public class BlindCall extends API {
 		agentBlindTransfer(agent1, "2023");
 		wait(1000);
 		agentCallAnswer(agent2);
-		wait(callDuration);
-	
-		// Transfer completed. agent1 hang up
-		agentCompleteTransfer(agent1);
-		
-		// continued conversation between agent2 and customer
+		wait(callDuration);// continued conversation between agent2 and customer
 		wait(callDuration);
 			
-		agentEndCall(agent2);
+		agentEndCall(admin);
 		
 		driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']")).click(); //supervision panel activation
 //		agentEndCall("admin");		
