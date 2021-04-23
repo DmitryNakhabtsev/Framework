@@ -1041,7 +1041,7 @@ public class BlindCall extends API {
 			Assert.assertEquals(actual, actual);
 		}
 	}
-
+/*
 	@Test
 	public void test_060_ServiceA_INHandledPerCent() {
 		serviceMetricNumber = 60;
@@ -1057,7 +1057,7 @@ public class BlindCall extends API {
 		}
 	}
 
-	/*-
+
 	@Test
 	public void test_061_ServiceA_INEWT() {
 		serviceMetricNumber = 61;
