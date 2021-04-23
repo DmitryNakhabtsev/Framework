@@ -621,7 +621,7 @@ public class API {
 	   */
 	protected static void setServiceToAgent(String agentName) {
 
-		String xpath_select = "//*[@title='Service Selector']/div";
+		String xpath_select = "//*[@title='Service Selector']";
 		String xpath_ServiceA = "//*[@aria-label='Service A']";
 		String service_names;
 
