@@ -37,10 +37,12 @@ public class BlindCall extends API {
 		printOutMetrics(serviceMetricsBefore);
 		
 		agentInit(agent1, pwd);
+		wait(1000);
 		setServiceToAgent(agent1);
 //		System.out.println(Helper.captureScreenshot(driver_aj));
 		
 		agentInit(agent2, pwd);
+		wait(1000);
 		setServiceToAgent(agent2);
 //		System.out.println(Helper.captureScreenshot(driver_tb));
 		
@@ -50,12 +52,14 @@ public class BlindCall extends API {
 		
 		setReadyToAgent(agent1);
 		
+		wait(1000);
 		agentCallAnswer(agent1);
 		wait(callDuration);
 //		System.out.println(Helper.captureScreenshot(driver_aj));
 		
 		// Blind call from agent1 to agent2
 		agentBlindTransfer(agent1, "2023");
+		wait(1000);
 		agentCallAnswer(agent2);
 		wait(callDuration);
 	
