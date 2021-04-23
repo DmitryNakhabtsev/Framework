@@ -1310,10 +1310,10 @@ public class BlindCall extends API {
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
 		int delta = 1;
 		
-		String expected = parseStringExpectation(metricValueBefore, delta);
 
-		if(expected != null && actual != null) {
+		if(metricValueBefore != null && actual != null) {
 			
+			String expected = parseStringExpectation(metricValueBefore, delta);
 			Assert.assertEquals(actual, expected);
 		} else {
 			Assert.assertEquals(actual, actual);
