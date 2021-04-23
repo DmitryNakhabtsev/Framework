@@ -42,8 +42,8 @@ public class LoginTestAD extends API {
 		
 		agentInit(agent2, pwd);
 		wait(1000);
-		System.out.println(Helper.captureScreenshot(driver_tb));
 		setServiceToAgent(agent2);
+		System.out.println(Helper.captureScreenshot(driver_tb));
 		
 		agentCallTo(admin, "8003");
 		wait(action);

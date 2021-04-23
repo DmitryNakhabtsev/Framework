@@ -20,6 +20,8 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverInfo;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.brightpattern.utility.Helper;
 
@@ -627,6 +629,10 @@ public class API {
 
 		switch (agentName) {
 		case "alan.jenks":
+			
+		    //Wait for element to be clickable
+		    WebDriverWait wait_aj = new WebDriverWait(driver_aj, 15);
+		    wait_aj.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_select)));
 
 			driver_aj.findElement(By.xpath(xpath_select)).click();
 			driver_aj.findElement(By.xpath(xpath_ServiceA)).click();
@@ -646,6 +652,10 @@ public class API {
 			break;
 		case "tony.cobb":
 
+		    //Wait for element to be clickable
+		    WebDriverWait wait_tb = new WebDriverWait(driver_tb, 15);
+		    wait_tb.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_select)));
+			
 			driver_tb.findElement(By.xpath(xpath_select)).click();
 			driver_tb.findElement(By.xpath(xpath_ServiceA)).click();
 			
@@ -661,6 +671,10 @@ public class API {
 			}
 			break;
 		case "carlos.clapper":
+			
+		    //Wait for element to be clickable
+		    WebDriverWait wait_cc = new WebDriverWait(driver_cc, 15);
+		    wait_cc.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_select)));
 
 			driver_cc.findElement(By.xpath(xpath_select)).click();
 			driver_cc.findElement(By.xpath(xpath_ServiceA)).click();
@@ -678,6 +692,10 @@ public class API {
 			}
 			break;
 		default:
+			
+		    //Wait for element to be clickable
+		    WebDriverWait wait = new WebDriverWait(driver, 15);
+		    wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_select)));
 
 			driver.findElement(By.xpath(xpath_select)).click();
 			driver.findElement(By.xpath(xpath_ServiceA)).click();
