@@ -1472,16 +1472,11 @@ public class API {
         String timeAfter;
         DateFormat dateFormat = new SimpleDateFormat("mm:ss");
         Date d = null;
-		try {
-			d = dateFormat.parse(strTime);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		try {d = dateFormat.parse(strTime);} catch (ParseException e) {e.printStackTrace();}
+		
         int min = d.getMinutes();
         int sec = d.getSeconds();
-//        int min = d.Calendar.MINUTE;
-//        int sec = d.getSeconds();
+
         String timeBefore = min + ":"+ sec;
 
         if((expectedSec+sec)>60) {
@@ -1500,6 +1495,42 @@ public class API {
         
      }
 	
+    
+	  /**
+	   * Set deviation for time value
+	   * 
+	   * @param actualTime String variable
+	   * @param expectedTime String variable
+	   * @param deviation in seconds
+	   * 
+	   */	
+  public static boolean timeDeviation(String actualTime, String expectedTime, int deviation) {
+
+      boolean timeAfterDeviation;
+      DateFormat dateFormat = new SimpleDateFormat("mm:ss");
+      Date d = null;
+      
+	  try {d = dateFormat.parse(actualTime);} catch (ParseException e) {e.printStackTrace();}		
+      int minActual = d.getMinutes();
+      int secActual = d.getSeconds();
+
+	  try {d = dateFormat.parse(expectedTime);} catch (ParseException e) {e.printStackTrace();}		
+      int minExpected = d.getMinutes();
+      int secExpected = d.getSeconds();
+
+      
+      if (Math.abs(secActual-secExpected) <= deviation) {
+    	  timeAfterDeviation = true;
+      }else {
+    	  timeAfterDeviation = false;
+      }
+
+
+      
+      return timeAfterDeviation;
+      
+   }
+    
 	  /**
 	   * Divide Time By Number
 	   * 

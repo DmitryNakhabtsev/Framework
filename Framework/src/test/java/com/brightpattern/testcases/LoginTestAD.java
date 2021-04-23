@@ -80,9 +80,10 @@ public class LoginTestAD extends API {
 		String expected = parseTimeExpectation(strTime, expectedSec);
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
 		
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
+		boolean expectedInDeviation = timeDeviation(actual, expected, 2);
+		
+		if(expected != null && actual != null) {			
+			Assert.assertTrue(expectedInDeviation);
 		} else {
 			Assert.assertEquals(actual, actual);
 		}
