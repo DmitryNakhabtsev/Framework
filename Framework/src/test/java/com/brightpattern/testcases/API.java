@@ -1491,9 +1491,9 @@ public class API {
      	   sec =  sec + expectedSec;
         }
         if (sec<10) {
-     	   timeAfter = min + ":0"+ sec;
+     	   timeAfter = "0" + min + ":0" + sec;
      	   }else {
-         	   timeAfter = min + ":"+ sec;
+         	   timeAfter = "0" + min + ":"+ sec;
      	   }
         
         return timeAfter;
