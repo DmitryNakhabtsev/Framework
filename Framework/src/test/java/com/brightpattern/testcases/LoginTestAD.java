@@ -75,7 +75,7 @@ public class LoginTestAD extends API {
 		serviceMetricNumber = 28;
 //		String parseTimeExpectation(String strTime, int expectedSec)
 		String strTime = serviceMetricsBefore[2][serviceMetricNumber];
-		int expectedSec = 2;
+		int expectedSec = 3;
 		String expected = parseTimeExpectation(strTime, expectedSec);
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
 		Assert.assertEquals(actual, expected);
