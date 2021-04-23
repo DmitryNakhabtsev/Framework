@@ -352,20 +352,26 @@ public class API {
 	   * @param agentName enter an agent Name
 	   */
 	protected static void agentCompleteTransfer(String agentName) {
+		String xpath_select = "//*[@id='cpTransfer']/div";
 
 		switch (agentName) {
 		case "alan.jenks":
 
-			driver_aj.findElement(By.xpath("//*[@id=\"cpTransfer\"]/div")).click(); // "Complete Transfer" button
+		    //Wait for element to be clickable
+		    WebDriverWait wait_aj = new WebDriverWait(driver_aj, 15);
+		    wait_aj.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_select)));
+			System.out.println("Complete Transfer button is clickable for " + agentName);
+				
+			driver_aj.findElement(By.xpath(xpath_select)).click(); // "Complete Transfer" button
 			break;
 		case "tony.cobb":
-			driver_tb.findElement(By.xpath("//*[@id=\"cpTransfer\"]/div")).click(); // "Complete Transfer" button
+			driver_tb.findElement(By.xpath(xpath_select)).click(); // "Complete Transfer" button
 			break;
 		case "carlos.clapper":
-			driver_cc.findElement(By.xpath("//*[@id=\"cpTransfer\"]/div")).click(); // "Complete Transfer" button
+			driver_cc.findElement(By.xpath(xpath_select)).click(); // "Complete Transfer" button
 			break;
 		default:
-			driver.findElement(By.xpath("//*[@id=\"cpTransfer\"]/div")).click(); // "Complete Transfer" button
+			driver.findElement(By.xpath(xpath_select)).click(); // "Complete Transfer" button
 		}
 	}// end of agentCompleteTransfer
 	
