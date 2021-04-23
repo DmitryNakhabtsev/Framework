@@ -1288,7 +1288,8 @@ public class API {
 			driver_aj.findElement(By.xpath("//button[@id='cpReminder']/following-sibling::button/following-sibling::button")).click(); // initiate transfer button
 			driver_aj.findElement(By.xpath("//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input")).sendKeys(calleeNumber); // it is ok too!`
 			
-			driver_aj.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); // blind transfer button
+//			driver_aj.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); // blind transfer button
+			driver_aj.findElement(By.xpath("/html/body/div[10]//button[@title='Blind transfer']")).click(); // blind transfer button
 			System.out.println("blind transfer button was clicked!!!!!!!!!!!!");
 			
 			break;

@@ -25,7 +25,7 @@ public class BlindCall extends API {
 	
 	
 	@Test(priority = -3)
-	public void ArrayBefore() {
+	public void executeScenario() {
 
 		agentInit(admin,pwd);
 		wait(action);
@@ -38,24 +38,35 @@ public class BlindCall extends API {
 		
 		agentInit(agent1, pwd);
 		setServiceToAgent(agent1);
-		System.out.println(Helper.captureScreenshot(driver_aj));
+//		System.out.println(Helper.captureScreenshot(driver_aj));
 		
 		agentInit(agent2, pwd);
-//		wait(1000);
 		setServiceToAgent(agent2);
-		System.out.println(Helper.captureScreenshot(driver_tb));
+//		System.out.println(Helper.captureScreenshot(driver_tb));
 		
 		agentCallTo(admin, "8003");
 		wait(action);
-		System.out.println(Helper.captureScreenshot(driver));
+//		System.out.println(Helper.captureScreenshot(driver));
 		
 		setReadyToAgent(agent1);
 		
 		agentCallAnswer(agent1);
 		wait(callDuration);
-		System.out.println(Helper.captureScreenshot(driver_aj));
+//		System.out.println(Helper.captureScreenshot(driver_aj));
 		
-		agentEndCall(agent1);
+		// Blind call from agent1 to agent2
+		agentBlindTransfer(agent1, "2023");
+		agentCallAnswer(agent2);
+		wait(callDuration);
+	
+		// Transfer completed. agent1 hang up
+		agentCompleteTransfer(agent1);
+		
+		// continued conversation between agent2 and customer
+		wait(callDuration);
+			
+		agentEndCall(agent2);
+		
 		driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']")).click(); //supervision panel activation
 //		agentEndCall("admin");		
 		wait(12000);
