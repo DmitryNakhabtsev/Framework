@@ -25,10 +25,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.brightpattern.utility.Helper;
 
+// TODO: Auto-generated Javadoc
 /**
  * The API implements methods that simply interact with the Agent Desktop
- * application for The Java-Selenium-TestNG Automation Project
- * 
+ * application for The Java-Selenium-TestNG Automation Project.
+ *
  * @author Dmitry Nakhabtsev
  * @version 1.0
  * @since 12 Mart, 2021
@@ -44,6 +45,18 @@ import com.brightpattern.utility.Helper;
  *        interactions. Check Contact Activity history (Agent should has a role
  *        to see the call recordings). Play voice recording from Activity
  *        history
+ */
+/**
+ * @author admin
+ *
+ */
+/**
+ * @author admin
+ *
+ */
+/**
+ * @author admin
+ *
  */
 public class API {
 //**************************** WERTC LOCATORS ***********************************
@@ -85,9 +98,16 @@ public class API {
 //	END CALL
 //	//*[@id="cpEndCall"]/div
 
-	static 	ChromeDriver driver_aj;
+	/** The driver aj. */
+static 	ChromeDriver driver_aj;
+	
+	/** The driver tb. */
 	static 	ChromeDriver driver_tb;
+	
+	/** The driver cc. */
 	static 	ChromeDriver driver_cc;
+	
+	/** The driver. */
 	static 	ChromeDriver driver;
 	
 	/**
@@ -479,8 +499,8 @@ public class API {
 	   * Get Services Metrics for 3 services: Customer Service Chat, Service A, ServiceZen 
 	   * from the "admin" Supervision board.
 	   * 
-	   * @param agentName not implemented feature
-	   * @param numberOfAgents enter number of agents that metrics we want to get
+	   * @param serviceName enter service names
+	   * @param numberOfServices enter number of services
 	   * @return String[][] two-dimensional array of all agents (Customer Alan Jenks, Tony Cobb, User Super ) metrics
 	   */
 	protected static String[][] getServicesMetrics(String serviceName, int numberOfServices) {
@@ -1435,31 +1455,35 @@ public class API {
 	}// end of selectDisposition	
 
 	  /**
-	   * Waiting time for scenario steps
-	   * 
-	   * @param t ms waiting time
-	   */
+  	 * Waiting time for scenario steps.
+  	 *
+  	 * @param t ms waiting time
+  	 */
 	protected static void wait(int t) {
 		try {Thread.sleep(t);} catch (InterruptedException e) {e.printStackTrace();} // t ms waiting time
 	}
 	
 	  /**
-	   * Print metrics in console
-	   * 
-	   * @param metricArray enter the metric array  name
-	   */
+  	 * Print metrics in console.
+  	 *
+  	 * @param metricArray enter the metric array  name
+  	 */
 	protected static void printOutMetrics(String[][] metricArray) {
 	
 		System.out.println("************ mettrics *************");
 		System.out.println(Arrays.deepToString(metricArray)); 
 	}
 	
-	  /**
-	   * Set scenario counter result to metric. Used as expected result.
-	   * 
-	   * @param metricValue as before scenario interaction
-	   * @param delta as delta between metricValue and expected result
-	   */
+
+	
+	
+	/**
+	 * Parses the string expectation.
+	 *
+	 * @param metricValueBefore the metric value before
+	 * @param delta the delta
+	 * @return the string
+	 */
 	protected static String parseStringExpectation(String metricValueBefore, int delta) {	
 		
 	 int i = Integer.parseInt(metricValueBefore); //String to int
@@ -1469,11 +1493,12 @@ public class API {
 	}
 	
 	  /**
-	   * Set scenario timer result to metric. Used as expected result.
-	   * 
-	   * @param strTime as before scenario interaction
-	   * @param expectedSec as delta between strTime and expected result
-	   */	
+  	 * Set scenario timer result to metric. Used as expected result.
+  	 *
+  	 * @param strTime as before scenario interaction
+  	 * @param expectedSec as delta between strTime and expected result
+  	 * @return the string
+  	 */	
     public static String parseTimeExpectation(String strTime, int expectedSec) {
 
         String timeAfter;
@@ -1504,13 +1529,13 @@ public class API {
 	
     
 	  /**
-	   * Set deviation for time value
-	   * 
-	   * @param actualTime String variable
-	   * @param expectedTime String variable
-	   * @param deviation in seconds
-	   * 
-	   */	
+  	 * Set deviation for time value.
+  	 *
+  	 * @param actualTime String variable
+  	 * @param expectedTime String variable
+  	 * @param deviation in seconds
+  	 * @return true, if successful
+  	 */	
   public static boolean timeDeviation(String actualTime, String expectedTime, int deviation) {
 
       boolean timeAfterDeviation;
@@ -1539,11 +1564,12 @@ public class API {
    }
     
 	  /**
-	   * Divide Time By Number
-	   * 
-	   * @param strTime as before dividing
-	   * @param number as number by 
-	   */	
+  	 * Divide Time By Number.
+  	 *
+  	 * @param strTime as before dividing
+  	 * @param number as number by
+  	 * @return the string
+  	 */	
   public static String divideTimeByNumber(String strTime, int number) {
 
       String timeAfter;
@@ -1572,10 +1598,11 @@ public class API {
    }
   
   /**
-   * Addition Time in String
-   * 
-   * @param strTime as before dividing
-   * @param number as number by 
+   * Addition Time in String.
+   *
+   * @param firstTime the first time
+   * @param secondTime the second time
+   * @return the string
    */	
 public static String addTime(String firstTime, String secondTime) {
     String timeAfter;
