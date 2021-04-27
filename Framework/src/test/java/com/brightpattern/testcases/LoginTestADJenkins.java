@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import com.brightpattern.utility.Helper;
 public class LoginTestADJenkins extends API {
-	
+/*	
 
 	
 	@Test(priority = -3)
@@ -47,5 +47,5 @@ public class LoginTestADJenkins extends API {
 
 
 	}
-	
+*/	
 }

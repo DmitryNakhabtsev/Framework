@@ -20,7 +20,7 @@ import com.brightpattern.utility.Helper;
 
 
 public class LoginTestAD3 extends API{
-		
+/*		
 		private DimaAfter obj1 = new DimaAfter();
 
 		
@@ -2954,5 +2954,5 @@ public class LoginTestAD3 extends API{
 
 
 	
-
+*/
 }

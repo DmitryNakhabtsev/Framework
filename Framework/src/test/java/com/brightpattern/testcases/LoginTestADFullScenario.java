@@ -20,7 +20,7 @@ import com.brightpattern.utility.Helper;
 
 
 public class LoginTestADFullScenario extends API{
-		
+/*		
 		private DimaAfter scenario = new DimaAfter();
 
 		
@@ -2953,5 +2953,5 @@ public class LoginTestADFullScenario extends API{
 
 
 	
-
+*/
 }

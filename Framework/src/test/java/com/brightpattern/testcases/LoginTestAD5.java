@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 
 public class LoginTestAD5 extends API {
-	
+/*	
 	private DimaAfter scenario = new DimaAfter();
 	 
 		// getAgentsMetrics
@@ -2910,6 +2910,6 @@ public class LoginTestAD5 extends API {
 	
 	
 	//*****************************************************************************
-
+*/
 	 	
 }
