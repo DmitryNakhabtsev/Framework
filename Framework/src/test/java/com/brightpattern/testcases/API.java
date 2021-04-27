@@ -202,7 +202,12 @@ public class API {
 			System.out.println(e.toString());
 		}
 
-		agentDriver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); // activation dial pad
+		try {
+			agentDriver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); // activation dial pad
+			System.out.println("Agent " + agentName + " activation dial pad was successfully");
+		} catch (NoSuchElementException e) {
+			System.out.println(e.toString());
+		}
 
 		if (agentName.equals("admin")) {
 			agentDriver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); // activation dial pad
