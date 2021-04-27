@@ -99,16 +99,16 @@ public class API {
 //	//*[@id="cpEndCall"]/div
 
 	/** The driver aj. */
-static 	ChromeDriver driver_aj;
+   protected static ChromeDriver driver_aj;
 	
 	/** The driver tb. */
-	static 	ChromeDriver driver_tb;
+   protected static ChromeDriver driver_tb;
 	
 	/** The driver cc. */
-	static 	ChromeDriver driver_cc;
+   protected static ChromeDriver driver_cc;
 	
 	/** The driver. */
-	static 	ChromeDriver driver;
+   public static ChromeDriver driver;
 	
 	protected static ChromeDriver agentDriver(String agentName) {
 		
@@ -187,8 +187,11 @@ static 	ChromeDriver driver_aj;
 //	    String hostURL = "https://autotests.ssf.bugfocus.com/agentdesktop/";
 
 		agentDriver.get(hostURL);
+		System.out.println("agentDriver.get(hostURL); --> SUCCESS");
 		agentDriver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
+		System.out.println("AGENT DESKTOP LOGIN: user name --> SUCCESS");
 		agentDriver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
+		System.out.println("AGENT DESKTOP LOGIN: password --> SUCCESS");
 
 		try {
 			agentDriver.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
