@@ -192,6 +192,8 @@ public class API {
 		System.out.println("AGENT DESKTOP LOGIN: user name --> SUCCESS");
 		agentDriver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 		System.out.println("AGENT DESKTOP LOGIN: password --> SUCCESS");
+		wait(1000);
+		System.out.println(Helper.captureScreenshot(agentDriver));
 
 		try {
 			agentDriver.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
@@ -203,7 +205,7 @@ public class API {
 		agentDriver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); // activation dial pad
 
 		if (agentName.equals("admin")) {
-			driver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); // activation dial pad
+			agentDriver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); // activation dial pad
 		}
 
 	}// end of agent_init
