@@ -110,6 +110,64 @@ static 	ChromeDriver driver_aj;
 	/** The driver. */
 	static 	ChromeDriver driver;
 	
+	protected static ChromeDriver agentDriver(String agentName) {
+		
+		System.setProperty("webdriver.chrome.driver", "Drivers/Linux/chromedriver");
+		System.setProperty("webdriver.chrome.whitelistedIps", ""); // Cannot assign requested address (99) while starting chromedriver
+		
+		ChromeOptions options = new ChromeOptions();
+		
+		options.addArguments("--headless");		
+//		options.addExtensions(new File("C:\\Users\\admin\\Documents\\AUTOMATION\\Agent Desktop Chrome Extension 1.16.0.0.crx")); // BPClient chrome extension
+		options.addArguments("--disable-notifications");
+		options.addArguments("use-fake-ui-for-media-stream"); // Disable permission dialogs for camera/mic access
+		options.addArguments("--enable-webrtc-stun-origin[13]");	//STUN server used to gather
+		/*
+		 * Session Traversal Utilities for NAT (STUN) is a standardized set of methods,
+		 * including a network protocol, for traversal of network address translator
+		 * (NAT) gateways in applications of real-time voice, video, messaging, and
+		 * other interactive communications
+		 */
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-gpu");
+		options.addArguments("--use-fake-device-for-media-stream"); //Bypass the media stream infobar by selecting the default device for media streams (e.g. WebRTC)
+	    options.addArguments("--verbose");
+	    options.addArguments("--whitelisted-ips=''");
+	    options.addArguments("--window-size=1920,1200");
+
+		switch (agentName) {
+		
+		case "alan.jenks":
+			
+			  driver_aj = new ChromeDriver(options);
+			  driver_aj.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			  driver_aj.manage().window().maximize();
+
+			return driver_aj;
+		case "tony.cobb":
+			
+			  driver_tb = new ChromeDriver(options);
+			  driver_tb.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			  driver_tb.manage().window().maximize();
+
+			return driver_tb;
+		case "carlos.clapper":
+			
+			  driver_cc = new ChromeDriver(options);
+			  driver_cc.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			  driver_cc.manage().window().maximize();
+
+			return driver_cc;
+		default:
+			
+			  driver = new ChromeDriver(options);
+			  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			  driver.manage().window().maximize();
+
+			return driver;
+		}
+}
+	
 	/**
 	 * Agent Desktop initialization 
 	 * <ul>
@@ -123,7 +181,44 @@ static 	ChromeDriver driver_aj;
 	 * @param agentName user name
 	 * @param agentPassword default password is "password" 
 	 */
-	protected static void agentInit(String agentName, String agentPassword) {
+	protected static void agentInit(String agentName, String agentPassword, ChromeDriver agentDriver) {
+
+		String hostURL = "https://dima1.ssf.bugfocus.com/agentdesktop/";
+//	    String hostURL = "https://autotests.ssf.bugfocus.com/agentdesktop/";
+
+		agentDriver.get(hostURL);
+		agentDriver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
+		agentDriver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
+
+		try {
+			agentDriver.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
+			System.out.println("Agent " + agentName + " was Logged IN successfully");
+		} catch (NoSuchElementException e) {
+			System.out.println(e.toString());
+		}
+
+		agentDriver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); // activation dial pad
+
+		if (agentName.equals("admin")) {
+			driver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); // activation dial pad
+		}
+
+	}// end of agent_init
+	
+	/**
+	 * Agent Desktop initialization 
+	 * <ul>
+	 * <li>BPClient Google Chrome extension initialization.
+	 * <li>Set disable-notifications. 
+	 * <li>Set microphone access in the agent desktop. 
+	 * <li>AGENT DESKTOP LOGIN: user name and default password is "password". 
+	 * <li>setPosition of the browser window (alan.jenks 1920,0), (tony.cobb 2880,0), (carlos.clapper 2400,0), (admin maximize())
+	 * </ul>
+	 * 
+	 * @param agentName user name
+	 * @param agentPassword default password is "password" 
+	 */
+	protected static void agentInitOriginal(String agentName, String agentPassword) {
 
 		System.setProperty("webdriver.chrome.driver", "Drivers/Linux/chromedriver");
 		System.setProperty("webdriver.chrome.whitelistedIps", ""); // Cannot assign requested address (99) while starting chromedriver
@@ -252,7 +347,8 @@ static 	ChromeDriver driver_aj;
 			  driver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); //activation dial pad
 
 		}
-}// end of agent_init
+}// end of agent_init_original
+	
 	
 	  /**
 	   * Put a phone number in the input field of the agent and call to.

@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -23,11 +24,15 @@ public class ConsultCall extends API {
 	int callDuration = 2000; // 10 sec for every conversation
 	int action = 1000; 
 	
+	ChromeDriver agent1Driver = agentDriver(agent1);
+	ChromeDriver agent2Driver = agentDriver(agent2);
+	ChromeDriver adminDriver = agentDriver(admin);
+	
 	
 	@Test(priority = -3)
 	public void ArrayBefore() {
 
-		agentInit(admin,pwd);
+		agentInit(admin, pwd, adminDriver);
 		wait(action);
 		System.out.println(">>>>>>>>>>>>>>>>>> print serviceMetricsBefore <<<<<<<<<<<<<<<<<<");
 		serviceMetricsBefore = getServicesMetrics("Service A", 3);	
@@ -36,11 +41,11 @@ public class ConsultCall extends API {
 		System.out.println(Helper.captureScreenshot(driver));
 		printOutMetrics(serviceMetricsBefore);
 		
-		agentInit(agent1, pwd);
+		agentInit(agent1, pwd, agent1Driver);
 		setServiceToAgent(agent1);
 		System.out.println(Helper.captureScreenshot(driver_aj));
 		
-		agentInit(agent2, pwd);
+		agentInit(agent2, pwd, agent2Driver);
 //		wait(1000);
 		setServiceToAgent(agent2);
 		System.out.println(Helper.captureScreenshot(driver_tb));
