@@ -32,7 +32,7 @@ public class ConsultCall extends API {
 	@Test(priority = -3)
 	public void ArrayBefore() {
 
-		agentInit(admin, pwd, adminDriver);
+		agentInit(admin, pwd);
 		wait(action);
 		System.out.println(">>>>>>>>>>>>>>>>>> print serviceMetricsBefore <<<<<<<<<<<<<<<<<<");
 		serviceMetricsBefore = getServicesMetrics("Service A", 3);	
@@ -41,11 +41,11 @@ public class ConsultCall extends API {
 		System.out.println(Helper.captureScreenshot(driver));
 		printOutMetrics(serviceMetricsBefore);
 		
-		agentInit(agent1, pwd, agent1Driver);
+		agentInit(agent1, pwd);
 		setServiceToAgent(agent1);
 		System.out.println(Helper.captureScreenshot(driver_aj));
 		
-		agentInit(agent2, pwd, agent2Driver);
+		agentInit(agent2, pwd);
 //		wait(1000);
 		setServiceToAgent(agent2);
 		System.out.println(Helper.captureScreenshot(driver_tb));

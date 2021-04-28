@@ -168,19 +168,9 @@ public class API {
 		}
 }
 	
-	/**
-	 * Agent Desktop initialization 
-	 * <ul>
-	 * <li>BPClient Google Chrome extension initialization.
-	 * <li>Set disable-notifications. 
-	 * <li>Set microphone access in the agent desktop. 
-	 * <li>AGENT DESKTOP LOGIN: user name and default password is "password". 
-	 * <li>setPosition of the browser window (alan.jenks 1920,0), (tony.cobb 2880,0), (carlos.clapper 2400,0), (admin maximize())
-	 * </ul>
-	 * 
-	 * @param agentName user name
-	 * @param agentPassword default password is "password" 
-	 */
+
+	
+/*
 	protected static void agentInit(String agentName, String agentPassword, ChromeDriver agentDriver) {
 
 		String hostURL = "https://dima1.ssf.bugfocus.com/agentdesktop/";
@@ -214,6 +204,7 @@ public class API {
 		}
 
 	}// end of agent_init
+	*/
 	
 	/**
 	 * Agent Desktop initialization 
@@ -228,7 +219,7 @@ public class API {
 	 * @param agentName user name
 	 * @param agentPassword default password is "password" 
 	 */
-	protected static void agentInitOriginal(String agentName, String agentPassword) {
+	protected static void agentInit(String agentName, String agentPassword) {
 
 		System.setProperty("webdriver.chrome.driver", "Drivers/Linux/chromedriver");
 		System.setProperty("webdriver.chrome.whitelistedIps", ""); // Cannot assign requested address (99) while starting chromedriver
