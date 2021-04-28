@@ -622,7 +622,7 @@ public class ConsultCall extends API {
 	public void test_025_ServiceA_Occupancy() {
 		serviceMetricNumber = 25;
 //		String expected = serviceMetricsBefore[2][serviceMetricNumber];
-		String expected = "99";                                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! hardcore String
+		String expected = "0";                                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! hardcore String
 		
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
 		if(expected != null && actual != null) {
