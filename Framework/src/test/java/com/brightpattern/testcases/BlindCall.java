@@ -12,7 +12,7 @@ import com.brightpattern.utility.Helper;
 public class BlindCall extends API {
 	
 	//getServicesMetrics
-	protected int serviceMetricNumber; //Service Metric index in the array
+	protected int serviceMetricNumber; //Service Metric index in array
 	protected static String[][] serviceMetricsBefore;
 	protected static String[][] serviceMetricsAfter;
 	
