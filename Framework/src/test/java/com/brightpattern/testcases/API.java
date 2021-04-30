@@ -345,7 +345,9 @@ public class API {
 					// Code for Handling exception
 					System.out.println(e.toString());
 				}
-				
+
+				wait(1000);
+				System.out.println("screenshot after login --> " + Helper.captureScreenshot(driver));
 			  
 				try {
 					// try to supervision panel activation //*[@id="b-navigation"]/div[11]
