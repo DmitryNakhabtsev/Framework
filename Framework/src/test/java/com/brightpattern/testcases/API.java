@@ -346,7 +346,7 @@ public class API {
 					System.out.println(e.toString());
 				}
 
-				wait(1000);
+				wait(3000);
 				System.out.println("screenshot after login --> " + Helper.captureScreenshot(driver));
 			  
 				try {
