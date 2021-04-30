@@ -348,7 +348,9 @@ public class API {
 			  
 				try {
 					// try to supervision panel activation
-					driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']")).click(); 
+					                             //*[@id="b-navigation-item-supervisor"]/div[1]
+//					/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[11]
+					driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[11]")).click(); 
 					System.out.println("AGENT " + agentName + " has supervision panel activation");
 
 				} catch (NoSuchElementException e) {
