@@ -272,7 +272,18 @@ public class API {
 				}
 				
 						//*[@id='b-navigation']/div[2]
-			  driver_aj.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); //activation dial pad
+				try {
+					// try to activation dial pad
+					driver_aj.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); 
+					System.out.println("AGENT " + agentName + " has supervision panel activation");
+
+				} catch (Exception e) {
+					// Code for Handling exception
+					System.out.println(agentName + " can't activate dial pad ->>> " + e.toString());
+				}
+			  
+				wait(1000);
+				System.out.println(Helper.captureScreenshot(driver));
 		    break;
 		  case "tony.cobb": 
 
