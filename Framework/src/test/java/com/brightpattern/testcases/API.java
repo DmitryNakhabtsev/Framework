@@ -283,7 +283,7 @@ public class API {
 				}
 			  
 				wait(1000);
-				System.out.println(Helper.captureScreenshot(driver));
+				System.out.println(Helper.captureScreenshot(driver_aj));
 		    break;
 		  case "tony.cobb": 
 
