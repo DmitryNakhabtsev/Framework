@@ -332,8 +332,8 @@ public class API {
 			  
 			  driver.get(hostURL); 
 
-			  driver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys("admin"); // AGENT DESKTOP LOGIN: user name
-			  driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys("password"); // AGENT DESKTOP LOGIN: password
+			  driver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
+			  driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 				wait(1000);
 				System.out.println(Helper.captureScreenshot(driver));			  
 			  
