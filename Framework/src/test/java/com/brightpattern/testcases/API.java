@@ -247,7 +247,7 @@ public class API {
 //	    String hostURL = "https://dima1.ssf.bugfocus.com/agentdesktop/";
 //	    String hostURL = "https://autotests.ssf.bugfocus.com/agentdesktop/";
 	    String hostURL = "https://olgaa.brightpattern.com/agentdesktop/";
-	    
+	    https://olgaa.brightpattern.com/agentdesktop/
 		
 		switch(agentName) {
 		  case "alan.jenks":
@@ -324,6 +324,7 @@ public class API {
 //			  driver_cc.findElement(By.xpath("//*[@id=\"b-navigation-item-supervisor\"]/div[1]")).click(); //supervision panel activation
 			  driver_cc.findElement(By.xpath("//*[@id=\"b-navigation-item-acl1\"]/div[1]")).click(); //activation dial pad
 			  break;
+			  
 		  default:
 			  driver = new ChromeDriver(options);
 			  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -331,9 +332,10 @@ public class API {
 			  
 			  driver.get(hostURL); 
 
-			  driver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
-			  driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
-			  
+			  driver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys("admin"); // AGENT DESKTOP LOGIN: user name
+			  driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys("password"); // AGENT DESKTOP LOGIN: password
+				wait(1000);
+				System.out.println(Helper.captureScreenshot(driver));			  
 			  
 			  
 				try {
