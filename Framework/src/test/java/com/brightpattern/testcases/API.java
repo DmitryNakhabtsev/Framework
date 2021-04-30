@@ -271,7 +271,7 @@ public class API {
 					System.out.println(e.toString());
 				}
 
-			  driver_aj.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); //activation dial pad
+			  driver_aj.findElement(By.xpath("//*[@id='b-navigation']/div[2]")).click(); //activation dial pad
 		    break;
 		  case "tony.cobb":
 
@@ -296,7 +296,7 @@ public class API {
 					System.out.println(e.toString());
 				}
 
-			  driver_tb.findElement(By.xpath("//*[@id=\"b-navigation-item-acl1\"]/div[1]")).click(); //activation dial pad
+			  driver_tb.findElement(By.xpath("//*[@id='b-navigation']/div[2]")).click(); //activation dial pad
 		    break;
 		  case "carlos.clapper":
 			  
@@ -322,7 +322,7 @@ public class API {
 			  }
 
 //			  driver_cc.findElement(By.xpath("//*[@id=\"b-navigation-item-supervisor\"]/div[1]")).click(); //supervision panel activation
-			  driver_cc.findElement(By.xpath("//*[@id=\"b-navigation-item-acl1\"]/div[1]")).click(); //activation dial pad
+			  driver_cc.findElement(By.xpath("//*[@id='b-navigation']/div[2]")).click(); //activation dial pad
 			  break;
 			  
 		  default:
@@ -333,9 +333,7 @@ public class API {
 			  driver.get(hostURL); 
 
 			  driver.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
-			  driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
-				wait(1000);
-				System.out.println(Helper.captureScreenshot(driver));			  
+			  driver.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password		  
 			  
 			  
 				try {
@@ -348,14 +346,11 @@ public class API {
 					System.out.println(e.toString());
 				}
 				
-				wait(1000);
-				System.out.println(Helper.captureScreenshot(driver));
+//				wait(1000);
+//				System.out.println(Helper.captureScreenshot(driver));
 			  
 				try {
-					// try to supervision panel activation
-					                             
-//					/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[11]
-//					driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[11]")).click(); 
+					// try to supervision panel activation //*[@id="b-navigation"]/div[11]
 					driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']/div[1]")).click(); 
 					System.out.println("AGENT " + agentName + " has supervision panel activation");
 
@@ -364,7 +359,7 @@ public class API {
 					System.out.println("can't activate supervision panel -> "+e.toString());
 				}
 			  
-			  driver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); //activation dial pad
+			  driver.findElement(By.xpath("//*[@id='b-navigation']/div[2]")).click(); //activation dial pad
 
 		}
 }// end of agent_init_original
