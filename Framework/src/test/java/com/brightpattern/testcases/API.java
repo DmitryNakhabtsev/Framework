@@ -346,19 +346,20 @@ public class API {
 					System.out.println(e.toString());
 				}
 				
-//				wait(1000);
-//				System.out.println(Helper.captureScreenshot(driver));
 			  
 				try {
 					// try to supervision panel activation //*[@id="b-navigation"]/div[11]
-					driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']/div[1]")).click(); 
+					driver.findElement(By.xpath("//*[@id=\"b-navigation\"]/div[11]")).click(); 
 					System.out.println("AGENT " + agentName + " has supervision panel activation");
 
-				} catch (NoSuchElementException e) {
+				} catch (Exception e) {
 					// Code for Handling exception
 					System.out.println("can't activate supervision panel -> "+e.toString());
 				}
 			  
+				wait(1000);
+				System.out.println(Helper.captureScreenshot(driver));
+				
 			  driver.findElement(By.xpath("//*[@id='b-navigation']/div[2]")).click(); //activation dial pad
 
 		}
