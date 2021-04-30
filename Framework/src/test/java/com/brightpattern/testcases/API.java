@@ -347,7 +347,7 @@ public class API {
 					System.out.println(e.toString());
 				}
 
-				wait(3000);
+				wait(1000);
 				System.out.println("screenshot after login --> " + Helper.captureScreenshot(driver));
 			  
 				try {
@@ -777,9 +777,13 @@ public class API {
 	   * @param agentName enter the agent name
 	   */
 	protected static void setServiceToAgent(String agentName) {
+		
 
-		String xpath_select = "//*[@title='Service Selector']";
-		String xpath_ServiceA = "//*[@aria-label='Service A']";
+//		String xpath_select = "//*[@title='Service Selector']";
+		String xpath_select = "/html/body/div[5]/div/div[2]/div/div/div[1]/div[2]/div[1]";
+		String xpath_ServiceA = "/html/body/div[7]/div/div/div/div/table/tbody/tr[2]/td";
+		
+//		String xpath_ServiceA = "//*[@aria-label='Service A']";
 		String service_names;
 
 		switch (agentName) {
