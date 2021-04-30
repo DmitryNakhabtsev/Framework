@@ -363,7 +363,21 @@ public class API {
 				wait(1000);
 				System.out.println(Helper.captureScreenshot(driver));
 				
-			  driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); //activation dial pad
+			  
+			  
+				try {
+					// try to activation dial pad
+					driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); 
+					System.out.println("AGENT " + agentName + " has supervision panel activation");
+
+				} catch (Exception e) {
+					// Code for Handling exception
+					System.out.println("can't activate dial pad ->>> " + e.toString());
+				}
+			  
+				wait(1000);
+				System.out.println(Helper.captureScreenshot(driver));
+				
 
 		}
 }// end of agent_init_original
