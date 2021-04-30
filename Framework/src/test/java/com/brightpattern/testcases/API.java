@@ -270,10 +270,11 @@ public class API {
 					// Code for Handling exception
 					System.out.println(e.toString());
 				}
-
-			  driver_aj.findElement(By.xpath("//*[@id='b-navigation']/div[2]")).click(); //activation dial pad
+				
+						//*[@id='b-navigation']/div[2]
+			  driver_aj.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); //activation dial pad
 		    break;
-		  case "tony.cobb":
+		  case "tony.cobb": 
 
 			  driver_tb = new ChromeDriver(options);
 			  driver_tb.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -296,7 +297,7 @@ public class API {
 					System.out.println(e.toString());
 				}
 
-			  driver_tb.findElement(By.xpath("//*[@id='b-navigation']/div[2]")).click(); //activation dial pad
+			  driver_tb.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); //activation dial pad
 		    break;
 		  case "carlos.clapper":
 			  
@@ -322,7 +323,7 @@ public class API {
 			  }
 
 //			  driver_cc.findElement(By.xpath("//*[@id=\"b-navigation-item-supervisor\"]/div[1]")).click(); //supervision panel activation
-			  driver_cc.findElement(By.xpath("//*[@id='b-navigation']/div[2]")).click(); //activation dial pad
+			  driver_cc.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); //activation dial pad
 			  break;
 			  
 		  default:
@@ -362,7 +363,7 @@ public class API {
 				wait(1000);
 				System.out.println(Helper.captureScreenshot(driver));
 				
-			  driver.findElement(By.xpath("//*[@id='b-navigation']/div[2]")).click(); //activation dial pad
+			  driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); //activation dial pad
 
 		}
 }// end of agent_init_original
