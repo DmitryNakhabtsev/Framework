@@ -359,7 +359,7 @@ public class API {
 					System.out.println("can't activate supervision panel -> "+e.toString());
 				}
 			  
-			  driver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); //activation dial pad
+//			  driver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); //activation dial pad
 
 		}
 }// end of agent_init_original
