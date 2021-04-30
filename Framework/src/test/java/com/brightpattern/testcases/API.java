@@ -244,9 +244,9 @@ public class API {
 	    options.addArguments("--whitelisted-ips=''");
 	    options.addArguments("--window-size=1920,1200");
 	    
-//	    String hostURL = "https://dima1.ssf.bugfocus.com/agentdesktop/";
+	    String hostURL = "https://dima1.ssf.bugfocus.com/agentdesktop/";
 //	    String hostURL = "https://autotests.ssf.bugfocus.com/agentdesktop/";
-	    String hostURL = "https://olgaa.brightpattern.com/agentdesktop/";
+//	    String hostURL = "https://olgaa.brightpattern.com/agentdesktop/";
 	    
 		
 		switch(agentName) {
@@ -351,7 +351,7 @@ public class API {
 					                             
 //					/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[11]
 //					driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[11]")).click(); 
-//					driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']/div[1]")).click(); 
+					driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']/div[1]")).click(); 
 					System.out.println("AGENT " + agentName + " has supervision panel activation");
 
 				} catch (NoSuchElementException e) {
@@ -359,7 +359,7 @@ public class API {
 					System.out.println("can't activate supervision panel -> "+e.toString());
 				}
 			  
-//			  driver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); //activation dial pad
+			  driver.findElement(By.xpath("//*[@id='b-navigation-item-acl1']")).click(); //activation dial pad
 
 		}
 }// end of agent_init_original
