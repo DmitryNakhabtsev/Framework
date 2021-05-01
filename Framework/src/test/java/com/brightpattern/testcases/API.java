@@ -310,7 +310,15 @@ public class API {
 					System.out.println(e.toString());
 				}
 
-			  driver_tb.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); //activation dial pad
+				try {
+					// try to activation dial pad
+					driver_tb.findElement(By.xpath("//*[@title=\"Conversations\"]")).click(); 
+					System.out.println("AGENT " + agentName + " has dial pad activation");
+
+				} catch (Exception e) {
+					// Code for Handling exception
+					System.out.println(agentName + " can't activate dial pad ->>> " + e.toString());
+				}
 		    break;
 		  case "carlos.clapper":
 			  
@@ -336,7 +344,15 @@ public class API {
 			  }
 
 //			  driver_cc.findElement(By.xpath("//*[@id=\"b-navigation-item-supervisor\"]/div[1]")).click(); //supervision panel activation
-			  driver_cc.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); //activation dial pad
+				try {
+					// try to activation dial pad
+					driver_cc.findElement(By.xpath("//*[@title=\"Conversations\"]")).click(); 
+					System.out.println("AGENT " + agentName + " has dial pad activation");
+
+				} catch (Exception e) {
+					// Code for Handling exception
+					System.out.println(agentName + " can't activate dial pad ->>> " + e.toString());
+				}
 			  break;
 			  
 		  default:
@@ -380,12 +396,12 @@ public class API {
 			  
 				try {
 					// try to activation dial pad
-					driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); 
-					System.out.println("AGENT " + agentName + " has supervision panel activation");
+					driver.findElement(By.xpath("//*[@title=\"Conversations\"]")).click(); 
+					System.out.println("AGENT " + agentName + " has dial pad activation");
 
 				} catch (Exception e) {
 					// Code for Handling exception
-					System.out.println("can't activate dial pad ->>> " + e.toString());
+					System.out.println(agentName + " can't activate dial pad ->>> " + e.toString());
 				}
 			  
 				wait(1000);
