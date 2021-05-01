@@ -271,11 +271,13 @@ public class API {
 					System.out.println(e.toString());
 				}
 				
-						//*[@id='b-navigation']/div[2]
+				//*[@id='b-navigation']/div[2]
+				//*[@title="Conversations"]
+				// /html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]
 				try {
 					// try to activation dial pad
-					driver_aj.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]")).click(); 
-					System.out.println("AGENT " + agentName + " has supervision panel activation");
+					driver_aj.findElement(By.xpath("//*[@title=\"Conversations\"]")).click(); 
+					System.out.println("AGENT " + agentName + " has dial pad activation");
 
 				} catch (Exception e) {
 					// Code for Handling exception
