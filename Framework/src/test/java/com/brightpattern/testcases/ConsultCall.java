@@ -76,7 +76,7 @@ public class ConsultCall extends API {
 
 	}
 	
-	@Test
+	@Test(enabled = false)
 	public void test_028_ServiceA_INTotalTalkTime() {
 		serviceMetricNumber = 28;
 //		String parseTimeExpectation(String strTime, int expectedSec)
