@@ -841,6 +841,8 @@ public class API {
 		case "tony.cobb":
 
 		    //Wait for element to be clickable
+			
+			System.out.println("screenshot inside of method --> " + Helper.captureScreenshot(driver_tb));
 		    WebDriverWait wait_tb = new WebDriverWait(driver_tb, 15);
 		    wait_tb.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_select)));
 			

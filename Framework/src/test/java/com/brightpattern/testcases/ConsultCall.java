@@ -46,7 +46,8 @@ public class ConsultCall extends API {
 		System.out.println(Helper.captureScreenshot(driver_aj));
 		
 		agentInit(agent2, pwd);
-//		wait(1000);
+		wait(1000);
+		System.out.println(Helper.captureScreenshot(driver_tb));
 		setServiceToAgent(agent2);
 		System.out.println(Helper.captureScreenshot(driver_tb));
 		
