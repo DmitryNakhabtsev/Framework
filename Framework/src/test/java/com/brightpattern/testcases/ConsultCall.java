@@ -184,7 +184,7 @@ public class ConsultCall extends API {
 //		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		int delta = 1;
+		int delta = 0;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
 		if(expected != null && actual != null) {
@@ -201,7 +201,7 @@ public class ConsultCall extends API {
 //		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String metricValueBefore = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		int delta = 1;
+		int delta = 0;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
 		if(expected != null && actual != null) {
