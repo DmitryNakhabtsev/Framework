@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.brightpattern.utility.Helper;
-public class ConsultCall extends API {
+public class ConsultTransfer extends API {
 	
 	//getServicesMetrics
 	protected int serviceMetricNumber; //Service Metric index in array
