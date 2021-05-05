@@ -316,7 +316,7 @@ public class ConsultCall extends API {
 		}
 	}
 	  
-	@Test
+	@Test(enabled = false)
 	public void test_002_ServiceA_Ready() {
 
 		serviceMetricNumber = 2;
@@ -619,7 +619,7 @@ public class ConsultCall extends API {
 		}
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void test_025_ServiceA_Occupancy() {
 		serviceMetricNumber = 25;
 //		String expected = serviceMetricsBefore[2][serviceMetricNumber];
