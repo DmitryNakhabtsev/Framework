@@ -77,14 +77,19 @@ public class ConsultTransfer extends API {
 
 	}
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void test_028_ServiceA_INTotalTalkTime() {
 		serviceMetricNumber = 28;
-//		String parseTimeExpectation(String strTime, int expectedSec)
+		
 		String strTime = serviceMetricsBefore[2][serviceMetricNumber];
+		System.out.println("serviceMetricsBefore -> " + strTime);
 		int expectedSec = 2;
+		
 		String expected = parseTimeExpectation(strTime, expectedSec);
+		System.out.println("parseTimeExpectation = " + strTime + "+" + expectedSec);
+		
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
+		System.out.println("actual time -> " + actual);
 		
 		boolean expectedInDeviation = timeDeviation(actual, expected, 2);
 		
