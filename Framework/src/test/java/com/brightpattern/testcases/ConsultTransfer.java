@@ -124,7 +124,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 	ChromeDriver adminDriver = agentDriver(admin);
 	
 	@Test(priority = -4)
-	public void DimaAssert(String[] args) {
+	public void DimaAssert() {
 		String expected = "dima";
 		String actual = "dima";
 		assertNotNull(expected, actual);
