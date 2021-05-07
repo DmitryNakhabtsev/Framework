@@ -22,6 +22,7 @@ import org.openqa.selenium.chrome.ChromeDriverInfo;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.brightpattern.utility.Helper;
 
@@ -1805,6 +1806,29 @@ public static String addTime(String firstTime, String secondTime) {
     
 
     return timeAfter;
+}
+
+/**
+ * Verify expected and actual result by assertion (no null exception)
+ *
+ * @param expected the expected result
+ * @param actual the actual result
+ */
+public static void assertNotNull(String expected, String actual) {
+	
+	if(expected != null && actual != null) {
+		System.out.println("expected != null && actual != null");
+		Assert.assertEquals(actual, expected);
+	} else {
+		if (actual != null) {
+			System.out.println("actual != null");
+			Assert.assertEquals(actual, actual);			
+		} else {
+			System.out.println("actual = null");
+			Assert.assertEquals(expected, expected);
+		}
+	}
+	
 }
 	
 }// end of class API

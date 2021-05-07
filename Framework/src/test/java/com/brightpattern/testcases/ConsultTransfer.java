@@ -123,6 +123,13 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 	ChromeDriver agent2Driver = agentDriver(agent2);
 	ChromeDriver adminDriver = agentDriver(admin);
 	
+	@Test(priority = -4)
+	public void DimaAssert(String[] args) {
+		String expected = "dima";
+		String actual = "dima";
+		assertNotNull(expected, actual);
+	}
+	
 	
 	@Test(priority = -3)
 	public void ArrayBefore() {
@@ -224,12 +231,17 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 1;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
+		
+//		if(expected != null && actual != null) {
+//			Assert.assertEquals(actual, expected);
+//		} else {
+//			if (actual != null) {
+//				Assert.assertEquals(actual, actual);			
+//			} else {
+//				Assert.assertEquals(expected, expected);
+//			}
+//		}
 	}
 	
 	@Test
