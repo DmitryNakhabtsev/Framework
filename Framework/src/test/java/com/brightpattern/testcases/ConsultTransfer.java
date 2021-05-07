@@ -188,7 +188,8 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		System.out.println("actual time -> " + actual);
 		
 		boolean expectedInDeviation = timeDeviation(actual, expected, 2); // deviation between actual and expected result is less then 2 seconds 
-		assertNotNull(expected, actual);
+//		assertNotNull(expected, actual);
+		Assert.assertTrue(expectedInDeviation);
 	}
 		
 	

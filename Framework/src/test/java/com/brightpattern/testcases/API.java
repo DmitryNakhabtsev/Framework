@@ -111,6 +111,12 @@ public class API {
 	/** The driver. */
    public static ChromeDriver driver;
 	
+	/**
+	 * Agent driver.
+	 *
+	 * @param agentName the agent name
+	 * @return the chrome driver
+	 */
 	protected static ChromeDriver agentDriver(String agentName) {
 		
 		System.setProperty("webdriver.chrome.driver", "Drivers/Linux/chromedriver");
@@ -1809,7 +1815,7 @@ public static String addTime(String firstTime, String secondTime) {
 }
 
 /**
- * Verify expected and actual result by assertion (no null exception)
+ * Verify expected and actual result by assertion (no null exception).
  *
  * @param expected the expected result
  * @param actual the actual result
