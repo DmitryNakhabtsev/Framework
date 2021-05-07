@@ -123,12 +123,6 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 	ChromeDriver agent2Driver = agentDriver(agent2);
 	ChromeDriver adminDriver = agentDriver(admin);
 	
-	@Test(priority = -4)
-	public void DimaAssert() {
-		String expected = null;
-		String actual = "dima";
-		assertNotNull(expected, actual);
-	}
 	
 	
 	@Test(priority = -3)
@@ -194,12 +188,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		System.out.println("actual time -> " + actual);
 		
 		boolean expectedInDeviation = timeDeviation(actual, expected, 2); // deviation between actual and expected result is less then 2 seconds 
-		
-		if(expected != null && actual != null) {			
-			Assert.assertTrue(expectedInDeviation);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 		
 	
@@ -213,13 +202,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 1;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}	
 
 	@Test
@@ -252,12 +235,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 1;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 	
 	@Test
@@ -269,12 +247,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 1;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}	
 	
 	@Test
@@ -282,12 +255,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 71;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 	
 	@Test
@@ -299,12 +267,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 0;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 	
 	@Test
@@ -316,12 +279,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 0;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}	
 	
 	@Test
@@ -333,12 +291,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 0;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}	
 	
 	@Test
@@ -350,12 +303,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 2;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 	
 	@Test
@@ -367,12 +315,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 1;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -384,12 +327,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 1;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -401,31 +339,16 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 1;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
-	
-	
-	
-	
-	
-	
+		
 	
 	@Test(priority = 0)
 	public void test_001_ServiceA_Name() {
 		serviceMetricNumber = 1;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 	  
 	@Test(enabled = false)
@@ -434,12 +357,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 2;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -448,12 +366,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 3;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -462,12 +375,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 4;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -476,12 +384,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 5;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -489,12 +392,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int serviceMetricNumber = 6;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -502,12 +400,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int serviceMetricNumber = 7;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -515,12 +408,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int serviceMetricNumber = 8;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -528,12 +416,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int serviceMetricNumber = 9;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -541,12 +424,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int serviceMetricNumber = 10;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -554,12 +432,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 11;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -567,12 +440,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 12;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -580,12 +448,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 13;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -593,12 +456,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 14;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -606,12 +464,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 15;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -619,12 +472,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 16;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -632,12 +480,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 17;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -645,12 +488,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 18;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -658,12 +496,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 19;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -671,12 +504,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 20;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -684,12 +512,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 21;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -697,12 +520,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 22;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -710,12 +528,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 23;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -723,12 +536,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 24;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test(enabled = false)
@@ -738,12 +546,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		String expected = "38";                                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! hardcore String
 		
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -751,12 +554,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 26;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -764,12 +562,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 27;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 
@@ -778,12 +571,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 29;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -791,12 +579,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 30;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -806,12 +589,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		String expected = "100";                                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! hardcore String
 		
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -819,12 +597,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 32;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -832,12 +605,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 33;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -845,12 +613,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 34;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -858,12 +621,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 35;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 
@@ -872,12 +630,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 37;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -885,12 +638,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 38;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -898,12 +646,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 39;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -915,13 +658,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 0;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -929,12 +666,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 41;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -942,12 +674,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 42;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 
@@ -956,12 +683,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 44;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -969,12 +691,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 45;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -982,12 +699,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 46;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -995,12 +707,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 47;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1008,12 +715,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 48;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1025,13 +727,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 0;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1043,13 +739,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 0;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1057,12 +747,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 51;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1070,12 +755,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 52;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1083,12 +763,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 53;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1096,12 +771,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 54;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 
@@ -1110,12 +780,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 56;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1123,12 +788,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 57;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 
@@ -1137,12 +797,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 59;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 /*
 	@Test
@@ -1195,12 +850,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 62;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1209,12 +859,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1222,12 +867,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 64;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1235,12 +875,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 65;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1248,12 +883,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 66;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 /*
 	@Test
@@ -1308,12 +938,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 71;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1321,12 +946,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 72;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1334,12 +954,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 73;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 
@@ -1348,12 +963,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 75;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 
@@ -1362,12 +972,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 77;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1375,12 +980,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 78;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1388,12 +988,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 79;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1401,12 +996,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 80;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 
@@ -1419,13 +1009,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 0;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1437,13 +1021,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		int delta = 0;
 		
 		String expected = parseStringExpectation(metricValueBefore, delta);
-		
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1453,13 +1031,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		String expected = "100 (80/20)";                                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! hardcore String
 		
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	@Test
@@ -1467,12 +1039,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 		serviceMetricNumber = 86;
 		String expected = serviceMetricsBefore[2][serviceMetricNumber];
 		String actual = serviceMetricsAfter[2][serviceMetricNumber];
-		if(expected != null && actual != null) {
-			
-			Assert.assertEquals(actual, expected);
-		} else {
-			Assert.assertEquals(actual, actual);
-		}
+		assertNotNull(expected, actual);
 	}
 
 	
