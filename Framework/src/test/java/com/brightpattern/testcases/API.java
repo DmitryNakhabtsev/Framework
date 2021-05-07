@@ -1817,14 +1817,11 @@ public static String addTime(String firstTime, String secondTime) {
 public static void assertNotNull(String expected, String actual) {
 	
 	if(expected != null && actual != null) {
-		System.out.println("expected != null && actual != null");
 		Assert.assertEquals(actual, expected);
 	} else {
 		if (actual != null) {
-			System.out.println("actual != null");
 			Assert.assertEquals(actual, actual);			
 		} else {
-			System.out.println("actual = null");
 			Assert.assertEquals(expected, expected);
 		}
 	}
