@@ -126,7 +126,7 @@ test_089_ServiceA_INHandled				IN Handled				Inbound interactions handled by age
 	@Test(priority = -4)
 	public void DimaAssert() {
 		String expected = "dima";
-		String actual = "olga";
+		String actual = null;
 		assertNotNull(expected, actual);
 	}
 	
