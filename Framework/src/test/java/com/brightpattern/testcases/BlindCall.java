@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.brightpattern.utility.Helper;
-public class BlindCall extends API {
+public class BlindCall extends AppUtils {
 	
 	//getServicesMetrics
 	protected int serviceMetricNumber; //Service Metric index in array

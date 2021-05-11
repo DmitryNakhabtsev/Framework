@@ -19,7 +19,7 @@ import com.brightpattern.utility.ExcelDataProvider;
 import com.brightpattern.utility.Helper;
 
 
-public class LoginTestAD3 extends API{
+public class LoginTestAD3 extends AppUtils{
 /*		
 		private DimaAfter obj1 = new DimaAfter();
 

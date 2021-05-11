@@ -6,7 +6,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 
 import com.brightpattern.utility.Helper;
 
-public class DimaAfter extends API{
+public class DimaAfter extends AppUtils{
 //
 //	public void olgaInteraction() { // olgaInteraction ==================================================================
 //		

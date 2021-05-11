@@ -19,7 +19,7 @@ import com.brightpattern.utility.ExcelDataProvider;
 import com.brightpattern.utility.Helper;
 
 
-public class LoginTestADFullScenario extends API{
+public class LoginTestADFullScenario extends AppUtils{
 /*		
 		private DimaAfter scenario = new DimaAfter();
 

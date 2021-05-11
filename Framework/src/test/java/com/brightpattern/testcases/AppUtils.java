@@ -59,7 +59,7 @@ import com.brightpattern.utility.Helper;
  * @author admin
  *
  */
-public class API {
+public class AppUtils {
 //**************************** WERTC LOCATORS ***********************************
 //	ACCEPT CALL ->
 //	/html/body/div[8]/div/table/tbody/tr[2]/td[2]/div/div/div[3]/button[1] ACCEPT CALL
@@ -99,14 +99,14 @@ public class API {
 //	END CALL
 //	//*[@id="cpEndCall"]/div
 
-	/** The driver aj. */
-   protected static ChromeDriver driver_aj;
+	/** The driverAJ. */
+   protected static ChromeDriver driverAJ;
 	
-	/** The driver tb. */
-   protected static ChromeDriver driver_tb;
+	/** The driverTC. */
+   protected static ChromeDriver driverTC;
 	
-	/** The driver cc. */
-   protected static ChromeDriver driver_cc;
+	/** The driverCC. */
+   protected static ChromeDriver driverCC;
 	
 	/** The driver. */
    public static ChromeDriver driver;
@@ -146,25 +146,25 @@ public class API {
 		
 		case "alan.jenks":
 			
-			  driver_aj = new ChromeDriver(options);
-			  driver_aj.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driver_aj.manage().window().maximize();
+			  driverAJ = new ChromeDriver(options);
+			  driverAJ.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			  driverAJ.manage().window().maximize();
 
-			return driver_aj;
+			return driverAJ;
 		case "tony.cobb":
 			
-			  driver_tb = new ChromeDriver(options);
-			  driver_tb.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driver_tb.manage().window().maximize();
+			  driverTC = new ChromeDriver(options);
+			  driverTC.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			  driverTC.manage().window().maximize();
 
-			return driver_tb;
+			return driverTC;
 		case "carlos.clapper":
 			
-			  driver_cc = new ChromeDriver(options);
-			  driver_cc.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driver_cc.manage().window().maximize();
+			  driverCC = new ChromeDriver(options);
+			  driverCC.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			  driverCC.manage().window().maximize();
 
-			return driver_cc;
+			return driverCC;
 		default:
 			
 			  driver = new ChromeDriver(options);
@@ -258,19 +258,19 @@ public class API {
 		
 		switch(agentName) {
 		  case "alan.jenks":
-			  driver_aj = new ChromeDriver(options);
-			  driver_aj.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driver_aj.manage().window().maximize();
+			  driverAJ = new ChromeDriver(options);
+			  driverAJ.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			  driverAJ.manage().window().maximize();
 			  
-			  driver_aj.get(hostURL); 
+			  driverAJ.get(hostURL); 
 
-			  driver_aj.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
-			  driver_aj.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
+			  driverAJ.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
+			  driverAJ.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 
 		  
 				try {
 					// try to submit
-					  driver_aj.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
+					  driverAJ.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
 					System.out.println("AGENT " + agentName + " WAS LOGIN successfully");
 
 				} catch (NoSuchElementException e) {
@@ -283,7 +283,7 @@ public class API {
 				// /html/body/div[4]/div/div[2]/div/div/div[1]/div[2]/div[2]
 				try {
 					// try to activation dial pad
-					driver_aj.findElement(By.xpath("//*[@title=\"Conversations\"]")).click(); 
+					driverAJ.findElement(By.xpath("//*[@title=\"Conversations\"]")).click(); 
 					System.out.println("AGENT " + agentName + " has dial pad activation");
 
 				} catch (Exception e) {
@@ -292,24 +292,24 @@ public class API {
 				}
 			  
 				wait(1000);
-				System.out.println(Helper.captureScreenshot(driver_aj));
+				System.out.println(Helper.captureScreenshot(driverAJ));
 		    break;
 		  case "tony.cobb": 
 
-			  driver_tb = new ChromeDriver(options);
-			  driver_tb.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driver_tb.manage().window().maximize();
+			  driverTC = new ChromeDriver(options);
+			  driverTC.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			  driverTC.manage().window().maximize();
 			  
-			  driver_tb.get(hostURL);
+			  driverTC.get(hostURL);
 
-			  driver_tb.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
-			  driver_tb.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
+			  driverTC.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
+			  driverTC.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
 			  
 
 			  
 				try {
 					// try to submit
-					driver_tb.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
+					driverTC.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
 					System.out.println("AGENT " + agentName + " WAS LOGIN successfully");
 
 				} catch (NoSuchElementException e) {
@@ -319,7 +319,7 @@ public class API {
 
 				try {
 					// try to activation dial pad
-					driver_tb.findElement(By.xpath("//*[@title=\"Conversations\"]")).click(); 
+					driverTC.findElement(By.xpath("//*[@title=\"Conversations\"]")).click(); 
 					System.out.println("AGENT " + agentName + " has dial pad activation");
 
 				} catch (Exception e) {
@@ -329,20 +329,20 @@ public class API {
 		    break;
 		  case "carlos.clapper":
 			  
-			  driver_cc = new ChromeDriver(options);
-			  driver_cc.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driver_cc.manage().window().maximize();
+			  driverCC = new ChromeDriver(options);
+			  driverCC.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			  driverCC.manage().window().maximize();
 			  
-			  driver_cc.get(hostURL);
+			  driverCC.get(hostURL);
 
-			  driver_cc.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
-			  driver_cc.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
-			  driver_cc.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
+			  driverCC.findElement(By.xpath("//*[@id=\"auth-login\"]")).sendKeys(agentName); // AGENT DESKTOP LOGIN: user name
+			  driverCC.findElement(By.xpath("//*[@id=\"auth-password\"]")).sendKeys(agentPassword); // AGENT DESKTOP LOGIN: password
+			  driverCC.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();
 		  
 			  try
 			  {
 				  // try to login
-				  driver_cc.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();	
+				  driverCC.findElement(By.xpath("//*[@id=\"auth-submit\"]")).click();	
 				  System.out.println("AGENT "+agentName+" WAS LOGIN successfully");
 				  
 			  } catch (NoSuchElementException e) {
@@ -353,7 +353,7 @@ public class API {
 //			  driver_cc.findElement(By.xpath("//*[@id=\"b-navigation-item-supervisor\"]/div[1]")).click(); //supervision panel activation
 				try {
 					// try to activation dial pad
-					driver_cc.findElement(By.xpath("//*[@title=\"Conversations\"]")).click(); 
+					driverCC.findElement(By.xpath("//*[@title=\"Conversations\"]")).click(); 
 					System.out.println("AGENT " + agentName + " has dial pad activation");
 
 				} catch (Exception e) {
@@ -430,18 +430,18 @@ public class API {
 		switch (agentName) {
 		case "alan.jenks":
 			// input field for enter number, call to calleeNumber
-			driver_aj.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);
-			driver_aj.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button
+			driverAJ.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);
+			driverAJ.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button
 			break;
 		case "tony.cobb":
 			// input field for enter number, call tocalleeNumber
-			driver_tb.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);
-			driver_tb.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button
+			driverTC.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);
+			driverTC.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button
 			break;
 		case "carlos.clapper":
 			// input field for enter number, call tocalleeNumber
-			driver_cc.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);
-			driver_cc.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button
+			driverCC.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);
+			driverCC.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button
 			break;
 		default:
 			// input field for enter number, call tocalleeNumber
@@ -485,7 +485,7 @@ public class API {
 			
 			try //TRY to click the "end call" button
 			  {
-				driver_aj.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call	
+				driverAJ.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call	
 				  System.out.println("AGENT "+ agentName +" ended the call");
 				  
 			  } catch (NoSuchElementException e) {
@@ -498,7 +498,7 @@ public class API {
 			
 			try //TRY to click the "end call" button
 			  {
-				driver_tb.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
+				driverTC.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
 				  System.out.println("AGENT "+ agentName +" ended the call");
 				  
 			  } catch (NoSuchElementException e) {
@@ -510,7 +510,7 @@ public class API {
 			
 			try //TRY to click the "end call" button
 			  {
-				driver_cc.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
+				driverCC.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
 				  System.out.println("AGENT "+ agentName +" ended the call");
 				  
 			  } catch (NoSuchElementException e) {
@@ -537,26 +537,26 @@ public class API {
 	   * @param agentName enter an agent Name
 	   */
 	protected static void agentCompleteTransfer(String agentName) {
-		String xpath_select = "//*[@id='cpTransfer']/div";
+		String xpathSelect = "//*[@id='cpTransfer']/div";
 
 		switch (agentName) {
 		case "alan.jenks":
 
 		    //Wait for element to be clickable
-		    WebDriverWait wait_aj = new WebDriverWait(driver_aj, 15);
-		    wait_aj.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_select)));
+		    WebDriverWait waitAJ = new WebDriverWait(driverAJ, 15);
+		    waitAJ.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
 			System.out.println("Complete Transfer button is clickable for " + agentName);
 				
-			driver_aj.findElement(By.xpath(xpath_select)).click(); // "Complete Transfer" button
+			driverAJ.findElement(By.xpath(xpathSelect)).click(); // "Complete Transfer" button
 			break;
 		case "tony.cobb":
-			driver_tb.findElement(By.xpath(xpath_select)).click(); // "Complete Transfer" button
+			driverTC.findElement(By.xpath(xpathSelect)).click(); // "Complete Transfer" button
 			break;
 		case "carlos.clapper":
-			driver_cc.findElement(By.xpath(xpath_select)).click(); // "Complete Transfer" button
+			driverCC.findElement(By.xpath(xpathSelect)).click(); // "Complete Transfer" button
 			break;
 		default:
-			driver.findElement(By.xpath(xpath_select)).click(); // "Complete Transfer" button
+			driver.findElement(By.xpath(xpathSelect)).click(); // "Complete Transfer" button
 		}
 	}// end of agentCompleteTransfer
 	
@@ -569,14 +569,14 @@ public class API {
 	protected static void agentCallAnswer(String agentName) {
 
 //		String AcceptCallButton = "/html/body/div[8]/div/table/tbody/tr[2]/td[2]/div/div/div[3]/button[1]";		
-		String AcceptCallButton = "/html/body/div[8]//button[contains(text(),'Accept')]";
+		String acceptCallButton = "/html/body/div[8]//button[contains(text(),'Accept')]";
 		                         
 		switch (agentName) {
 		case "alan.jenks":
 		
 			try {
 				// try to check ACCEPT CALL
-				driver_aj.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
+				driverAJ.findElement(By.xpath(acceptCallButton)).click(); // ACCEPT CALL
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
@@ -588,7 +588,7 @@ public class API {
 		case "tony.cobb":		
 			try {
 				// try to check ACCEPT CALL
-				driver_tb.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
+				driverTC.findElement(By.xpath(acceptCallButton)).click(); // ACCEPT CALL
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
@@ -600,7 +600,7 @@ public class API {
 		case "carlos.clapper":
 			try {
 				// try to check ACCEPT CALL
-				driver_cc.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
+				driverCC.findElement(By.xpath(acceptCallButton)).click(); // ACCEPT CALL
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
@@ -611,7 +611,7 @@ public class API {
 		default:			
 			try {
 				// try to check ACCEPT CALL
-				driver.findElement(By.xpath(AcceptCallButton)).click(); // ACCEPT CALL
+				driver.findElement(By.xpath(acceptCallButton)).click(); // ACCEPT CALL
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
@@ -633,21 +633,21 @@ public class API {
 		switch (agentName) {
 		case "alan.jenks":
 
-			driver_aj.findElement(By.xpath("//*[@id=\"top-toolbar-logout\"]")).click();
-			driver_aj.findElement(By.xpath("//*[@id=\"gwt-debug-cdbOk\"]")).click();
-			driver_aj.quit();
+			driverAJ.findElement(By.xpath("//*[@id=\"top-toolbar-logout\"]")).click();
+			driverAJ.findElement(By.xpath("//*[@id=\"gwt-debug-cdbOk\"]")).click();
+			driverAJ.quit();
 			break;
 		case "tony.cobb":
 
-			driver_tb.findElement(By.xpath("//*[@id=\"top-toolbar-logout\"]")).click();
-			driver_tb.findElement(By.xpath("//*[@id=\"gwt-debug-cdbOk\"]")).click();
-			driver_tb.quit();
+			driverTC.findElement(By.xpath("//*[@id=\"top-toolbar-logout\"]")).click();
+			driverTC.findElement(By.xpath("//*[@id=\"gwt-debug-cdbOk\"]")).click();
+			driverTC.quit();
 			break;
 		case "carlos.clapper":
 
-			driver_cc.findElement(By.xpath("//*[@id=\"top-toolbar-logout\"]")).click();
-			driver_cc.findElement(By.xpath("//*[@id=\"gwt-debug-cdbOk\"]")).click();
-			driver_cc.quit();
+			driverCC.findElement(By.xpath("//*[@id=\"top-toolbar-logout\"]")).click();
+			driverCC.findElement(By.xpath("//*[@id=\"gwt-debug-cdbOk\"]")).click();
+			driverCC.quit();
 			break;
 		default:
 
@@ -675,17 +675,17 @@ public class API {
 		String[][] metrics = new String[4][size+1]; // create a metrics array
 		
 		for (int i = 1; i <= size; i++) {// get name fields
-			String xpath_names = "//*[@id=\"monServiceTable\"]/div[1]/div[3]/table/thead/tr/th[" + i + "]/div/span";
+			String xpathNames = "//*[@id=\"monServiceTable\"]/div[1]/div[3]/table/thead/tr/th[" + i + "]/div/span";
 
-			try	{metrics[0][i] = driver.findElement(By.xpath(xpath_names)).getText();
+			try	{metrics[0][i] = driver.findElement(By.xpath(xpathNames)).getText();
 			} catch (StaleElementReferenceException e) {System.out.println(e.toString());}
 
 		}
 
 		for (int j = 1; j < 4; j++) {// get value fields for 3 services: Customer Service Chat, Service A, ServiceZen		
 			for (int i = 1; i <= size; i++) {
-				String xpath_values = "//*[@id=\"monServiceTable\"]/div[3]/div/div[1]/div/div/table/tbody/tr[" + j + "]/td[" + i + "]/div/div";
-				  try {metrics[j][i] = driver.findElement(By.xpath(xpath_values)).getText();
+				String xpathValues = "//*[@id=\"monServiceTable\"]/div[3]/div/div[1]/div/div/table/tbody/tr[" + j + "]/td[" + i + "]/div/div";
+				  try {metrics[j][i] = driver.findElement(By.xpath(xpathValues)).getText();
 				  } catch (StaleElementReferenceException e) {System.out.println(e.toString());}
 			}
 
@@ -710,9 +710,9 @@ public class API {
 
 		for (int i = 4; i <= 3+size; i++) {// get name fields
 
-			String xpath_names = "//*[@id=\"monUserTable\"]/div[1]/div[3]/table/thead/tr/th[" + i + "]/div/span";
+			String xpathNames = "//*[@id=\"monUserTable\"]/div[1]/div[3]/table/thead/tr/th[" + i + "]/div/span";
 
-			try	{agentsMetrics[0][i] = driver.findElement(By.xpath(xpath_names)).getText();
+			try	{agentsMetrics[0][i] = driver.findElement(By.xpath(xpathNames)).getText();
 			} catch (StaleElementReferenceException e) {System.out.println(e.toString());}	
 
 		}
@@ -721,9 +721,9 @@ public class API {
 		for (int j = 1; j <= numberOfAgents; j++) {// get value fields for 3 agents: Alan Jenks, Tony Cobb, User Super 
 			for (int i = 4; i <= 3+size; i++) {
 
-				String xpath_values = "//*[@id=\"monUserTable\"]/div[3]/div/div[1]/div/div/table/tbody/tr[" + j + "]/td[" + i + "]";
+				String xpathValues = "//*[@id=\"monUserTable\"]/div[3]/div/div[1]/div/div/table/tbody/tr[" + j + "]/td[" + i + "]";
 				
-				try	{agentsMetrics[j][i] = driver.findElement(By.xpath(xpath_values)).getText();
+				try	{agentsMetrics[j][i] = driver.findElement(By.xpath(xpathValues)).getText();
 				} catch (StaleElementReferenceException e) {System.out.println(e.toString());}	
 
 			}
@@ -749,9 +749,9 @@ public class API {
 
 		for (int i = 1; i <= size; i++) {//get name fields
 
-			String xpath_names = "//*[@id=\"monTeamTable\"]/div[1]/div[3]/table/thead/tr/th["+i+"]/div/span";
+			String xpathMetricsNames = "//*[@id=\"monTeamTable\"]/div[1]/div[3]/table/thead/tr/th["+i+"]/div/span";
 
-			try	{teamsMetrics[0][i] = driver.findElement(By.xpath(xpath_names)).getText();
+			try	{teamsMetrics[0][i] = driver.findElement(By.xpath(xpathMetricsNames)).getText();
 			} catch (StaleElementReferenceException e) {System.out.println(e.toString());}
 
 		}
@@ -760,8 +760,8 @@ public class API {
 		for (int j = 2; j < 4; j++) {// get value fields for 3 teams
 			for (int i = 1; i <= size; i++) {
 
-				String xpath_values =    "//*[@id=\"monTeamTable\"]/div[3]/div/div[1]/div/div/table/tbody/tr[" + j + "]/td[" + i + "]";	
-				try	{teamsMetrics[j][i] = driver.findElement(By.xpath(xpath_values)).getText();
+				String xpathMetricsValues =    "//*[@id=\"monTeamTable\"]/div[3]/div/div[1]/div/div/table/tbody/tr[" + j + "]/td[" + i + "]";	
+				try	{teamsMetrics[j][i] = driver.findElement(By.xpath(xpathMetricsValues)).getText();
 				} catch (StaleElementReferenceException e) {System.out.println(e.toString());}				
 
 			}
@@ -785,8 +785,8 @@ public class API {
 
 		for (int i = 1; i <= 15; i++) {// get name fields
 
-			String xpath_names = "//*[@id=\"monServiceTable\"]/div[1]/div[3]/table/thead/tr/th[" + i + "]/div/span";
-			servicesMetrics[0][i] = driver.findElement(By.xpath(xpath_names)).getText();
+			String xpathNames = "//*[@id=\"monServiceTable\"]/div[1]/div[3]/table/thead/tr/th[" + i + "]/div/span";
+			servicesMetrics[0][i] = driver.findElement(By.xpath(xpathNames)).getText();
 			System.out.print(servicesMetrics[0][i] + " ");
 
 		}
@@ -795,8 +795,8 @@ public class API {
 		for (int j = 1; j < 4; j++) {// get value fields for 3 services: Customer Service Chat, Service A, ServiceZen
 			for (int i = 1; i <= 15; i++) {
 
-				String xpath_values = "//*[@id=\"monServiceTable\"]/div[3]/div/div[1]/div/div/table/tbody/tr[" + j + "]/td[" + i + "]";
-				servicesMetrics[j][i] = driver.findElement(By.xpath(xpath_values)).getText();
+				String xpathMetricsValues = "//*[@id=\"monServiceTable\"]/div[3]/div/div[1]/div/div/table/tbody/tr[" + j + "]/td[" + i + "]";
+				servicesMetrics[j][i] = driver.findElement(By.xpath(xpathMetricsValues)).getText();
 				System.out.print(servicesMetrics[j][i] + " ");
 
 			}
@@ -815,29 +815,29 @@ public class API {
 	protected static void setServiceToAgent(String agentName) {
 		
 
-		String xpath_select = "//*[@title='Service Selector']";
+		String xpathSelect = "//*[@title='Service Selector']";
 //		String xpath_select = "/html/body/div[5]/div/div[2]/div/div/div[1]/div[2]/div[1]";
 //		String xpath_ServiceA = "/html/body/div[7]/div/div/div/div/table/tbody/tr[2]/td";
 		
-		String xpath_ServiceA = "//*[@aria-label='Service A']";
-		String service_names;
+		String xpathServiceA = "//*[@aria-label='Service A']";
+		String serviceNames;
 
 		switch (agentName) {
 		case "alan.jenks":
 			
 		    //Wait for element to be clickable
-		    WebDriverWait wait_aj = new WebDriverWait(driver_aj, 15);
-		    wait_aj.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_select)));
+		    WebDriverWait waitAJ = new WebDriverWait(driverAJ, 15);
+		    waitAJ.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
 
-			driver_aj.findElement(By.xpath(xpath_select)).click();
-			driver_aj.findElement(By.xpath(xpath_ServiceA)).click();
+			driverAJ.findElement(By.xpath(xpathSelect)).click();
+			driverAJ.findElement(By.xpath(xpathServiceA)).click();
 			
 			//Thread.sleep(1000);
 			
 			try {
 				// try to check setting of "Service A"
-				service_names = driver_aj.findElement(By.xpath(xpath_select)).getText();
-				System.out.println(service_names + " was set succesfully for agent " + agentName);
+				serviceNames = driverAJ.findElement(By.xpath(xpathSelect)).getText();
+				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
 				// Code for Handling exception
@@ -849,18 +849,18 @@ public class API {
 
 		    //Wait for element to be clickable
 			
-			System.out.println("screenshot inside of method --> " + Helper.captureScreenshot(driver_tb));
-		    WebDriverWait wait_tb = new WebDriverWait(driver_tb, 15);
-		    wait_tb.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_select)));
+			System.out.println("screenshot inside of method --> " + Helper.captureScreenshot(driverTC));
+		    WebDriverWait waitTC = new WebDriverWait(driverTC, 15);
+		    waitTC.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
 			
-			driver_tb.findElement(By.xpath(xpath_select)).click();
-			driver_tb.findElement(By.xpath(xpath_ServiceA)).click();
+			driverTC.findElement(By.xpath(xpathSelect)).click();
+			driverTC.findElement(By.xpath(xpathServiceA)).click();
 			
 //			Thread.sleep(1000);
 			try {
 				// // try to check setting of "Service A"
-				service_names = driver_tb.findElement(By.xpath(xpath_select)).getText();
-				System.out.println(service_names + " was set succesfully for agent " + agentName);
+				serviceNames = driverTC.findElement(By.xpath(xpathSelect)).getText();
+				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
 				// Code for Handling exception
@@ -870,18 +870,18 @@ public class API {
 		case "carlos.clapper":
 			
 		    //Wait for element to be clickable
-		    WebDriverWait wait_cc = new WebDriverWait(driver_cc, 15);
-		    wait_cc.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_select)));
+		    WebDriverWait waitCC = new WebDriverWait(driverCC, 15);
+		    waitCC.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
 
-			driver_cc.findElement(By.xpath(xpath_select)).click();
-			driver_cc.findElement(By.xpath(xpath_ServiceA)).click();
+			driverCC.findElement(By.xpath(xpathSelect)).click();
+			driverCC.findElement(By.xpath(xpathServiceA)).click();
 			
 //			Thread.sleep(1000);
 			
 			try {
 				// // try to check setting of "Service A"
-				service_names = driver_cc.findElement(By.xpath(xpath_select)).getText();
-				System.out.println(service_names + " was set succesfully for agent " + agentName);
+				serviceNames = driverCC.findElement(By.xpath(xpathSelect)).getText();
+				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
 				// Code for Handling exception
@@ -892,17 +892,17 @@ public class API {
 			
 		    //Wait for element to be clickable
 		    WebDriverWait wait = new WebDriverWait(driver, 15);
-		    wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_select)));
+		    wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
 
-			driver.findElement(By.xpath(xpath_select)).click();
-			driver.findElement(By.xpath(xpath_ServiceA)).click();
+			driver.findElement(By.xpath(xpathSelect)).click();
+			driver.findElement(By.xpath(xpathServiceA)).click();
 			
 //			Thread.sleep(1000);
 			
 			try {
 				// try to check setting of "Service A"
-				service_names = driver.findElement(By.xpath(xpath_select)).getText();
-				System.out.println(service_names + " was set succesfully for agent " + agentName);
+				serviceNames = driver.findElement(By.xpath(xpathSelect)).getText();
+				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
 				// Code for Handling exception
@@ -926,24 +926,24 @@ public class API {
 		String xpathSelectReadyStatus = "//*[@id=\"header-panel\"]/div"; // locator for READY status in agent desktop 
 
 		
-		String service_names;
-		String status_names;
+		String serviceNames;
+		String statusNames;
 
 		switch (agentName) {
 		case "alan.jenks":
 
 			System.out.println(agentName + " attempts to set READY");
-			driver_aj.findElement(By.xpath(xpathSelectStatus)).click();
-			System.out.println(Helper.captureScreenshot(driver_aj));
+			driverAJ.findElement(By.xpath(xpathSelectStatus)).click();
+			System.out.println(Helper.captureScreenshot(driverAJ));
 			wait(1000);
-			driver_aj.findElement(By.xpath(xpathReady)).click();	
-			System.out.println(Helper.captureScreenshot(driver_aj));
+			driverAJ.findElement(By.xpath(xpathReady)).click();	
+			System.out.println(Helper.captureScreenshot(driverAJ));
 
 			
 			try {
 			// try to find status Not Ready
-				status_names = driver_aj.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
-				System.out.println("click to STATUS field: " + status_names);
+				statusNames = driverAJ.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
+				System.out.println("click to STATUS field: " + statusNames);
 			
 		} catch (NoSuchElementException e) {
 			// Code for Handling exception
@@ -953,13 +953,13 @@ public class API {
 			break;
 		case "tony.cobb":
 
-			driver_tb.findElement(By.xpath(xpathSelectStatus)).click();
-			driver_tb.findElement(By.xpath(xpathReady)).click();	
+			driverTC.findElement(By.xpath(xpathSelectStatus)).click();
+			driverTC.findElement(By.xpath(xpathReady)).click();	
 			
 			try {
 			// try to find status Not Ready
-				status_names = driver_tb.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
-				System.out.println("click to STATUS field: " + status_names);
+				statusNames = driverTC.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
+				System.out.println("click to STATUS field: " + statusNames);
 			
 		} catch (NoSuchElementException e) {
 			// Code for Handling exception
@@ -969,13 +969,13 @@ public class API {
 			break;
 		case "carlos.clapper":
 
-			driver_cc.findElement(By.xpath(xpathSelectStatus)).click();
-			driver_cc.findElement(By.xpath(xpathReady)).click();	
+			driverCC.findElement(By.xpath(xpathSelectStatus)).click();
+			driverCC.findElement(By.xpath(xpathReady)).click();	
 
 			try {
 			// try to find status Not Ready
-				status_names = driver_cc.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
-				System.out.println("click to STATUS field: " + status_names);
+				statusNames = driverCC.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
+				System.out.println("click to STATUS field: " + statusNames);
 			
 		} catch (NoSuchElementException e) {
 			// Code for Handling exception
@@ -991,8 +991,8 @@ public class API {
 			
 			try {
 			// try to find status Not Ready
-				status_names = driver.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
-				System.out.println("click to STATUS field: " + status_names);
+				statusNames = driver.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
+				System.out.println("click to STATUS field: " + statusNames);
 			
 		} catch (NoSuchElementException e) {
 			// Code for Handling exception
@@ -1018,7 +1018,7 @@ public class API {
 
 			try {
 				// try to find the calling status element
-				String callNoAnswer = driver_aj.findElement(By.xpath("/html/body/div[5]/div/div[2]/div/div/div[2]/div[3]/div/div[1]/div[1]/div/div[10]/div[1]/div[6]")).getAttribute("class");
+				String callNoAnswer = driverAJ.findElement(By.xpath("/html/body/div[5]/div/div[2]/div/div/div[2]/div[3]/div/div[1]/div[1]/div/div[10]/div[1]/div[6]")).getAttribute("class");
 				
 				if (callNoAnswer.equals("b-desk-repeater-ixn-name-label")) {
 					callContinuing = true;
@@ -1038,7 +1038,7 @@ public class API {
 
 			try {
 				// try to find the calling status element
-				String callNoAnswer = driver_tb.findElement(By.xpath(
+				String callNoAnswer = driverTC.findElement(By.xpath(
 						"/html/body/div[5]/div/div[2]/div/div/div[2]/div[3]/div/div[1]/div[1]/div/div[10]/div[1]/div[6]"))
 						.getAttribute("class");
 				
@@ -1059,7 +1059,7 @@ public class API {
 
 			try {
 				// try to find the calling status element
-				String callNoAnswer = driver_cc.findElement(By.xpath(
+				String callNoAnswer = driverCC.findElement(By.xpath(
 						"/html/body/div[5]/div/div[2]/div/div/div[2]/div[3]/div/div[1]/div[1]/div/div[10]/div[1]/div[6]"))
 						.getAttribute("class");
 				
@@ -1115,7 +1115,7 @@ public class API {
 		case "alan.jenks":
 			// check flag
 			try {
-				driver_aj.findElement(By.xpath("//button[@title='Flag the call']")).click();
+				driverAJ.findElement(By.xpath("//button[@title='Flag the call']")).click();
 				System.out.println("Flag the call check PASSED");
 				return true;
 
@@ -1128,7 +1128,7 @@ public class API {
 		case "tony.cobb":
 			// check flag
 			try {
-				driver_tb.findElement(By.xpath("//button[@title='Flag the call']")).click();
+				driverTC.findElement(By.xpath("//button[@title='Flag the call']")).click();
 				System.out.println("Flag the call status PASSED");
 				return true;
 
@@ -1141,7 +1141,7 @@ public class API {
 		case "carlos.clapper":
 			// check flag
 			try {
-				driver_cc.findElement(By.xpath("//button[@title='Flag the call']")).click();
+				driverCC.findElement(By.xpath("//button[@title='Flag the call']")).click();
 				System.out.println("Flag the call status PASSED");
 				return true;
 
@@ -1179,7 +1179,7 @@ public class API {
 		case "alan.jenks":
 			// check retrieve
 			try {
-				driver_aj.findElement(By.xpath("//*[@id=\"cpRetrieve\"]")).click();
+				driverAJ.findElement(By.xpath("//*[@id=\"cpRetrieve\"]")).click();
 				System.out.println("RETRIEVE status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1191,7 +1191,7 @@ public class API {
 		case "tony.cobb":
 			// check retrieve
 			try {
-				driver_tb.findElement(By.xpath("//*[@id=\"cpRetrieve\"]")).click();
+				driverTC.findElement(By.xpath("//*[@id=\"cpRetrieve\"]")).click();
 				System.out.println("RETRIEVE status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1203,7 +1203,7 @@ public class API {
 		case "carlos.clapper":
 			// check retrieve
 			try {
-				driver_cc.findElement(By.xpath("//*[@id=\"cpRetrieve\"]")).click();
+				driverCC.findElement(By.xpath("//*[@id=\"cpRetrieve\"]")).click();
 				System.out.println("RETRIEVE status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1239,7 +1239,7 @@ public class API {
 		case "alan.jenks":
 			// check hold
 			try {
-				driver_aj.findElement(By.xpath("//*[@id='cpHold']/div")).click();
+				driverAJ.findElement(By.xpath("//*[@id='cpHold']/div")).click();
 				System.out.println("HOLD status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1251,7 +1251,7 @@ public class API {
 		case "tony.cobb":
 			// check hold
 			try {
-				driver_tb.findElement(By.xpath("//*[@id='cpHold']/div")).click();
+				driverTC.findElement(By.xpath("//*[@id='cpHold']/div")).click();
 				System.out.println("HOLD status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1263,7 +1263,7 @@ public class API {
 		case "carlos.clapper":
 			// check hold
 			try {
-				driver_cc.findElement(By.xpath("//*[@id='cpHold']/div")).click();
+				driverCC.findElement(By.xpath("//*[@id='cpHold']/div")).click();
 				System.out.println("HOLD status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1299,7 +1299,7 @@ public class API {
 		case "alan.jenks":
 			// check contact identification
 			try {
-				driver_aj.findElement(By.xpath("//span[text()='User Super']")).click();
+				driverAJ.findElement(By.xpath("//span[text()='User Super']")).click();
 				System.out.println("contact identification PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1311,7 +1311,7 @@ public class API {
 		case "tony.cobb":
 			// check contact identification
 			try {
-				driver_tb.findElement(By.xpath("//span[text()='User Super']")).click();
+				driverTC.findElement(By.xpath("//span[text()='User Super']")).click();
 				System.out.println("contact identification PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1323,7 +1323,7 @@ public class API {
 		case "carlos.clapper":
 			// check contact identification
 			try {
-				driver_cc.findElement(By.xpath("//span[text()='User Super']")).click();
+				driverCC.findElement(By.xpath("//span[text()='User Super']")).click();
 				System.out.println("contact identification PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1360,7 +1360,7 @@ public class API {
 		case "alan.jenks":
 			// check popup
 			try {
-				driver_aj.findElement(By.xpath("//div[@title='URL']")).click();
+				driverAJ.findElement(By.xpath("//div[@title='URL']")).click();
 				System.out.println("Popup URL PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1372,7 +1372,7 @@ public class API {
 		case "tony.cobb":
 			// check popup
 			try {
-				driver_tb.findElement(By.xpath("//div[@title='URL']")).click();
+				driverTC.findElement(By.xpath("//div[@title='URL']")).click();
 				System.out.println("Popup URL PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1384,7 +1384,7 @@ public class API {
 		case "carlos.clapper":
 			// check popup
 			try {
-				driver_cc.findElement(By.xpath("//div[@title='URL']")).click();
+				driverCC.findElement(By.xpath("//div[@title='URL']")).click();
 				System.out.println("Popup URL PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1421,7 +1421,7 @@ public class API {
 		case "alan.jenks":
 			// check activity form
 			try {
-				driver_aj.findElement(By.xpath("//div[@title='AF_ServiceA']")).click();
+				driverAJ.findElement(By.xpath("//div[@title='AF_ServiceA']")).click();
 				System.out.println("Service Form PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1433,7 +1433,7 @@ public class API {
 		case "tony.cobb":
 			// check activity form
 			try {
-				driver_tb.findElement(By.xpath("//div[@title='AF_ServiceA']")).click();
+				driverTC.findElement(By.xpath("//div[@title='AF_ServiceA']")).click();
 				System.out.println("Service Form PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1445,7 +1445,7 @@ public class API {
 		case "carlos.clapper":
 			// check activity form
 			try {
-				driver_cc.findElement(By.xpath("//div[@title='AF_ServiceA']")).click();
+				driverCC.findElement(By.xpath("//div[@title='AF_ServiceA']")).click();
 				System.out.println("Service Form PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
@@ -1482,26 +1482,26 @@ public class API {
 		switch (agentName) {
 		case "alan.jenks":
 			// agentBlindTransfer
-			driver_aj.findElement(By.xpath("//button[@id='cpReminder']/following-sibling::button/following-sibling::button")).click(); // initiate transfer button
-			driver_aj.findElement(By.xpath("//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input")).sendKeys(calleeNumber); // it is ok too!`
+			driverAJ.findElement(By.xpath("//button[@id='cpReminder']/following-sibling::button/following-sibling::button")).click(); // initiate transfer button
+			driverAJ.findElement(By.xpath("//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input")).sendKeys(calleeNumber); // it is ok too!`
 			
 //			driver_aj.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); // blind transfer button
-			driver_aj.findElement(By.xpath("/html/body/div[10]//button[@title='Blind transfer']")).click(); // blind transfer button
+			driverAJ.findElement(By.xpath("/html/body/div[10]//button[@title='Blind transfer']")).click(); // blind transfer button
 			System.out.println("blind transfer button was clicked!!!!!!!!!!!!");
 			
 			break;
 		case "tony.cobb":
 			// agentBlindTransfer
-			driver_tb.findElement(By.xpath("//button[@id='cpReminder']/following-sibling::button/following-sibling::button")).click(); // initiate transfer button
-			driver_tb.findElement(By.xpath("//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input")).sendKeys(calleeNumber); 
-			driver_tb.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); // blind transfer button
+			driverTC.findElement(By.xpath("//button[@id='cpReminder']/following-sibling::button/following-sibling::button")).click(); // initiate transfer button
+			driverTC.findElement(By.xpath("//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input")).sendKeys(calleeNumber); 
+			driverTC.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); // blind transfer button
 			
 			break;
 		case "carlos.clapper":
 			// agentBlindTransfer
-			driver_cc.findElement(By.xpath("//button[@id='cpReminder']/following-sibling::button/following-sibling::button")).click(); // initiate transfer button
-			driver_cc.findElement(By.xpath("//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input")).sendKeys(calleeNumber); 
-			driver_cc.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); // blind transfer button
+			driverCC.findElement(By.xpath("//button[@id='cpReminder']/following-sibling::button/following-sibling::button")).click(); // initiate transfer button
+			driverCC.findElement(By.xpath("//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input")).sendKeys(calleeNumber); 
+			driverCC.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); // blind transfer button
 			break;
 		default:
 			// agentBlindTransfer
@@ -1521,38 +1521,38 @@ public class API {
 	   */	
 	protected static void agentConsultCall(String agentName, String calleeNumber) {
 		
-		String InitalTransferButton = "//*[@id=\"contact-panel\"]/div/div/div[1]/div[2]/div/div[1]/div[6]/button[13]";
-		String EnterNumber = "/html/body/div[10]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/input";
-		String SubmitNumber = "//*/div[1]/div/div/div[1]/div[2]/div/div/button/div[@class='b-svg']";
+		String initialTransferButton = "//*[@id=\"contact-panel\"]/div/div/div[1]/div[2]/div/div[1]/div[6]/button[13]";
+		String enterNumber = "/html/body/div[10]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/input";
+		String submitNumber = "//*/div[1]/div/div/div[1]/div[2]/div/div/button/div[@class='b-svg']";
 
 		switch (agentName) {
 		case "alan.jenks":
 			// Consult call
-			driver_aj.findElement(By.xpath(InitalTransferButton)).click(); // INITIAL TRANSFER BUTTON 
-			driver_aj.findElement(By.xpath(EnterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
-			driver_aj.findElement(By.xpath(SubmitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
+			driverAJ.findElement(By.xpath(initialTransferButton)).click(); // INITIAL TRANSFER BUTTON 
+			driverAJ.findElement(By.xpath(enterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
+			driverAJ.findElement(By.xpath(submitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
 			System.out.println(agentName + " initiate call button was clicked!");
 			
 			break;
 		case "tony.cobb":
 			// Consult call
-			driver_tb.findElement(By.xpath(InitalTransferButton)).click(); // INITIAL TRANSFER BUTTON 
-			driver_tb.findElement(By.xpath(EnterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
-			driver_tb.findElement(By.xpath(SubmitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
+			driverTC.findElement(By.xpath(initialTransferButton)).click(); // INITIAL TRANSFER BUTTON 
+			driverTC.findElement(By.xpath(enterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
+			driverTC.findElement(By.xpath(submitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
 			System.out.println(agentName + " initiate call button was clicked!");		
 			break;
 		case "carlos.clapper":
 			// Consult call
-			driver_cc.findElement(By.xpath(InitalTransferButton)).click(); // INITIAL TRANSFER BUTTON 
-			driver_cc.findElement(By.xpath(EnterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
-			driver_cc.findElement(By.xpath(SubmitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
+			driverCC.findElement(By.xpath(initialTransferButton)).click(); // INITIAL TRANSFER BUTTON 
+			driverCC.findElement(By.xpath(enterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
+			driverCC.findElement(By.xpath(submitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
 			System.out.println(agentName + " initiate call button was clicked!");
 			break;
 		default:
 			// Consult call
-			driver.findElement(By.xpath(InitalTransferButton)).click(); // INITIAL TRANSFER BUTTON 
-			driver.findElement(By.xpath(EnterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
-			driver.findElement(By.xpath(SubmitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
+			driver.findElement(By.xpath(initialTransferButton)).click(); // INITIAL TRANSFER BUTTON 
+			driver.findElement(By.xpath(enterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
+			driver.findElement(By.xpath(submitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
 			System.out.println(agentName + " initiate call button was clicked!");
 		}
 	}// agentConsultCall	
@@ -1568,15 +1568,15 @@ public class API {
 		switch (agentName) {
 		case "alan.jenks":
 			// fillOutNotes
-			driver_aj.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 
+			driverAJ.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 
 			break;
 		case "tony.cobb":
 			// fillOutNotes
-			driver_tb.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 	
+			driverTC.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 	
 			break;
 		case "carlos.clapper":
 			// fillOutNotes
-			driver_cc.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 
+			driverCC.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 
 			break;
 		default:
 			// fillOutNotes
@@ -1593,35 +1593,35 @@ public class API {
 	   */	
 	protected static void selectDisposition(String agentName) {
 		
-	String SelectDispositionButton = "//*[@id='gwt-uid-92']"; // SELECT DISPOSITION BUTTON
-	String SelectDisposition = "/html/body/div[9]/div/div/div/div/table/tbody/tr[3]/td"; // SELECT DISPOSITION (PRODUCT SOLD)	
-	String CompleteDispositionButton = "//*[@id=\"contact-panel\"]/div/div/div[1]/div[5]/div/div[1]/button/div"; // COMPLETE DISPOSITION
+	String selectDispositionButton = "//*[@id='gwt-uid-92']"; // SELECT DISPOSITION BUTTON
+	String selectDisposition = "/html/body/div[9]/div/div/div/div/table/tbody/tr[3]/td"; // SELECT DISPOSITION (PRODUCT SOLD)	
+	String completeDispositionButton = "//*[@id=\"contact-panel\"]/div/div/div[1]/div[5]/div/div[1]/button/div"; // COMPLETE DISPOSITION
 
 		switch (agentName) {
 		case "alan.jenks":
 			// selectDisposition
-			driver_aj.findElement(By.xpath(SelectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
-			driver_aj.findElement(By.xpath(SelectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
-			driver_aj.findElement(By.xpath(CompleteDispositionButton)).click(); // COMPLETE DISPOSITION
+			driverAJ.findElement(By.xpath(selectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
+			driverAJ.findElement(By.xpath(selectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
+			driverAJ.findElement(By.xpath(completeDispositionButton)).click(); // COMPLETE DISPOSITION
 
 			break;
 		case "tony.cobb":
 			// selectDisposition
-			driver_tb.findElement(By.xpath(SelectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
-			driver_tb.findElement(By.xpath(SelectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
-			driver_tb.findElement(By.xpath(CompleteDispositionButton)).click(); // COMPLETE DISPOSITION
+			driverTC.findElement(By.xpath(selectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
+			driverTC.findElement(By.xpath(selectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
+			driverTC.findElement(By.xpath(completeDispositionButton)).click(); // COMPLETE DISPOSITION
 			break;
 		case "carlos.clapper":
 			// selectDisposition
-			driver_cc.findElement(By.xpath(SelectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
-			driver_cc.findElement(By.xpath(SelectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
-			driver_cc.findElement(By.xpath(CompleteDispositionButton)).click(); // COMPLETE DISPOSITION
+			driverCC.findElement(By.xpath(selectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
+			driverCC.findElement(By.xpath(selectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
+			driverCC.findElement(By.xpath(completeDispositionButton)).click(); // COMPLETE DISPOSITION
 			break;
 		default:
 			// selectDisposition
-			driver.findElement(By.xpath(SelectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
-			driver.findElement(By.xpath(SelectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
-			driver.findElement(By.xpath(CompleteDispositionButton)).click(); // COMPLETE DISPOSITION
+			driver.findElement(By.xpath(selectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
+			driver.findElement(By.xpath(selectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
+			driver.findElement(By.xpath(completeDispositionButton)).click(); // COMPLETE DISPOSITION
 		}
 	}// end of selectDisposition	
 

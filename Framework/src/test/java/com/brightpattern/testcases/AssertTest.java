@@ -2,7 +2,7 @@ package com.brightpattern.testcases;
 
 import org.testng.annotations.Test;
 
-public class AssertTest extends API {
+public class AssertTest extends AppUtils {
 
 	@Test
 	public void DimaAssert(String[] args) {

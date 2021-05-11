@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 
 
-public class LoginTestAD5 extends API {
+public class LoginTestAD5 extends AppUtils {
 /*	
 	private DimaAfter scenario = new DimaAfter();
 	 

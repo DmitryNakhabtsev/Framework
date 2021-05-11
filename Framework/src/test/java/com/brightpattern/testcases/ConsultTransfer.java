@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.brightpattern.utility.Helper;
-public class ConsultTransfer extends API {
+public class ConsultTransfer extends AppUtils {
 	
 /*	
 
@@ -143,13 +143,13 @@ test_089_ServiceA_INHandled					IN Handled				Inbound interactions handled by ag
 		
 		agentInit(agent1, pwd);
 		setServiceToAgent(agent1);
-		System.out.println(Helper.captureScreenshot(driver_aj));
+		System.out.println(Helper.captureScreenshot(driverAJ));
 		
 		agentInit(agent2, pwd);
 		wait(1000);
-		System.out.println(Helper.captureScreenshot(driver_tb));
+		System.out.println(Helper.captureScreenshot(driverTC));
 		setServiceToAgent(agent2);
-		System.out.println(Helper.captureScreenshot(driver_tb));
+		System.out.println(Helper.captureScreenshot(driverTC));
 		
 		agentCallTo(admin, "8003");
 		wait(action);
@@ -159,7 +159,7 @@ test_089_ServiceA_INHandled					IN Handled				Inbound interactions handled by ag
 		
 		agentCallAnswer(agent1);
 		wait(callDuration);
-		System.out.println(Helper.captureScreenshot(driver_aj));
+		System.out.println(Helper.captureScreenshot(driverAJ));
 		
 		agentEndCall(agent1);
 		driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']")).click(); //supervision panel activation

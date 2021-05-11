@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.brightpattern.utility.Helper;
-public class LoginTestADJenkins extends API {
+public class LoginTestADJenkins extends AppUtils {
 /*	
 
 	
