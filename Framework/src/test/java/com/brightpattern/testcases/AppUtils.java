@@ -47,18 +47,7 @@ import com.brightpattern.utility.Helper;
  *        to see the call recordings). Play voice recording from Activity
  *        history
  */
-/**
- * @author admin
- *
- */
-/**
- * @author admin
- *
- */
-/**
- * @author admin
- *
- */
+
 public class AppUtils {
 //**************************** WERTC LOCATORS ***********************************
 //	ACCEPT CALL ->
@@ -143,34 +132,26 @@ public class AppUtils {
 	    options.addArguments("--window-size=1920,1200");
 
 		switch (agentName) {
-		
-		case "alan.jenks":
-			
-			  driverAJ = new ChromeDriver(options);
-			  driverAJ.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driverAJ.manage().window().maximize();
 
+		case "alan.jenks":
+			driverAJ = new ChromeDriver(options);
+			driverAJ.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driverAJ.manage().window().maximize();
 			return driverAJ;
 		case "tony.cobb":
-			
-			  driverTC = new ChromeDriver(options);
-			  driverTC.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driverTC.manage().window().maximize();
-
+			driverTC = new ChromeDriver(options);
+			driverTC.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driverTC.manage().window().maximize();
 			return driverTC;
 		case "carlos.clapper":
-			
-			  driverCC = new ChromeDriver(options);
-			  driverCC.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driverCC.manage().window().maximize();
-
+			driverCC = new ChromeDriver(options);
+			driverCC.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driverCC.manage().window().maximize();
 			return driverCC;
 		default:
-			
-			  driver = new ChromeDriver(options);
-			  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			  driver.manage().window().maximize();
-
+			driver = new ChromeDriver(options);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().window().maximize();
 			return driver;
 		}
 }
@@ -274,7 +255,7 @@ public class AppUtils {
 					System.out.println("AGENT " + agentName + " WAS LOGIN successfully");
 
 				} catch (NoSuchElementException e) {
-					// Code for Handling exception
+					
 					System.out.println(e.toString());
 				}
 				
@@ -287,7 +268,7 @@ public class AppUtils {
 					System.out.println("AGENT " + agentName + " has dial pad activation");
 
 				} catch (Exception e) {
-					// Code for Handling exception
+					
 					System.out.println(agentName + " can't activate dial pad ->>> " + e.toString());
 				}
 			  
@@ -313,7 +294,7 @@ public class AppUtils {
 					System.out.println("AGENT " + agentName + " WAS LOGIN successfully");
 
 				} catch (NoSuchElementException e) {
-					// Code for Handling exception
+					
 					System.out.println(e.toString());
 				}
 
@@ -323,7 +304,7 @@ public class AppUtils {
 					System.out.println("AGENT " + agentName + " has dial pad activation");
 
 				} catch (Exception e) {
-					// Code for Handling exception
+					
 					System.out.println(agentName + " can't activate dial pad ->>> " + e.toString());
 				}
 		    break;
@@ -346,7 +327,7 @@ public class AppUtils {
 				  System.out.println("AGENT "+agentName+" WAS LOGIN successfully");
 				  
 			  } catch (NoSuchElementException e) {
-				  // Code for Handling exception
+				  
 				  System.out.println(e.toString());
 			  }
 
@@ -357,7 +338,7 @@ public class AppUtils {
 					System.out.println("AGENT " + agentName + " has dial pad activation");
 
 				} catch (Exception e) {
-					// Code for Handling exception
+					
 					System.out.println(agentName + " can't activate dial pad ->>> " + e.toString());
 				}
 			  break;
@@ -379,7 +360,7 @@ public class AppUtils {
 					System.out.println("AGENT " + agentName + " WAS LOGIN successfully");
 
 				} catch (NoSuchElementException e) {
-					// Code for Handling exception
+					
 					System.out.println(e.toString());
 				}
 
@@ -392,7 +373,7 @@ public class AppUtils {
 					System.out.println("AGENT " + agentName + " has supervision panel activation");
 
 				} catch (Exception e) {
-					// Code for Handling exception
+					
 					System.out.println("can't activate supervision panel -> "+e.toString());
 				}
 			  
@@ -407,7 +388,7 @@ public class AppUtils {
 					System.out.println("AGENT " + agentName + " has dial pad activation");
 
 				} catch (Exception e) {
-					// Code for Handling exception
+					
 					System.out.println(agentName + " can't activate dial pad ->>> " + e.toString());
 				}
 			  
@@ -426,46 +407,41 @@ public class AppUtils {
 	   * @param calleeNumber enter the phone number
 	   */	
 	protected static void agentCallTo(String agentName, String calleeNumber) {
+		String numberFieldXpath = "//*[@id=\"sp-destination\"]";
+		String callButtonXpath = "//*[@id=\"dial-toolbar-call\"]/button";
 
 		switch (agentName) {
 		case "alan.jenks":
 			// input field for enter number, call to calleeNumber
-			driverAJ.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);
-			driverAJ.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button
+			driverAJ.findElement(By.xpath(numberFieldXpath)).sendKeys(calleeNumber);
+			driverAJ.findElement(By.xpath(callButtonXpath)).click(); // initiate call button
 			break;
 		case "tony.cobb":
 			// input field for enter number, call tocalleeNumber
-			driverTC.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);
-			driverTC.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button
+			driverTC.findElement(By.xpath(numberFieldXpath)).sendKeys(calleeNumber);
+			driverTC.findElement(By.xpath(callButtonXpath)).click(); // initiate call button
 			break;
 		case "carlos.clapper":
 			// input field for enter number, call tocalleeNumber
-			driverCC.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);
-			driverCC.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button
+			driverCC.findElement(By.xpath(numberFieldXpath)).sendKeys(calleeNumber);
+			driverCC.findElement(By.xpath(callButtonXpath)).click(); // initiate call button
 			break;
 		default:
-			// input field for enter number, call tocalleeNumber
-
-			driver.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button
-			
-			
+			driver.findElement(By.xpath(callButtonXpath)).click(); // initiate call button
+						
 			  try
 			  {
-				  driver.findElement(By.xpath("//*[@id=\"sp-destination\"]")).sendKeys(calleeNumber);	
-				  System.out.println("AGENT "+ agentName +" ENTER NUMBER of " + calleeNumber);
-				  
-			  } catch (NoSuchElementException e) {
-				  // Code for Handling exception
+				  driver.findElement(By.xpath(numberFieldXpath)).sendKeys(calleeNumber);	
+				  System.out.println("AGENT "+ agentName +" ENTER NUMBER of " + calleeNumber);				  
+			  } catch (NoSuchElementException e) {			  
 				  System.out.println(e.toString() + "AGENT "+ agentName +" ENTER NUMBER of " + calleeNumber + "FAILED!!! !!! !!!");
 			  }
 			  
 			  try
 			  {
-				  driver.findElement(By.xpath("//*[@id=\"dial-toolbar-call\"]/button")).click(); // initiate call button	
-				  System.out.println("AGENT "+ agentName +" CLICK call button FOR " + calleeNumber);
-				  
-			  } catch (NoSuchElementException e) {
-				  // Code for Handling exception
+				  driver.findElement(By.xpath(callButtonXpath)).click(); // initiate call button	
+				  System.out.println("AGENT "+ agentName +" CLICK call button FOR " + calleeNumber);				  
+			  } catch (NoSuchElementException e) {			  
 				  System.out.println(e.toString() + "AGENT "+ agentName +" CLICK call button FOR " + calleeNumber + "FAILED!!! !!! !!!");
 			  }
 			
@@ -478,54 +454,42 @@ public class AppUtils {
 	   * @param agentName enter an agent Name
 	   */
 	protected static void agentEndCall(String agentName) {
+		String endButtonXpath = "//*[@id='cpEndCall']";
 
 		switch (agentName) {
-		case "alan.jenks":
-
-			
-			try //TRY to click the "end call" button
+		case "alan.jenks":			
+			try 
 			  {
-				driverAJ.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call	
-				  System.out.println("AGENT "+ agentName +" ended the call");
-				  
-			  } catch (NoSuchElementException e) {
-				  // Code for Handling exception
+				driverAJ.findElement(By.xpath(endButtonXpath)).click(); // button end call	
+				  System.out.println("AGENT "+ agentName +" ended the call");		  
+			  } catch (NoSuchElementException e) {				  
 				  System.out.println(e.toString() + "AGENT "+ agentName +" click END CALL button FAILED!!! !!! !!!");
-			  }
-			
+			  }			
 			break;
-		case "tony.cobb":
-			
-			try //TRY to click the "end call" button
+		case "tony.cobb":			
+			try 
 			  {
-				driverTC.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
-				  System.out.println("AGENT "+ agentName +" ended the call");
-				  
-			  } catch (NoSuchElementException e) {
-				  // Code for Handling exception
+				driverTC.findElement(By.xpath(endButtonXpath)).click(); // button end call
+				  System.out.println("AGENT "+ agentName +" ended the call");		  
+			  } catch (NoSuchElementException e) {				  
 				  System.out.println(e.toString() + "AGENT "+ agentName +" click END CALL button FAILED!!! !!! !!!");
 			  }
 			break;
-		case "carlos.clapper":
-			
-			try //TRY to click the "end call" button
+		case "carlos.clapper":		
+			try 
 			  {
-				driverCC.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
-				  System.out.println("AGENT "+ agentName +" ended the call");
-				  
-			  } catch (NoSuchElementException e) {
-				  // Code for Handling exception
+				driverCC.findElement(By.xpath(endButtonXpath)).click(); // button end call
+				  System.out.println("AGENT "+ agentName +" ended the call");			  
+			  } catch (NoSuchElementException e) {				  
 				  System.out.println(e.toString() + "AGENT "+ agentName +" click END CALL button FAILED!!! !!! !!!");
 			  }
 			break;
 		default:
-			try //TRY to click the "end call" button
+			try 
 			  {
-				driver.findElement(By.xpath("//*[@id=\"cpEndCall\"]")).click(); // button end call
-				  System.out.println("AGENT "+ agentName +" ended the call");
-				  
-			  } catch (NoSuchElementException e) {
-				  // Code for Handling exception
+				driver.findElement(By.xpath(endButtonXpath)).click(); // button end call
+				  System.out.println("AGENT "+ agentName +" ended the call");			  
+			  } catch (NoSuchElementException e) {				  
 				  System.out.println(e.toString() + "AGENT "+ agentName +" click END CALL button FAILED!!! !!! !!!");
 			  }
 		}
@@ -542,7 +506,7 @@ public class AppUtils {
 		switch (agentName) {
 		case "alan.jenks":
 
-		    //Wait for element to be clickable
+		    //Wait for element to be Clickable
 		    WebDriverWait waitAJ = new WebDriverWait(driverAJ, 15);
 		    waitAJ.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
 			System.out.println("Complete Transfer button is clickable for " + agentName);
@@ -550,13 +514,13 @@ public class AppUtils {
 			driverAJ.findElement(By.xpath(xpathSelect)).click(); // "Complete Transfer" button
 			break;
 		case "tony.cobb":
-			driverTC.findElement(By.xpath(xpathSelect)).click(); // "Complete Transfer" button
+			driverTC.findElement(By.xpath(xpathSelect)).click(); 
 			break;
 		case "carlos.clapper":
-			driverCC.findElement(By.xpath(xpathSelect)).click(); // "Complete Transfer" button
+			driverCC.findElement(By.xpath(xpathSelect)).click(); 
 			break;
 		default:
-			driver.findElement(By.xpath(xpathSelect)).click(); // "Complete Transfer" button
+			driver.findElement(By.xpath(xpathSelect)).click(); 
 		}
 	}// end of agentCompleteTransfer
 	
@@ -580,7 +544,7 @@ public class AppUtils {
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "ACCEPT CALL for " + agentName + " was not set");
 			}
 					
@@ -592,7 +556,7 @@ public class AppUtils {
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "ACCEPT CALL for " + agentName + " was not set");
 			}
 			
@@ -604,7 +568,7 @@ public class AppUtils {
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "ACCEPT CALL for " + agentName + " was not set");
 			}
 			break;
@@ -615,7 +579,7 @@ public class AppUtils {
 				System.out.println("ACCEPT CALL was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "ACCEPT CALL for " + agentName + " was not set");
 			}
 		}
@@ -840,7 +804,7 @@ public class AppUtils {
 				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "Service A for " + agentName + " was not set");
 			}
 			
@@ -863,7 +827,7 @@ public class AppUtils {
 				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "Service A for " + agentName + " was not set");
 			}
 			break;
@@ -884,7 +848,7 @@ public class AppUtils {
 				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "Service A for " + agentName + " was not set");
 			}
 			break;
@@ -905,7 +869,7 @@ public class AppUtils {
 				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "Service A for " + agentName + " was not set");
 			}
 		}
@@ -919,12 +883,9 @@ public class AppUtils {
 	   */	
 	protected static void setReadyToAgent(String agentName) {
 		
-		
-//		String xpathSelectStatus ="//*[@id=\"gwt-debug-acStateMenuContainer\"]/div[1]"; // <-   xpathSelectStatus /img
 		String xpathSelectStatus ="//*[@id='header-panel']/div"; //*[@id='header-panel']/div
 		String xpathReady = "//*[@title='Ready']";
 		String xpathSelectReadyStatus = "//*[@id=\"header-panel\"]/div"; // locator for READY status in agent desktop 
-
 		
 		String serviceNames;
 		String statusNames;
@@ -932,72 +893,53 @@ public class AppUtils {
 		switch (agentName) {
 		case "alan.jenks":
 
-			System.out.println(agentName + " attempts to set READY");
+//			System.out.println(agentName + " attempts to set READY");
 			driverAJ.findElement(By.xpath(xpathSelectStatus)).click();
-			System.out.println(Helper.captureScreenshot(driverAJ));
-			wait(1000);
+//			System.out.println(Helper.captureScreenshot(driverAJ));
 			driverAJ.findElement(By.xpath(xpathReady)).click();	
-			System.out.println(Helper.captureScreenshot(driverAJ));
-
-			
+//			System.out.println(Helper.captureScreenshot(driverAJ));			
 			try {
-			// try to find status Not Ready
 				statusNames = driverAJ.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
-				System.out.println("click to STATUS field: " + statusNames);
-			
-		} catch (NoSuchElementException e) {
-			// Code for Handling exception
-			System.out.println(e.toString() + "agent" +  agentName + "status was not changed");
-		}
+//				System.out.println("click to STATUS field: " + statusNames);
+			} catch (NoSuchElementException e) {
+				System.out.println(e.toString() + "agent" + agentName + "status was not changed");
+			}
 			
 			break;
 		case "tony.cobb":
 
 			driverTC.findElement(By.xpath(xpathSelectStatus)).click();
-			driverTC.findElement(By.xpath(xpathReady)).click();	
-			
-			try {
-			// try to find status Not Ready
+			driverTC.findElement(By.xpath(xpathReady)).click();				
+			try {				
 				statusNames = driverTC.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
-				System.out.println("click to STATUS field: " + statusNames);
-			
-		} catch (NoSuchElementException e) {
-			// Code for Handling exception
-			System.out.println(e.toString() + "agent" +  agentName + "status was not changed");
-		}
+//				System.out.println("click to STATUS field: " + statusNames);
+			} catch (NoSuchElementException e) {
+				System.out.println(e.toString() + "agent" + agentName + "status was not changed");
+			}
 		
 			break;
 		case "carlos.clapper":
 
 			driverCC.findElement(By.xpath(xpathSelectStatus)).click();
 			driverCC.findElement(By.xpath(xpathReady)).click();	
-
 			try {
-			// try to find status Not Ready
 				statusNames = driverCC.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
-				System.out.println("click to STATUS field: " + statusNames);
-			
-		} catch (NoSuchElementException e) {
-			// Code for Handling exception
-			System.out.println(e.toString() + "agent" +  agentName + "status was not changed");
-		}
+//				System.out.println("click to STATUS field: " + statusNames);
+			} catch (NoSuchElementException e) {
+				System.out.println(e.toString() + "agent" + agentName + "status was not changed");
+			}
 			
 			break;
 		default:
 
 			driver.findElement(By.xpath(xpathSelectStatus)).click();
-			driver.findElement(By.xpath(xpathReady)).click();	
-
-			
+			driver.findElement(By.xpath(xpathReady)).click();				
 			try {
-			// try to find status Not Ready
 				statusNames = driver.findElement(By.xpath(xpathSelectReadyStatus)).getAttribute("aria-label");
-				System.out.println("click to STATUS field: " + statusNames);
-			
-		} catch (NoSuchElementException e) {
-			// Code for Handling exception
-			System.out.println(e.toString() + "agent" +  agentName + "status was not changed");
-		}
+//				System.out.println("click to STATUS field: " + statusNames);
+			} catch (NoSuchElementException e) {
+				System.out.println(e.toString() + "agent" + agentName + "status was not changed");
+			}
 			
 		}
 	}// end of setReadyToAgent
@@ -1012,13 +954,14 @@ public class AppUtils {
 	protected static boolean checkCalling(String agentName) {
 
 		boolean callContinuing=false;
+		String callStatusXpath = "/html/body/div[5]/div/div[2]/div/div/div[2]/div[3]/div/div[1]/div[1]/div/div[10]/div[1]/div[6]";
 
 		switch (agentName) {
 		case "alan.jenks":
 
 			try {
 				// try to find the calling status element
-				String callNoAnswer = driverAJ.findElement(By.xpath("/html/body/div[5]/div/div[2]/div/div/div[2]/div[3]/div/div[1]/div[1]/div/div[10]/div[1]/div[6]")).getAttribute("class");
+				String callNoAnswer = driverAJ.findElement(By.xpath(callStatusXpath)).getAttribute("class");
 				
 				if (callNoAnswer.equals("b-desk-repeater-ixn-name-label")) {
 					callContinuing = true;
@@ -1027,7 +970,6 @@ public class AppUtils {
 				return callContinuing;
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
 				System.out.println(e.toString() + "agent" + agentName + "is not calling");
 				callContinuing = false;
 				return callContinuing;
@@ -1038,10 +980,8 @@ public class AppUtils {
 
 			try {
 				// try to find the calling status element
-				String callNoAnswer = driverTC.findElement(By.xpath(
-						"/html/body/div[5]/div/div[2]/div/div/div[2]/div[3]/div/div[1]/div[1]/div/div[10]/div[1]/div[6]"))
-						.getAttribute("class");
-				
+				String callNoAnswer = driverTC.findElement(By.xpath(callStatusXpath)).getAttribute("class");
+
 				if (callNoAnswer.equals("b-desk-repeater-ixn-name-label")) {
 					callContinuing = true;
 					System.out.println("agent " + agentName + " is calling");
@@ -1049,7 +989,6 @@ public class AppUtils {
 				return callContinuing;
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
 				System.out.println(e.toString() + "agent" + agentName + "is not calling");
 				callContinuing = false;
 				return callContinuing;
@@ -1059,9 +998,7 @@ public class AppUtils {
 
 			try {
 				// try to find the calling status element
-				String callNoAnswer = driverCC.findElement(By.xpath(
-						"/html/body/div[5]/div/div[2]/div/div/div[2]/div[3]/div/div[1]/div[1]/div/div[10]/div[1]/div[6]"))
-						.getAttribute("class");
+				String callNoAnswer = driverCC.findElement(By.xpath(callStatusXpath)).getAttribute("class");
 				
 				if (callNoAnswer.equals("b-desk-repeater-ixn-name-label")) {
 					callContinuing = true;
@@ -1070,7 +1007,6 @@ public class AppUtils {
 				return callContinuing;
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
 				System.out.println(e.toString() + "agent" + agentName + "is not calling");
 				callContinuing = false;
 				return callContinuing;
@@ -1081,8 +1017,8 @@ public class AppUtils {
 
 			try {
 				// try to find the calling status element
-				String callNoAnswer = driver.findElement(By.xpath(
-						"/html/body/div[5]/div/div[2]/div/div/div[2]/div[3]/div/div[1]/div[1]/div/div[10]/div[1]/div[6]"))
+				String callNoAnswer = driver
+						.findElement(By.xpath(callStatusXpath))
 						.getAttribute("class");
 
 				if (callNoAnswer.equals("b-desk-repeater-ixn-name-label")) {
@@ -1092,12 +1028,11 @@ public class AppUtils {
 				return callContinuing;
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "agent" + agentName + "is not calling");
 				callContinuing = false;
 				return callContinuing;
 			}
-
 			
 		}
 	}// end of checkCalling
@@ -1110,56 +1045,49 @@ public class AppUtils {
 	   * @return boolean of the Flag button existing and clicking
 	   */
 	protected static boolean checkFlag(String agentName) {
+		String flagButtonXpath = "//button[@title='Flag the call']";
 
 		switch (agentName) {
 		case "alan.jenks":
-			// check flag
 			try {
-				driverAJ.findElement(By.xpath("//button[@title='Flag the call']")).click();
+				driverAJ.findElement(By.xpath(flagButtonXpath)).click();
 				System.out.println("Flag the call check PASSED");
 				return true;
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
 				System.out.println(e.toString() + " Flag the call check FAILED");
 				return false;
 			}
 
 		case "tony.cobb":
-			// check flag
 			try {
-				driverTC.findElement(By.xpath("//button[@title='Flag the call']")).click();
+				driverTC.findElement(By.xpath(flagButtonXpath)).click();
 				System.out.println("Flag the call status PASSED");
 				return true;
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
 				System.out.println(e.toString() + " Flag the call status FAILED");
 				return false;
 			}
 
 		case "carlos.clapper":
-			// check flag
 			try {
-				driverCC.findElement(By.xpath("//button[@title='Flag the call']")).click();
+				driverCC.findElement(By.xpath(flagButtonXpath)).click();
 				System.out.println("Flag the call status PASSED");
 				return true;
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
 				System.out.println(e.toString() + " Flag the call status FAILED");
 				return false;
 			}
 
 		default:
-			// check flag
 			try {
-				driver.findElement(By.xpath("//button[@title='Flag the call']")).click();
+				driver.findElement(By.xpath(flagButtonXpath)).click();
 				System.out.println("Flag the call status PASSED");
 				return true;
 
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
 				System.out.println(e.toString() + " Flag the call status FAILED");
 				return false;
 			}
@@ -1183,7 +1111,7 @@ public class AppUtils {
 				System.out.println("RETRIEVE status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + " RETRIEVE status FAILED");
 				return false;
 			}
@@ -1195,7 +1123,7 @@ public class AppUtils {
 				System.out.println("RETRIEVE status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + " RETRIEVE status FAILED");
 				return false;
 			}
@@ -1207,7 +1135,7 @@ public class AppUtils {
 				System.out.println("RETRIEVE status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + " RETRIEVE status FAILED");
 				return false;
 			}
@@ -1219,7 +1147,7 @@ public class AppUtils {
 				System.out.println("RETRIEVE status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + " RETRIEVE status FAILED");
 				return false;
 			}
@@ -1243,7 +1171,7 @@ public class AppUtils {
 				System.out.println("HOLD status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "HOLD status FAILED");
 				return false;
 			}
@@ -1255,7 +1183,7 @@ public class AppUtils {
 				System.out.println("HOLD status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "HOLD status FAILED");
 				return false;
 			}
@@ -1267,7 +1195,7 @@ public class AppUtils {
 				System.out.println("HOLD status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "HOLD status FAILED");
 				return false;
 			}
@@ -1279,7 +1207,7 @@ public class AppUtils {
 				System.out.println("HOLD status PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "HOLD status FAILED");
 				return false;
 			}
@@ -1303,7 +1231,7 @@ public class AppUtils {
 				System.out.println("contact identification PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "contact identification FAILED");
 				return false;
 			}
@@ -1315,7 +1243,7 @@ public class AppUtils {
 				System.out.println("contact identification PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "contact identification FAILED");
 				return false;
 			}
@@ -1327,7 +1255,7 @@ public class AppUtils {
 				System.out.println("contact identification PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "contact identification FAILED");
 				return false;
 			}
@@ -1339,7 +1267,7 @@ public class AppUtils {
 				System.out.println("contact identification PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + "contact identification FAILED");
 				return false;
 			}
@@ -1364,7 +1292,7 @@ public class AppUtils {
 				System.out.println("Popup URL PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + " Popup URL FAILED");
 				return false;
 			}
@@ -1376,7 +1304,7 @@ public class AppUtils {
 				System.out.println("Popup URL PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + " Popup URL FAILED");
 				return false;
 			}
@@ -1388,7 +1316,7 @@ public class AppUtils {
 				System.out.println("Popup URL PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + " Popup URL FAILED");
 				return false;
 			}
@@ -1400,7 +1328,7 @@ public class AppUtils {
 				System.out.println("Popup URL PASSED");
 				return true;
 			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+				
 				System.out.println(e.toString() + " Popup URL FAILED");
 				return false;
 			}
@@ -1416,56 +1344,48 @@ public class AppUtils {
 	   * @return boolean of the Activity Form existing 
 	   */
 	protected static boolean checkActivityForm(String agentName) {
+		String activityFormXpath = "//div[@title='AF_ServiceA']";
 
 		switch (agentName) {
 		case "alan.jenks":
-			// check activity form
 			try {
-				driverAJ.findElement(By.xpath("//div[@title='AF_ServiceA']")).click();
+				driverAJ.findElement(By.xpath(activityFormXpath)).click();
 				System.out.println("Service Form PASSED");
 				return true;
-			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+			} catch (NoSuchElementException e) {				
 				System.out.println(e.toString() + " Service Form FAILED");
 				return false;
 			}
 
 		case "tony.cobb":
-			// check activity form
 			try {
-				driverTC.findElement(By.xpath("//div[@title='AF_ServiceA']")).click();
+				driverTC.findElement(By.xpath(activityFormXpath)).click();
 				System.out.println("Service Form PASSED");
 				return true;
-			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+			} catch (NoSuchElementException e) {				
 				System.out.println(e.toString() + " Service Form FAILED");
 				return false;
 			}
 
 		case "carlos.clapper":
-			// check activity form
 			try {
-				driverCC.findElement(By.xpath("//div[@title='AF_ServiceA']")).click();
+				driverCC.findElement(By.xpath(activityFormXpath)).click();
 				System.out.println("Service Form PASSED");
 				return true;
-			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+			} catch (NoSuchElementException e) {				
 				System.out.println(e.toString() + " Service Form FAILED");
 				return false;
 			}
 
 		default:
-			// check activity form
 			try {
-				driver.findElement(By.xpath("//div[@title='AF_ServiceA']")).click();
+				driver.findElement(By.xpath(activityFormXpath)).click();
 				System.out.println("Service Form PASSED");
 				return true;
-			} catch (NoSuchElementException e) {
-				// Code for Handling exception
+			} catch (NoSuchElementException e) {				
 				System.out.println(e.toString() + " Service Form FAILED");
 				return false;
-			}
-		
+			}		
 		}
 	}// end of checkActivityForm	
 
@@ -1474,8 +1394,8 @@ public class AppUtils {
 	   * Put a phone number in the input field of the agent.
 	   * Click the "blind transfer" button
 	   * 
-	   * @param agentName enter the agent name
-	   * @param calleeNumber enter the outcoming number
+	   * @param agentName as an agent name
+	   * @param calleeNumber as an outcoming number
 	   */	
 	protected static void agentBlindTransfer(String agentName, String calleeNumber) {
 		String initiateXpath = "//button[@id='cpReminder']/following-sibling::button/following-sibling::button";
@@ -1487,7 +1407,6 @@ public class AppUtils {
 			driverAJ.findElement(By.xpath(initiateXpath)).click(); // initiate transfer button
 			driverAJ.findElement(By.xpath(numberFieldXPath)).sendKeys(calleeNumber);
 			driverAJ.findElement(By.xpath(tansferButtonXpath)).click(); // blind transfer button
-//			System.out.println("blind transfer button was clicked!!!!!!!!!!!!");
 			
 			break;
 		case "tony.cobb":
@@ -1555,19 +1474,20 @@ public class AppUtils {
 	   * @param notes enter a note text
 	   */
 	protected static void fillOutNotes(String agentName, String notes) {
+		String notesFieldXpath = "//*[@id='cp-notes']";
 
 		switch (agentName) {
 		case "alan.jenks":
-			driverAJ.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 
+			driverAJ.findElement(By.xpath(notesFieldXpath)).sendKeys(notes); 
 			break;
 		case "tony.cobb":
-			driverTC.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 	
+			driverTC.findElement(By.xpath(notesFieldXpath)).sendKeys(notes); 	
 			break;
 		case "carlos.clapper":
-			driverCC.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 
+			driverCC.findElement(By.xpath(notesFieldXpath)).sendKeys(notes); 
 			break;
 		default:
-			driver.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 
+			driver.findElement(By.xpath(notesFieldXpath)).sendKeys(notes); 
 		}
 	}// end of fillOutNotes	
 
@@ -1586,26 +1506,22 @@ public class AppUtils {
 
 		switch (agentName) {
 		case "alan.jenks":
-			// selectDisposition
 			driverAJ.findElement(By.xpath(selectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
 			driverAJ.findElement(By.xpath(selectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
 			driverAJ.findElement(By.xpath(completeDispositionButton)).click(); // COMPLETE DISPOSITION
 
 			break;
 		case "tony.cobb":
-			// selectDisposition
 			driverTC.findElement(By.xpath(selectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
 			driverTC.findElement(By.xpath(selectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
 			driverTC.findElement(By.xpath(completeDispositionButton)).click(); // COMPLETE DISPOSITION
 			break;
 		case "carlos.clapper":
-			// selectDisposition
 			driverCC.findElement(By.xpath(selectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
 			driverCC.findElement(By.xpath(selectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
 			driverCC.findElement(By.xpath(completeDispositionButton)).click(); // COMPLETE DISPOSITION
 			break;
 		default:
-			// selectDisposition
 			driver.findElement(By.xpath(selectDispositionButton)).click(); // SELECT DISPOSITION BUTTON
 			driver.findElement(By.xpath(selectDisposition)).click(); // SELECT DISPOSITION (PRODUCT SOLD)		                                
 			driver.findElement(By.xpath(completeDispositionButton)).click(); // COMPLETE DISPOSITION
