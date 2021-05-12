@@ -1736,5 +1736,20 @@ public static void assertNotNull(String expected, String actual) {
 	}
 	
 }
+
+/**
+ * Verify expected and actual result by not null
+ *
+ * @param expected the expected result
+ * @param actual the actual result
+ */
+public static boolean checkNotNull(String expected, String actual) {
+	if(expected != null && actual != null) {
+		return true;
+	} else {
+	return false;
+	}
+}
+
 	
 }// end of class API

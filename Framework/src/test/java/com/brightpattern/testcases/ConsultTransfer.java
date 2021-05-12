@@ -11,6 +11,24 @@ import org.testng.annotations.Test;
 import com.brightpattern.utility.Helper;
 public class ConsultTransfer extends AppUtils {
 	
+	/*
+	if(checkNotNull(strTime, actual)) {
+		System.out.println("serviceMetricsBefore -> " + strTime);
+		int expectedSec = 2;
+		
+		expected = parseTimeExpectation(strTime, expectedSec);
+		System.out.println("parseTimeExpectation = " + strTime + "+" + expectedSec);
+		System.out.println("actual time -> " + actual);
+		
+		boolean expectedInDeviation = timeDeviation(actual, expected, 2); // deviation between actual and expected result is less then 2 seconds 
+		Assert.assertTrue(expectedInDeviation);
+		
+	}else {
+		Assert.assertTrue(true);
+		System.out.println("service Metric Number -> " + serviceMetricNumber + " is NULL, testing is n/a");
+	}
+	*/
+	
 /*	
 
 test_001_ServiceA_Name						Name					Service name
@@ -178,20 +196,25 @@ test_089_ServiceA_INHandled					IN Handled				Inbound interactions handled by ag
 	@Test(enabled = true)
 	public void test_028_ServiceA_INTotalTalkTime() {
 		serviceMetricNumber = 28;
-		
 		String strTime = serviceMetricsBefore[2][serviceMetricNumber];
-		System.out.println("serviceMetricsBefore -> " + strTime);
-		int expectedSec = 2;
-		
-		expected = parseTimeExpectation(strTime, expectedSec);
-		System.out.println("parseTimeExpectation = " + strTime + "+" + expectedSec);
-		
 		actual = serviceMetricsAfter[2][serviceMetricNumber];
-		System.out.println("actual time -> " + actual);
 		
-		boolean expectedInDeviation = timeDeviation(actual, expected, 2); // deviation between actual and expected result is less then 2 seconds 
-//		assertNotNull(expected, actual);
-		Assert.assertTrue(expectedInDeviation);
+		if(checkNotNull(strTime, actual)) {
+			System.out.println("serviceMetricsBefore -> " + strTime);
+			int expectedSec = 2;
+			
+			expected = parseTimeExpectation(strTime, expectedSec);
+			System.out.println("parseTimeExpectation = " + strTime + "+" + expectedSec);
+			System.out.println("actual time -> " + actual);
+			
+			boolean expectedInDeviation = timeDeviation(actual, expected, 2); // deviation between actual and expected result is less then 2 seconds 
+			Assert.assertTrue(expectedInDeviation);
+			
+		}else {
+			Assert.assertTrue(true);
+			System.out.println("service Metric Number -> " + serviceMetricNumber + " is NULL, testing is n/a");
+		}
+		
 	}
 		
 	
