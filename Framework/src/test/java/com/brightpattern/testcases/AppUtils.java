@@ -1558,12 +1558,15 @@ public class AppUtils {
 	 * @param delta the delta
 	 * @return the string as expected result
 	 */
-	protected static String parseStringExpectation(String metricValueBefore, int delta) {	
-		
-	 int i = Integer.parseInt(metricValueBefore); //String to int
-	 String metricValueAfter = String.valueOf(i + delta); //int to String
-	 
-	 return metricValueAfter;
+	protected static String parseStringExpectation(String metricValueBefore, int delta) {
+		if(metricValueBefore != null) {
+			int i = Integer.parseInt(metricValueBefore); // String to int
+			String metricValueAfter = String.valueOf(i + delta); // int to String
+			return metricValueAfter;			
+		}else {
+			return "0";
+		}
+
 	}
 	
 	  /**
