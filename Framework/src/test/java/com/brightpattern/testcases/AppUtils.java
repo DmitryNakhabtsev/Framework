@@ -1478,36 +1478,32 @@ public class AppUtils {
 	   * @param calleeNumber enter the outcoming number
 	   */	
 	protected static void agentBlindTransfer(String agentName, String calleeNumber) {
+		String initiateXpath = "//button[@id='cpReminder']/following-sibling::button/following-sibling::button";
+		String numberFieldXPath = "//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input";
+		String tansferButtonXpath = "/html/body/div[10]//button[@title='Blind transfer']";
 
 		switch (agentName) {
 		case "alan.jenks":
-			// agentBlindTransfer
-			driverAJ.findElement(By.xpath("//button[@id='cpReminder']/following-sibling::button/following-sibling::button")).click(); // initiate transfer button
-			driverAJ.findElement(By.xpath("//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input")).sendKeys(calleeNumber); // it is ok too!`
-			
-//			driver_aj.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); // blind transfer button
-			driverAJ.findElement(By.xpath("/html/body/div[10]//button[@title='Blind transfer']")).click(); // blind transfer button
-			System.out.println("blind transfer button was clicked!!!!!!!!!!!!");
+			driverAJ.findElement(By.xpath(initiateXpath)).click(); // initiate transfer button
+			driverAJ.findElement(By.xpath(numberFieldXPath)).sendKeys(calleeNumber);
+			driverAJ.findElement(By.xpath(tansferButtonXpath)).click(); // blind transfer button
+//			System.out.println("blind transfer button was clicked!!!!!!!!!!!!");
 			
 			break;
 		case "tony.cobb":
-			// agentBlindTransfer
-			driverTC.findElement(By.xpath("//button[@id='cpReminder']/following-sibling::button/following-sibling::button")).click(); // initiate transfer button
-			driverTC.findElement(By.xpath("//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input")).sendKeys(calleeNumber); 
-			driverTC.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); // blind transfer button
-			
+			driverTC.findElement(By.xpath(initiateXpath)).click(); // initiate transfer button
+			driverTC.findElement(By.xpath(numberFieldXPath)).sendKeys(calleeNumber);
+			driverTC.findElement(By.xpath(tansferButtonXpath)).click(); // blind transfer button	
 			break;
 		case "carlos.clapper":
-			// agentBlindTransfer
-			driverCC.findElement(By.xpath("//button[@id='cpReminder']/following-sibling::button/following-sibling::button")).click(); // initiate transfer button
-			driverCC.findElement(By.xpath("//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input")).sendKeys(calleeNumber); 
-			driverCC.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); // blind transfer button
+			driverCC.findElement(By.xpath(initiateXpath)).click(); // initiate transfer button
+			driverCC.findElement(By.xpath(numberFieldXPath)).sendKeys(calleeNumber);
+			driverCC.findElement(By.xpath(tansferButtonXpath)).click(); // blind transfer button
 			break;
 		default:
-			// agentBlindTransfer
-			driver.findElement(By.xpath("//button[@id='cpReminder']/following-sibling::button/following-sibling::button")).click(); // initiate transfer button
-			driver.findElement(By.xpath("//*[@id=\"ConfirmDialogBox\"]/div/table/tbody/tr[2]/td[2]/div/div/div/div/div/div/div[2]/input")).sendKeys(calleeNumber); 
-			driver.findElement(By.xpath("/html/body/div[11]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/div/div/div[1]/div[2]/div/button/div")).click(); // blind transfer button
+			driver.findElement(By.xpath(initiateXpath)).click(); // initiate transfer button
+			driver.findElement(By.xpath(numberFieldXPath)).sendKeys(calleeNumber);
+			driver.findElement(By.xpath(tansferButtonXpath)).click(); // blind transfer button
 		}
 	}// agentBlindTransfer	
 	
@@ -1530,30 +1526,25 @@ public class AppUtils {
 			// Consult call
 			driverAJ.findElement(By.xpath(initialTransferButton)).click(); // INITIAL TRANSFER BUTTON 
 			driverAJ.findElement(By.xpath(enterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
-			driverAJ.findElement(By.xpath(submitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
-			System.out.println(agentName + " initiate call button was clicked!");
-			
+			driverAJ.findElement(By.xpath(submitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER			
 			break;
 		case "tony.cobb":
 			// Consult call
 			driverTC.findElement(By.xpath(initialTransferButton)).click(); // INITIAL TRANSFER BUTTON 
 			driverTC.findElement(By.xpath(enterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
 			driverTC.findElement(By.xpath(submitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
-			System.out.println(agentName + " initiate call button was clicked!");		
 			break;
 		case "carlos.clapper":
 			// Consult call
 			driverCC.findElement(By.xpath(initialTransferButton)).click(); // INITIAL TRANSFER BUTTON 
 			driverCC.findElement(By.xpath(enterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
 			driverCC.findElement(By.xpath(submitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
-			System.out.println(agentName + " initiate call button was clicked!");
 			break;
 		default:
 			// Consult call
 			driver.findElement(By.xpath(initialTransferButton)).click(); // INITIAL TRANSFER BUTTON 
 			driver.findElement(By.xpath(enterNumber)).sendKeys(calleeNumber); // ENTER NUBER WHEN INITIAL TRANSFER
 			driver.findElement(By.xpath(submitNumber)).click(); //INITIAL CALL AFTER ENTERD NUMBER
-			System.out.println(agentName + " initiate call button was clicked!");
 		}
 	}// agentConsultCall	
 	
@@ -1567,19 +1558,15 @@ public class AppUtils {
 
 		switch (agentName) {
 		case "alan.jenks":
-			// fillOutNotes
 			driverAJ.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 
 			break;
 		case "tony.cobb":
-			// fillOutNotes
 			driverTC.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 	
 			break;
 		case "carlos.clapper":
-			// fillOutNotes
 			driverCC.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 
 			break;
 		default:
-			// fillOutNotes
 			driver.findElement(By.xpath("//*[@id=\"cp-notes\"]")).sendKeys(notes); 
 		}
 	}// end of fillOutNotes	
@@ -1637,23 +1624,23 @@ public class AppUtils {
 	  /**
   	 * Print metrics in console.
   	 *
-  	 * @param metricArray enter the metric array  name
+  	 * @param metricsArray enter the metric array  name
   	 */
-	protected static void printOutMetrics(String[][] metricArray) {
+	protected static void printOutMetrics(String[][] metricsArray) {
 	
 		System.out.println("************ mettrics *************");
-		System.out.println(Arrays.deepToString(metricArray)); 
+		System.out.println(Arrays.deepToString(metricsArray)); 
 	}
 	
 
 	
 	
 	/**
-	 * Parses the string expectation.
+	 * Set scenario counter result to metric. Used as expected result.
 	 *
 	 * @param metricValueBefore the metric value before
 	 * @param delta the delta
-	 * @return the string
+	 * @return the string as expected result
 	 */
 	protected static String parseStringExpectation(String metricValueBefore, int delta) {	
 		
