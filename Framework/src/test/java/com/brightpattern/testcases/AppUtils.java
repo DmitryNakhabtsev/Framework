@@ -400,12 +400,12 @@ public class AppUtils {
 }// end of agent_init_original
 	
 	
-	  /**
-	   * Put a phone number in the input field of the agent and call to.
-	   * 
-	   * @param agentName enter an agent Name
-	   * @param calleeNumber enter the phone number
-	   */	
+  /**
+   * Put a phone number in the input field of the agent and call to.
+   * 
+   * @param agentName enter an agent Name
+   * @param calleeNumber enter the phone number
+   */	
 	protected static void agentCallTo(String agentName, String calleeNumber) {
 		String numberFieldXpath = "//*[@id=\"sp-destination\"]";
 		String callButtonXpath = "//*[@id=\"dial-toolbar-call\"]/button";
@@ -448,11 +448,11 @@ public class AppUtils {
 		}
 	}// end of agentCallTo
 	
-	  /**
-	   * End the call. Click the "end call" button. 
-	   * 
-	   * @param agentName enter an agent Name
-	   */
+  /**
+   * End the call. Click the "end call" button. 
+   * 
+   * @param agentName enter an agent Name
+   */
 	protected static void agentEndCall(String agentName) {
 		String endButtonXpath = "//*[@id='cpEndCall']";
 
@@ -495,11 +495,11 @@ public class AppUtils {
 		}
 	}// end of agentEndCall
 	
-	  /**
-	   * Click the "Complete Transfer" button. 
-	   * 
-	   * @param agentName enter an agent Name
-	   */
+  /**
+   * Click the "Complete Transfer" button. 
+   * 
+   * @param agentName enter an agent Name
+   */
 	protected static void agentCompleteTransfer(String agentName) {
 		String xpathSelect = "//*[@id='cpTransfer']/div";
 
@@ -524,12 +524,12 @@ public class AppUtils {
 		}
 	}// end of agentCompleteTransfer
 	
-	  /**
-	   * WebRTC
-	   *Answer incoming call. Click the "activation incoming call" button.
-	   * 
-	   * @param agentName enter an agent Name
-	   */
+  /**
+   * WebRTC
+   *Answer incoming call. Click the "activation incoming call" button.
+   * 
+   * @param agentName enter an agent Name
+   */
 	protected static void agentCallAnswer(String agentName) {
 
 //		String AcceptCallButton = "/html/body/div[8]/div/table/tbody/tr[2]/td[2]/div/div/div[3]/button[1]";		
