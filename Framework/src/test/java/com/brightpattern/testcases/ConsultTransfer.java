@@ -130,14 +130,12 @@ test_089_ServiceA_INHandled					IN Handled				Inbound interactions handled by ag
 	
 	
 	@Test(priority = -3)
-	public void ArrayBefore() {
+	public void scenario() {
 
 		agentInit(admin, pwd);
 		wait(action);
 		System.out.println(">>>>>>>>>>>>>>>>>> print serviceMetricsBefore <<<<<<<<<<<<<<<<<<");
 		serviceMetricsBefore = getServicesMetrics("Service A", 3);	
-//		agentMetricsBefore = getAgentsMetrics("admin", 1);	
-//		teamMetricsBefore = getTeamsMetrics("TeamDmitry");
 		System.out.println(Helper.captureScreenshot(driver));
 		printOutMetrics(serviceMetricsBefore);
 		
