@@ -792,8 +792,11 @@ public class AppUtils {
 		    //Wait for element to be clickable
 		    WebDriverWait waitAJ = new WebDriverWait(driverAJ, 15);
 		    waitAJ.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
-
+		    System.out.println("waitng expected conditions");
+		    wait(1000);
+		    System.out.println("wait(1000)");
 			driverAJ.findElement(By.xpath(xpathSelect)).click();
+			System.out.println("click by Service Selector");
 			driverAJ.findElement(By.xpath(xpathServiceA)).click();
 			
 			//Thread.sleep(1000);
