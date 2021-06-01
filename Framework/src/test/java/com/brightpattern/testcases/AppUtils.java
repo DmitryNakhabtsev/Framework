@@ -234,7 +234,7 @@ public class AppUtils {
 	    
 //	    String hostURL = "https://dima1.ssf.bugfocus.com/agentdesktop/";
 //	    String hostURL = "https://autotests.ssf.bugfocus.com/agentdesktop/";
-	    String hostURL = "https://olgaa.brightpattern.com/agentdesktop/";
+	    String hostURL = "https://olgaa.brightpattern.com/agentdesktop/"; //ocean08 NewAD build
 
 		
 		switch(agentName) {
