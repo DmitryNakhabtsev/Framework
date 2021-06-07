@@ -778,29 +778,30 @@ public class AppUtils {
 	   */
 	protected static void setServiceToAgent(String agentName) {
 		
-
-		String xpathSelect = "//*[@title='Service Selector']/div";
-//		String xpath_select = "/html/body/div[5]/div/div[2]/div/div/div[1]/div[2]/div[1]";
-//		String xpath_ServiceA = "/html/body/div[7]/div/div/div/div/table/tbody/tr[2]/td";
-		
+		String xpathSelect = "//*[@title='Service Selector']";
+//		String xpathSelect = "//*[@title='Service Selector']/div";		
 		String xpathServiceA = "//*[@aria-label='Service A']";
 		String serviceNames;
 
 		switch (agentName) {
 		case "alan.jenks":
-			
-		    //Wait for element to be clickable
+
 		    WebDriverWait waitAJ = new WebDriverWait(driverAJ, 15);
-		    waitAJ.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
-		    System.out.println("waitng expected conditions");
-		    wait(1000);
-		    System.out.println("wait(1000)");
-			driverAJ.findElement(By.xpath(xpathSelect)).click();
-			System.out.println("click by Service Selector");
-			driverAJ.findElement(By.xpath(xpathServiceA)).click();
+		    
+			try {
+				waitAJ.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
+				System.out.println("Select bar was found succesfully for agent " + agentName);
+				driverAJ.findElement(By.xpath(xpathSelect)).click();
+				System.out.println("click by Service Selector");
+				driverAJ.findElement(By.xpath(xpathServiceA)).click();
+
+			} catch (NoSuchElementException e) {
+				
+				System.out.println("SELECT bar for " + agentName + " was not found >>>> " + e.toString());
+				System.out.println("screenshot for SELECT bar --> " + Helper.captureScreenshot(driverAJ));
+			}
 			
-			//Thread.sleep(1000);
-			
+			//Thread.sleep(1000);			
 			try {
 				// try to check setting of "Service A"
 				serviceNames = driverAJ.findElement(By.xpath(xpathSelect)).getText();
@@ -814,18 +815,22 @@ public class AppUtils {
 			break;
 		case "tony.cobb":
 
-		    //Wait for element to be clickable
-			
-			System.out.println("screenshot inside of method --> " + Helper.captureScreenshot(driverTC));
-		    WebDriverWait waitTC = new WebDriverWait(driverTC, 15);
-		    waitTC.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
-			
-			driverTC.findElement(By.xpath(xpathSelect)).click();
-			driverTC.findElement(By.xpath(xpathServiceA)).click();
-			
-//			Thread.sleep(1000);
+		    WebDriverWait waitTC = new WebDriverWait(driverTC, 15);		    
 			try {
-				// // try to check setting of "Service A"
+				waitTC.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
+				System.out.println("Select bar was found succesfully for agent " + agentName);
+				driverTC.findElement(By.xpath(xpathSelect)).click();
+				System.out.println("click by Service Selector");
+				driverTC.findElement(By.xpath(xpathServiceA)).click();
+
+			} catch (NoSuchElementException e) {
+				
+				System.out.println("SELECT bar for " + agentName + " was not found >>>> " + e.toString());
+				System.out.println("screenshot for SELECT bar --> " + Helper.captureScreenshot(driverTC));
+			}			
+			//Thread.sleep(1000);
+			try {
+				// try to check setting of "Service A"
 				serviceNames = driverTC.findElement(By.xpath(xpathSelect)).getText();
 				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
@@ -835,15 +840,20 @@ public class AppUtils {
 			}
 			break;
 		case "carlos.clapper":
-			
-		    //Wait for element to be clickable
-		    WebDriverWait waitCC = new WebDriverWait(driverCC, 15);
-		    waitCC.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
+		    WebDriverWait waitCC = new WebDriverWait(driverCC, 15);		    
+			try {
+				waitCC.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathSelect)));
+				System.out.println("Select bar was found succesfully for agent " + agentName);
+				driverCC.findElement(By.xpath(xpathSelect)).click();
+				System.out.println("click by Service Selector");
+				driverCC.findElement(By.xpath(xpathServiceA)).click();
 
-			driverCC.findElement(By.xpath(xpathSelect)).click();
-			driverCC.findElement(By.xpath(xpathServiceA)).click();
-			
-//			Thread.sleep(1000);
+			} catch (NoSuchElementException e) {
+				
+				System.out.println("SELECT bar for " + agentName + " was not found >>>> " + e.toString());
+				System.out.println("screenshot for SELECT bar --> " + Helper.captureScreenshot(driverCC));
+			}			
+			//Thread.sleep(1000);
 			
 			try {
 				// // try to check setting of "Service A"
