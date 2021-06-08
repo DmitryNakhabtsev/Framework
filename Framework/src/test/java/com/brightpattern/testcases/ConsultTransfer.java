@@ -162,8 +162,6 @@ test_089_ServiceA_INHandled					IN Handled				Inbound interactions handled by ag
 		System.out.println(Helper.captureScreenshot(driverAJ));
 		
 		agentInit(agent2, pwd);
-		wait(1000);
-		System.out.println(Helper.captureScreenshot(driverTC));
 		setServiceToAgent(agent2);
 		System.out.println(Helper.captureScreenshot(driverTC));
 		

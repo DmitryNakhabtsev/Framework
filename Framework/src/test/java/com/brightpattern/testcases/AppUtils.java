@@ -777,13 +777,13 @@ public class AppUtils {
 	   * @param agentName enter the agent name
 	 * @throws InterruptedException 
 	   */
-	protected static void setServiceToAgent(String agentName) throws InterruptedException {
+	protected static void setServiceToAgent(String agentName) {
 		
 		String xpathSelect = "//*[@title='Service Selector']";
 //		String xpathSelect = "//*[@title='Service Selector']/div";		
 		String xpathServiceA = "//*[@aria-label='Service A']";
 		String serviceNames;
-		Thread.sleep(1000);
+
 
 		switch (agentName) {
 		case "alan.jenks":
