@@ -213,6 +213,7 @@ public class AppUtils {
 
 		System.setProperty("webdriver.chrome.driver", "Drivers/Linux/chromedriver");
 		System.setProperty("webdriver.chrome.whitelistedIps", ""); // Cannot assign requested address (99) while starting chromedriver
+		System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 		
 		ChromeOptions options = new ChromeOptions();
 		
