@@ -140,49 +140,43 @@ test_089_ServiceA_INHandled					IN Handled				Inbound interactions handled by ag
 
 	int callDuration = 2000; // 10 sec for every conversation
 	int action = 1000; 
-	
-//	ChromeDriver agent1Driver = agentDriver(agent1);
-//	ChromeDriver agent2Driver = agentDriver(agent2);
-//	ChromeDriver adminDriver = agentDriver(admin);
-	
-	
-	
+		
 	@Test(priority = -3)
 	public void scenario() {
 
 		agentInit(admin, pwd);
 		wait(action);
-		System.out.println(">>>>>>>>>>>>>>>>>> print serviceMetricsBefore <<<<<<<<<<<<<<<<<<");
+		System.out.println("<--- print serviceMetricsBefore --->");
 		serviceMetricsBefore = getServicesMetrics("Service A", 3);	
-		System.out.println(Helper.captureScreenshot(driver));
+//		System.out.println(Helper.captureScreenshot(driver));
 		printOutMetrics(serviceMetricsBefore);
 		
 		agentInit(agent1, pwd);
 		setServiceToAgent(agent1);
-		System.out.println(Helper.captureScreenshot(driverAJ));
+//		System.out.println(Helper.captureScreenshot(driverAJ));
 		
 		agentInit(agent2, pwd);
 		setServiceToAgent(agent2);
-		System.out.println(Helper.captureScreenshot(driverTC));
+//		System.out.println(Helper.captureScreenshot(driverTC));
 		
 		agentCallTo(admin, "8003");
 		wait(action);
-		System.out.println(Helper.captureScreenshot(driver));
+//		System.out.println(Helper.captureScreenshot(driver));
 		
 //		setReadyToAgent(agent1);
 		
 		agentCallAnswer(agent1);
 		wait(callDuration);
-		System.out.println(Helper.captureScreenshot(driverAJ));
+//		System.out.println(Helper.captureScreenshot(driverAJ));
 		
 		agentEndCall(agent1);
 		driver.findElement(By.xpath("//*[@id='b-navigation-item-supervisor']")).click(); //supervision panel activation
 //		agentEndCall("admin");		
 		wait(12000);
-		System.out.println("Start getServicesMetrics after wait(12000) <<<<<<<<<<<<<<<<<<<");
-		System.out.println(Helper.captureScreenshot(driver));
+		System.out.println("<--- Start getServicesMetrics after wait(12000) --->");
+//		System.out.println(Helper.captureScreenshot(driver));
 		serviceMetricsAfter = getServicesMetrics("Service A", 3);
-		System.out.println(">>>>>>>>>>>>>>>>>> print serviceMetricsAfter <<<<<<<<<<<<<<<<<<");
+		System.out.println("<--- print serviceMetricsAfter --->");
 		printOutMetrics(serviceMetricsAfter);
 		
 		agentLogOut(admin);				

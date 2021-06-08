@@ -273,10 +273,10 @@ public class AppUtils {
 				} catch (Exception e) {
 					
 					System.out.println(agentName + " can't activate dial pad ->>> " + e.toString());
+					System.out.println(Helper.captureScreenshot(driverAJ));
 				}
 			  
 				wait(1000);
-				System.out.println(Helper.captureScreenshot(driverAJ));
 		    break;
 		  case "tony.cobb": 
 
@@ -365,10 +365,10 @@ public class AppUtils {
 				} catch (NoSuchElementException e) {
 					
 					System.out.println(e.toString());
+					System.out.println("screenshot after login attempt --> " + Helper.captureScreenshot(driver));
 				}
 
 				wait(1000);
-				System.out.println("screenshot after login --> " + Helper.captureScreenshot(driver));
 			  
 				try {
 					// try to supervision panel activation //*[@id="b-navigation"]/div[11]
@@ -378,10 +378,10 @@ public class AppUtils {
 				} catch (Exception e) {
 					
 					System.out.println("can't activate supervision panel -> "+e.toString());
+					System.out.println(Helper.captureScreenshot(driver));
 				}
 			  
 				wait(1000);
-				System.out.println(Helper.captureScreenshot(driver));
 				
 			  
 			  
@@ -393,10 +393,10 @@ public class AppUtils {
 				} catch (Exception e) {
 					
 					System.out.println(agentName + " can't activate dial pad ->>> " + e.toString());
+					System.out.println(Helper.captureScreenshot(driver));
 				}
 			  
 				wait(1000);
-				System.out.println(Helper.captureScreenshot(driver));
 				
 
 		}
