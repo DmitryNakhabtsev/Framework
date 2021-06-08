@@ -775,13 +775,15 @@ public class AppUtils {
 	   * And check if the service was not set
 	   * 
 	   * @param agentName enter the agent name
+	 * @throws InterruptedException 
 	   */
-	protected static void setServiceToAgent(String agentName) {
+	protected static void setServiceToAgent(String agentName) throws InterruptedException {
 		
 		String xpathSelect = "//*[@title='Service Selector']";
 //		String xpathSelect = "//*[@title='Service Selector']/div";		
 		String xpathServiceA = "//*[@aria-label='Service A']";
 		String serviceNames;
+		Thread.sleep(1000);
 
 		switch (agentName) {
 		case "alan.jenks":
@@ -795,19 +797,19 @@ public class AppUtils {
 				System.out.println("click by Service Selector");
 				driverAJ.findElement(By.xpath(xpathServiceA)).click();
 
-			} catch (NoSuchElementException e) {
+			} catch (Exception e) {
 				
 				System.out.println("SELECT bar for " + agentName + " was not found >>>> " + e.toString());
 				System.out.println("screenshot for SELECT bar --> " + Helper.captureScreenshot(driverAJ));
 			}
 			
-			//Thread.sleep(1000);			
+			
 			try {
 				// try to check setting of "Service A"
 				serviceNames = driverAJ.findElement(By.xpath(xpathSelect)).getText();
 				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
-			} catch (NoSuchElementException e) {
+			} catch (Exception e) {
 				
 				System.out.println(e.toString() + "Service A for " + agentName + " was not set");
 			}
@@ -823,7 +825,7 @@ public class AppUtils {
 				System.out.println("click by Service Selector");
 				driverTC.findElement(By.xpath(xpathServiceA)).click();
 
-			} catch (NoSuchElementException e) {
+			} catch (Exception e) {
 				
 				System.out.println("SELECT bar for " + agentName + " was not found >>>> " + e.toString());
 				System.out.println("screenshot for SELECT bar --> " + Helper.captureScreenshot(driverTC));
@@ -834,7 +836,7 @@ public class AppUtils {
 				serviceNames = driverTC.findElement(By.xpath(xpathSelect)).getText();
 				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
-			} catch (NoSuchElementException e) {
+			} catch (Exception e) {
 				
 				System.out.println(e.toString() + "Service A for " + agentName + " was not set");
 			}
@@ -848,7 +850,7 @@ public class AppUtils {
 				System.out.println("click by Service Selector");
 				driverCC.findElement(By.xpath(xpathServiceA)).click();
 
-			} catch (NoSuchElementException e) {
+			} catch (Exception e) {
 				
 				System.out.println("SELECT bar for " + agentName + " was not found >>>> " + e.toString());
 				System.out.println("screenshot for SELECT bar --> " + Helper.captureScreenshot(driverCC));
@@ -860,7 +862,7 @@ public class AppUtils {
 				serviceNames = driverCC.findElement(By.xpath(xpathSelect)).getText();
 				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
-			} catch (NoSuchElementException e) {
+			} catch (Exception e) {
 				
 				System.out.println(e.toString() + "Service A for " + agentName + " was not set");
 			}
@@ -881,7 +883,7 @@ public class AppUtils {
 				serviceNames = driver.findElement(By.xpath(xpathSelect)).getText();
 				System.out.println(serviceNames + " was set succesfully for agent " + agentName);
 
-			} catch (NoSuchElementException e) {
+			} catch (Exception e) {
 				
 				System.out.println(e.toString() + "Service A for " + agentName + " was not set");
 			}
