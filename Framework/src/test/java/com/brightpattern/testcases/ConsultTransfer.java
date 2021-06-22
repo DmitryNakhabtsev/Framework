@@ -122,7 +122,7 @@ test_088_ServiceA_INQueued					IN Queued				Inbound calls queued for the day
 test_089_ServiceA_INHandled					IN Handled				Inbound interactions handled by agents for the day	
 	
 	
-*/	//============================================ RTM test description ==========================================================
+*/	//============================================ RTM test description ===========================================================
 		
 	//getServicesMetrics
 	protected int serviceMetricNumber; //Service Metric index in array
